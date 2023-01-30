@@ -1,0 +1,9 @@
+#DatosUsuario {
+	font-size: 25px;
+}
+
+.col-sm-12 {
+	background: yellow;
+	align-content: center;
+	display: flex;
+}

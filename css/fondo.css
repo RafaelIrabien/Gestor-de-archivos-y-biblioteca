@@ -1,0 +1,117 @@
+/*
+body {
+	background-image: url("../img/fondo.jpg");
+	 Para dejar la imagen centrada vertical y horizontalmente 
+	background-position: center center;
+	/* Para que no se repita 
+	background-repeat: no-repeat;
+	/* La imagen se fija en la ventana de visualización para que la altura 
+	de la imagen no supere a la del contenido
+	background-attachment: fixed;
+	/* La imagen de fondo se reescala automáticamente con el cambio 
+	del ancho de ventana del navegador
+	background-size: cover;
+	/* Se muestra color de fondo mientras se está cargando la imagen
+	de fondo o si hay problemas para cargarla 
+	background-color: #66999; 
+}
+*/
+
+
+
+
+body.enero {
+	background-image: url("../img/enero.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+body.febrero {
+	background-image: url("../img/febrero.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+body.marzo {
+	background-image: url("../img/marzo.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+body.abril {
+	background-image: url("../img/abril.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+body.mayo {
+	background-image: url("../img/mayo.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+body.junio {
+	background-image: url("../img/junio.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+body.julio {
+	background-image: url("../img/julioo.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+body.agosto {
+	background-image: url("../img/agosto.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+body.septiembre {
+	background-image: url("../img/septiembre.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+body.octubre {
+	background-image: url("../img/octubre.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+body.noviembre {
+	background-image: url("../img/noviembre.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+body.diciembre {
+	background-image: url("../img/diciembre.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}

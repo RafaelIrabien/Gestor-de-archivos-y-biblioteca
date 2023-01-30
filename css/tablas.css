@@ -1,0 +1,13 @@
+td {
+	text-align: center;
+}
+
+th {
+	font-size: 18px;
+}
+
+.row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+};
