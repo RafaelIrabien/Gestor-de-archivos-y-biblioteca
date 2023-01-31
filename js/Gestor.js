@@ -14,6 +14,14 @@
 				processData: false,
 				success:function(respuesta) {
 				 console.log(respuesta);
+				 respuesta = respuesta.trim();
+
+				 if (respuesta == 1) {
+				 	$('#tablaGestorArchivos').load("gestor/tablaGestor.php");
+				 	swal(":D", "Agregado con éxito", "success");
+				 } else {
+				 	swal(":(", "Falló al agregar", "error");
+				 }
 				}
 		});
 	}
