@@ -17,26 +17,26 @@
  </head>
  <body>
 
-
- 		<div class="">
+   
+ 		<div class="contenido_categorias">
+      <br>
 				<div class="container">
 					<h1 class="display-4">Categorías</h1>
 
-					<div class="row">
-						<div class="col-sm-4">
+            <div id="btn">
 							<span class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">
 								<span class="fa-solid fa-folder-plus"></span>
 								Agregar nueva categoría 
 							</span>
-						</div>
-					</div>
+            </div>
+						
 					<br>
-					<div class="col-sm-12">
 						<div id="tablaCategorias"></div>
-					</div>
 				</div>
+        <br>
 		</div>
-
+  
+ 
 
 
 <!-- Modal Agregar Categoria -->

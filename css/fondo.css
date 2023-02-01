@@ -21,7 +21,7 @@ body {
 
 
 body.enero {
-	background-image: url("../img/enero.png");
+	background: linear-gradient(rgba(5, 7, 12, 0.40), rgba(5, 7, 12, 0.40)), url("../img/enero.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;

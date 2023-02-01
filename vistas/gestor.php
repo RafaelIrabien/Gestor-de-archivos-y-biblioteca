@@ -17,16 +17,26 @@
 	<title></title>
 </head>
 <body>
-	<div class="">
+
+
+	<div>
+		<br>
+		<div class="contenido_gestor">
+			<br>
 		<div class="container">
 			<h1 class="display-4">Gestor de archivos</h1>
+			
+			<div id="btn">
 			<span class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarArchivos">
 				<span class="fa-solid fa-file-circle-plus"></span>
 			 	Agregar Archivos
-
 			</span>
+			</div>
+			<br>
 			<div id="tablaGestorArchivos"></div>
 		</div>
+	</div>
+	<br>
 	</div>
 
 

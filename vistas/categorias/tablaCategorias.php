@@ -14,13 +14,12 @@
 
  ?>
 
-
-
-
-<div class="row">
-	<div class="col-sm-8">
+<div>
+	<div class="tabla">
+	<div class="col-sm-9">
 	<div class="table-responsive">
 		<table class="table table-hover table-dark" id="tablaCategoriasDatatable">
+			<br>
 			<thead>
 				 <tr>
 					<th style="text-align: center;">Nombre</th>
@@ -64,10 +63,11 @@
 				 ?> 
 			</tbody>
 		</table>
+		<br>
 	</div>
   </div>
 </div>
-
+</div>
 
 	<script type="text/javascript">
 		$(document).ready(function(){
