@@ -93,6 +93,7 @@
 		//Evento para guardar archivos
 		$('#btnGuardarArchivos').click(function(){
 			agregarArchivosGestor();
+
 		});
 	});
 </script>

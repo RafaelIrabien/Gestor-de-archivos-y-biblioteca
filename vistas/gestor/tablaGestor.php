@@ -6,6 +6,7 @@
 	$c = new Conectar;
 	$conexion = $c->conexion();
 	$id_Usuario = $_SESSION['id_usuario'];
+ 
 
 	$sql = "SELECT 
     				archivo.id_archivo AS idArchivo,
@@ -34,8 +35,9 @@
 				<br>
 				<thead>
 					<tr>
+						<th style="text-align: center;">Categoría</th>
 						<th style="text-align: center;">Nombre</th>
-						<th style="text-align: center;">Tipo de archivo</th>
+						<!-- <th style="text-align: center;">Tipo de archivo</th> -->
 						<th style="text-align: center;">Descargar</th>
 						<th style="text-align: center;">Visualizar</th>
 						<th style="text-align: center;">Eliminar</th>
@@ -45,14 +47,15 @@
 				<tbody>
 					<?php 
 						while($mostrar = mysqli_fetch_array($result)) {
-
 						$rutaDescarga = "../archivos/"."$id_Usuario"."/".$mostrar['nombreArchivo'];
 						$nombreArchivo = $mostrar['nombreArchivo'];
+						$id_Archivo = $mostrar['idArchivo'];
 					 ?>
 
 					<tr>
+						<td><?php echo $mostrar['categoria'];?></td>
 						<td><?php echo $mostrar['nombreArchivo']; ?></td>
-						<td><?php echo $mostrar['tipoArchivo']; ?></td>
+						<!-- <td><?php echo $mostrar['tipoArchivo']; ?></td> -->
 						<td>
 							<a href="<?php echo $rutaDescarga; ?>" download="<?php $nombreArchivo ?>" class="btn btn-success">
 								<span class="fas fa-download"></span>
@@ -60,7 +63,7 @@
 						</td>
 						<td></td>
 						<td>
-							<span class="btn btn-danger">
+							<span class="btn btn-danger" onclick="eliminarArchivo('<?php echo $id_Archivo ?>')">
 								<span class="fas fa-trash-alt"></span>
 							</span>
 						</td>
