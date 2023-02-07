@@ -1,12 +1,10 @@
 <?php 
 	
 	session_start();
-
 	require_once "../../clases/Conexion.php";
 	$c = new Conectar;
 	$conexion = $c->conexion();
 	$id_Usuario = $_SESSION['id_usuario'];
- 
 
 	$sql = "SELECT 
     				archivo.id_archivo AS idArchivo,
@@ -31,21 +29,33 @@
 <div class="tabla">
 	<div class="col-sm-10">
 		<div class="table-responsive">
-			<table class="table table-hover table-dark" id="tablaGestorDataTable">
+			<table class="table table-hover" id="tablaGestorDataTable">
 				<br>
 				<thead>
 					<tr>
 						<th style="text-align: center;">Categoría</th>
 						<th style="text-align: center;">Nombre</th>
-						<!-- <th style="text-align: center;">Tipo de archivo</th> -->
-						<th style="text-align: center;">Descargar</th>
-						<th style="text-align: center;">Visualizar</th>
-						<th style="text-align: center;">Eliminar</th>
+						<th style="text-align: center;">Tipo de archivo</th>
+						<th style="text-align: center;">Acciones</th>
 					</tr>
 				</thead>
 
 				<tbody>
-					<?php 
+
+					<?php
+						//Arreglo de extensiones validas
+						$extensionesValidas = array(
+												'png', 
+												'jpg',
+												'doc',
+												'docx', 
+												'pdf',
+												'xls', 
+												'mp4',
+												'mp3',
+												'flac'
+											);
+
 						while($mostrar = mysqli_fetch_array($result)) {
 						$rutaDescarga = "../archivos/"."$id_Usuario"."/".$mostrar['nombreArchivo'];
 						$nombreArchivo = $mostrar['nombreArchivo'];
@@ -55,22 +65,33 @@
 					<tr>
 						<td><?php echo $mostrar['categoria'];?></td>
 						<td><?php echo $mostrar['nombreArchivo']; ?></td>
-						<!-- <td><?php echo $mostrar['tipoArchivo']; ?></td> -->
+						<td><?php echo $mostrar['tipoArchivo']; ?></td>
 						<td>
-							<a href="<?php echo $rutaDescarga; ?>" download="<?php $nombreArchivo ?>" class="btn btn-success">
+							<a href="<?php echo $rutaDescarga; ?>" download="<?php $nombreArchivo ?>" class="btn btn-success btn-sm">
 								<span class="fas fa-download"></span>
 							</a>
-						</td>
-						<td></td>
-						<td>
-							<span class="btn btn-danger" onclick="eliminarArchivo('<?php echo $id_Archivo ?>')">
+						
+							<?php 
+								for ($i=0; $i < count($extensionesValidas); $i++) { 
+									if ($extensionesValidas[$i] == $mostrar['tipoArchivo']) {
+							 ?>
+							 <span class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalVisualizarArchivos" onclick="obtenerArchivoPorId('<?php echo $id_Archivo ?>')">
+								<span class="fas fa-eye"></span>
+							</span>
+							<?php	
+
+									}
+								}
+							 ?>
+			
+							<span class="btn btn-danger btn-sm" onclick="eliminarArchivo('<?php echo $id_Archivo ?>')">
 								<span class="fas fa-trash-alt"></span>
 							</span>
 						</td>
 					</tr>
 
 					<?php 
-						}
+						} //Fin del bucle while
 					 ?>
 				</tbody>
 			</table>

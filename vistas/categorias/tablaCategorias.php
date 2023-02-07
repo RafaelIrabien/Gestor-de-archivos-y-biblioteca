@@ -18,14 +18,13 @@
 	<div class="tabla">
 	<div class="col-sm-9">
 	<div class="table-responsive">
-		<table class="table table-hover table-dark" id="tablaCategoriasDatatable">
+		<table class="table table-hover" id="tablaCategoriasDatatable">
 			<br>
 			<thead>
 				 <tr>
 					<th style="text-align: center;">Nombre</th>
 					<th style="text-align: center;">Fecha</th>
-					<th style="text-align: center;">Editar</th>
-					<th style="text-align: center;">Eliminar</th>
+					<th style="text-align: center;">Acciones</th>
 				 </tr>
 			</thead>
 
@@ -46,13 +45,11 @@
 					<td><?php echo $mostrar['nombre']; ?></td>
 					<td><?php echo $mostrar['fecha_insert']; ?></td>
 					<td>
-						<span class="btn btn-warning" data-toggle="modal" data-target="#modalActualizarCategoria" onclick="obtenerDatosCategoria('<?php echo $id_categoria ?>')">
+						<span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalActualizarCategoria" onclick="obtenerDatosCategoria('<?php echo $id_categoria ?>')">
 							<span class="fa-solid fa-pen-to-square"></span>
 					</span>
-				    </td>
-
-					<td>
-						<span class="btn btn-danger" onclick="eliminarCategoria('<?php echo $id_categoria ?>')">
+				    
+						<span class="btn btn-danger btn-sm" onclick="eliminarCategoria('<?php echo $id_categoria ?>')">
 							<span class="fa-solid fa-trash"></span>
 					</span>
 				    </td>

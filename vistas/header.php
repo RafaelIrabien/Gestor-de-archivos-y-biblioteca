@@ -16,7 +16,7 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img src="../img/logo.png" alt="..." width="100px">
@@ -38,19 +38,32 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="gestor.php"><span class="fa-solid fa-folder"></span> Administrar</a>
+            <a class="nav-link" href="gestor.php"><span class="fa-solid fa-folder"></span> Mis archivos</a>
           </li>
           
-          <li class="nav-item">
-            <a class="nav-link" href="../procesos/usuario/salir.php" style="color: red"><span class="fa-solid fa-arrow-right-from-bracket"></span> Salir</a>
-          </li>
-         
-        
-          <li class="nav-item">  
-            <a class="nav-link" href="perfil.php">
+          
+  
+          <li class="list_item">
+              <a class="nav-link" href="perfil.php">
              <span class="fa-solid fa-user"></span>
              Usuario
-           </a></li>
+           </a>
+
+            <ul class="menu-vertical list_show">
+                
+                  <li>
+                    <a class="nav-link" href="../procesos/usuario/salir.php"><span class="fa-solid fa-arrow-right-from-bracket"></span> Cerrar sesión
+                    </a>
+                 </li>
+
+                   <li>
+                     <a class="nav-link" href="../procesos/usuario/salir.php"><span class="fa-solid fa-arrow-right-from-bracket"></span> Salir</a>
+                    </li>
+                
+                
+       
+           </ul>
+          </li>
         
            
         
@@ -59,3 +72,25 @@
     </div>
   </nav>
 
+
+
+<style type="text/css">
+
+  
+  
+  .menu-vertical {
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 110px;
+    background-color: #CE2408;
+  }
+
+  .navbar-nav li:hover .menu-vertical {
+    display: block;
+  }
+
+  .menu-vertical li a{
+    display: block;
+  }
+</style>

@@ -1,6 +1,7 @@
 	table, td {
 		text-align: center;
-		color: white;
+		
+		background-color: #FFC043;
 		
 	}
 
@@ -11,7 +12,7 @@
 	th {
 		font-size: 18px;
 		color: white;
-		background-color: #181B22;
+		background-color: #CE2408;
 
 	}
 
@@ -32,8 +33,28 @@
 		align-items: center;
 		background-color: #ffffff10;
 		border: 0.5px solid #ffffff30;
-		backdrop-filter: blur(6px);
+		backdrop-filter: blur(8px);
 		border-radius: 20px;
 	}
+
+
+	.btn-primary {
+		margin: 11px;
+		background-color: #FA5F00;
+	}
+
+	.btn-warning {
+		margin-right: 11px;
+		background-color: #F12A09;
+	}
+
+	.btn-success {
+		background-color: #FC3F04;
+	}
+
+	.btn-danger {
+		background-color: #DA2700;
+	}
+
 
 	
