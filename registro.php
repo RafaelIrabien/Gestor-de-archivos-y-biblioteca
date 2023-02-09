@@ -6,28 +6,30 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link rel="stylesheet" type="text/css" href="css/registro.css">
 
-    <link rel="stylesheet" type="text/css" href="librerias/bootstrap_4/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="librerias/bootstrap_4/bootstrap_2.min.css">
 </head>
 <body>
 	<br>
 	<br>
-	
+  <div class="wrapper">
+	<div id="formContent">
 	<div class="container">
+		<br>
 		<h1 class="text-center">Registro de usuario</h1>
-
-		<div class="row">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-4">
-
+			
+		 <div class="col-sm-9 col-center">
 				<form id="frmRegistro" method="post" onsubmit="return agregarUsuarioNuevo()"> <!-- Inicio del formulario -->
 
-					<label>Nombre</label>
+					<label>Nombre:</label>
 					<input type="text" name="nombre" id="nombre" class="form-control" required="">
-					<label>Email o correo</label>
+					<br>
+					<label>Email o correo:</label>
 					<input type="email" name="correo" id="correo" class="form-control" required="">
-					<label>Contraseña</label>
-					<input type="password" name="password" id="password" class="form-control" required="">
+					<br>
+					<label>Contraseña:</label>
+					<input type="text" name="password" id="password" class="form-control" required="">
 
 					<br>
 					<div class="row">
@@ -35,16 +37,18 @@
 						 <button class="btn btn-primary">Registrar</button>
 						</div>
 						<div class="col-sm-6 text-right">
-						 <a href="index.php" class="btn btn-success">Login</a>
+						 <a href="index.php" class="btn btn-warning">Login</a>
 						</div>
 					</div>
 					
 
 				</form> <!-- Fin del formulario -->
 			</div>
-			<div class="col-sm-4"></div>
+			<br>
 		</div>
 	</div>
+	</div>
+  </div>
 
 <script type="text/javascript" src="librerias/jquery-3.6.3.min.js"></script>
 <script type="text/javascript" src="librerias/sweetalert.min.js"></script>

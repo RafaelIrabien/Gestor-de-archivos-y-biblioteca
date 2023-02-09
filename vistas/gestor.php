@@ -12,7 +12,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="../css/tablas.css">
 	<title></title>
 </head>
@@ -24,11 +24,11 @@
 		<div class="contenido_gestor">
 			<br>
 		<div class="container">
-			<h1 class="display-4">Gestor de archivos</h1>
+			<h1 class="display-4">Mis archivos</h1>
 			
 			<div id="btn">
 			<span class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAgregarArchivos">
-				<span class="fas fa-solid fa-upload"></span>
+				<span class="fa fa-solid fa-cloud-arrow-up"></span>
 			 	Agregar Archivos
 			</span>
 			</div>

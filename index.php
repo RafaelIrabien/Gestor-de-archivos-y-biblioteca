@@ -21,7 +21,7 @@
     <!-- Icon -->
     <div class="fadeIn first">
     	<br>
-      <img src="img/logo.png" id="icon" alt="User Icon" />
+      <img src="img/logo_2.png" id="icon" alt="User Icon" />
       <h1>Gestor de archivos</h1>
     </div>
 
@@ -65,7 +65,7 @@
             window.location = "vistas/inicio.php";
           } 
             else {
-              swal(":(", "Fallo al entrar", "error");
+              swal(":(", "Falló al entrar", "error");
           }
       }
 

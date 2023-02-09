@@ -82,7 +82,7 @@ h2.active {
 /* FORM TYPOGRAPHY*/
 
 input[type=button], input[type=submit], input[type=reset]  {
-  background-color: #56baed;
+  background-color: #CE2408;
   border: none;
   color: white;
   padding: 15px 80px;
@@ -104,7 +104,7 @@ input[type=button], input[type=submit], input[type=reset]  {
 }
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-  background-color: #39ace7;
+  background-color: #F62C0A;
 }
 
 input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
@@ -138,7 +138,7 @@ input[type=text] {
 
 input[type=text]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid yellow;
 }
 
 input[type=text]:placeholder {
@@ -169,7 +169,7 @@ input[type=password] {
 
 input[type=password]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid yellow;
 }
 
 input[type=password]:placeholder {
@@ -266,7 +266,7 @@ input[type=password]:placeholder {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  background-color: yellow;
   content: "";
   transition: width 0.2s;
 }
@@ -290,5 +290,5 @@ h1{
 } 
 
 #icon {
-  width:30%;
+  width:50%;
 }

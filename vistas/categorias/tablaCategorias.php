@@ -14,12 +14,12 @@
 
  ?>
 
-<div>
+
 	<div class="tabla">
 	<div class="col-sm-9">
 	<div class="table-responsive">
+
 		<table class="table table-hover" id="tablaCategoriasDatatable">
-			<br>
 			<thead>
 				 <tr>
 					<th style="text-align: center;">Nombre</th>
@@ -27,9 +27,7 @@
 					<th style="text-align: center;">Acciones</th>
 				 </tr>
 			</thead>
-
-			<tbody>
-
+			<br>
 			<?php 
 				$sql = "SELECT id_categoria, nombre, fecha_insert FROM categorias WHERE id_usuario = '$id_Usuario' ";
 
@@ -38,9 +36,13 @@
 				//Bucle que se repite las veces que sean necesarias
 				while ($mostrar = mysqli_fetch_array($result)) {
 					$id_categoria = $mostrar['id_categoria'];
-				
-
 			 ?>
+			 
+			
+
+			<tbody>
+
+			
 				<tr>
 					<td><?php echo $mostrar['nombre']; ?></td>
 					<td><?php echo $mostrar['fecha_insert']; ?></td>
@@ -64,7 +66,7 @@
 	</div>
   </div>
 </div>
-</div>
+
 
 	<script type="text/javascript">
 		$(document).ready(function(){

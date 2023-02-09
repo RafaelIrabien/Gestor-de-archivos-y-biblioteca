@@ -21,7 +21,10 @@ body {
 
 
 body.enero {
-	background: url("../img/enero.png");
+	background-image: linear-gradient(
+          rgba(0, 0, 0, 0), 
+          rgba(0, 0, 0, 0.4)
+        ), url("../img/enero.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -54,7 +57,10 @@ body.marzo {
 }
 
 body.abril {
-	background-image: url("../img/abril.png");
+	background-image: linear-gradient(
+          rgba(0, 0, 0, 0), 
+          rgba(0, 0, 0, 0.4)
+        ), url("../img/abril.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -63,7 +69,10 @@ body.abril {
 }
 
 body.mayo {
-	background-image: url("../img/mayo.png");
+	background-image: linear-gradient(
+          rgba(0, 0, 0, 0), 
+          rgba(0, 0, 0, 0.4)
+        ), url("../img/mayo.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -72,7 +81,10 @@ body.mayo {
 }
 
 body.junio {
-	background-image: url("../img/junio.png");
+	background-image: linear-gradient(
+          rgba(0, 0, 0, 0), 
+          rgba(0, 0, 0, 0.4)
+        ), url("../img/junio.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -81,7 +93,10 @@ body.junio {
 }
 
 body.julio {
-	background-image: url("../img/julioo.png");
+	background-image: linear-gradient(
+          rgba(0, 0, 0, 0), 
+          rgba(0, 0, 0, 0.4)
+        ), url("../img/julioo.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -90,7 +105,10 @@ body.julio {
 }
 
 body.agosto {
-	background-image: url("../img/agosto.jpg");
+	background-image: linear-gradient(
+          rgba(0, 0, 0, 0), 
+          rgba(0, 0, 0, 0.4)
+        ), url("../img/agosto.jpg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -99,7 +117,10 @@ body.agosto {
 }
 
 body.septiembre {
-	background-image: url("../img/septiembre.png");
+	background-image: linear-gradient(
+          rgba(0, 0, 0, 0), 
+          rgba(0, 0, 0, 0.4)
+        ), url("../img/septiembre.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -108,7 +129,10 @@ body.septiembre {
 }
 
 body.octubre {
-	background-image: url("../img/octubre.jpg");
+	background-image: linear-gradient(
+          rgba(0, 0, 0, 0), 
+          rgba(0, 0, 0, 0.4)
+        ), url("../img/octubre.jpg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -117,7 +141,10 @@ body.octubre {
 }
 
 body.noviembre {
-	background-image: url("../img/noviembre.png");
+	background-image: linear-gradient(
+          rgba(0, 0, 0, 0), 
+          rgba(0, 0, 0, 0.4)
+        ), url("../img/noviembre.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -126,7 +153,10 @@ body.noviembre {
 }
 
 body.diciembre {
-	background-image: url("../img/diciembre.jpg");
+	background-image: linear-gradient(
+          rgba(0, 0, 0, 0), 
+          rgba(0, 0, 0, 0.4)
+        ), url("../img/diciembre.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;

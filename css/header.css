@@ -1,0 +1,76 @@
+nav {
+  border-bottom: 0.5px solid #E92909;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.nav-item {
+    width: 200px;
+  }
+
+  a {
+     color: white;
+  }
+
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  .navbar-nav {
+    width: 60%;
+  }
+
+  .nav__link {
+    padding: 15px 0;
+    text-decoration: none;
+  }
+
+  .nav__link--inside {
+
+  }
+
+/**
+  .nav__link--inside:hover {
+    background: #F6F8FA;
+    border-radius: 3px;
+    padding: 5px 3px;
+    text-decoration: none;
+  } **/
+
+  .list__item {
+    overflow: hidden;
+  }
+
+  .list__item--click {
+    cursor: pointer;
+  }
+
+
+  .list__show {
+    list-style: none;
+    transition: height .4s;
+    height: 0;
+    position: absolute;
+    display: block;
+    background-color: #CE2408;
+    overflow: hidden;
+  }
+
+  .navbar-nav li:hover .list__show {
+    display: block;
+  }
+
+  .list__show li a{
+    display: block;
+    margin-right: 15px;
+  }
+
+  .list__arrow {
+    transition: transform .3s;
+  }
+
+  /* cuando el elemento list__button--click tenga la clase arrow,
+  su hijo list__arrow tenga el estilo siguiente*/
+  .arrow .list__arrow {
+    transform: rotate(90deg);
+  }

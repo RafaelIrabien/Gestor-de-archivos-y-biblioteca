@@ -7,6 +7,7 @@
   ">
   <link rel="stylesheet" type="text/css" href="../librerias/fontawesome/css/all.css">
   <link rel="stylesheet" type="text/css" href="../librerias/datatable/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/header.css">
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,8 +19,8 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="../img/logo.png" alt="..." width="100px">
+      <a class="navbar-brand" href="inicio.php">
+        <img src="../img/logo_2.png" alt="..." width="140px">
       </a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,40 +29,50 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="inicio.php"><span class="fa-solid fa-house-chimney"></span> Inicio
+            <a href="inicio.php"><span class="fa-solid fa-house-chimney"></span> Inicio
               <span class="sr-only">(current)</span>
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="categorias.php"><span class="fa-solid fa-tags"></span> Categorías</a>
+            <a href="categorias.php"><span class="fa-solid fa-tags"></span> Categorías</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="gestor.php"><span class="fa-solid fa-folder"></span> Mis archivos</a>
+            <a href="gestor.php"><span class="fa-solid fa-folder"></span> Mis archivos</a>
           </li>
-          
-          
-  
-          <li class="list_item">
-              <a class="nav-link" href="perfil.php">
-             <span class="fa-solid fa-user"></span>
-             Usuario
-           </a>
 
-            <ul class="menu-vertical list_show">
-                
-                  <li>
-                    <a class="nav-link" href="../procesos/usuario/salir.php"><span class="fa-solid fa-arrow-right-from-bracket"></span> Cerrar sesión
+          <!-- <li class="nav-item list__item list__item--click">
+            <div class="list__button list__button--click">
+              <a href="#">
+                <span class="fa-solid fa-book"></span> 
+                Biblioteca
+              </a>
+            </div>
+          </li> -->
+          
+        
+          <li class="nav-item list__item list__item--click">
+            <div class="list__button list__button--click">
+                <a class="nav__link" href="#">
+                 <span class="fa-solid fa-user"></span>
+                  Usuario
+                </a>
+                <img src="../librerias/assets/arrow.svg" class="list__arrow">
+            </div>
+              
+            <ul class="list__show menu-vertical">
+                  <li class="list__inside">
+                    <a class="nav__link nav__link--inside" href="perfil.php">
+                      <span></span> Perfil
                     </a>
                  </li>
 
-                   <li>
-                     <a class="nav-link" href="../procesos/usuario/salir.php"><span class="fa-solid fa-arrow-right-from-bracket"></span> Salir</a>
-                    </li>
-                
-                
-       
+                 <li class="list__inside">
+                    <a class="nav__link nav__link--inside" href="../procesos/usuario/salir.php">
+                      <span class="fa-solid fa-arrow-right-from-bracket"></span> Cerrar sesión
+                    </a>
+                 </li>
            </ul>
           </li>
         
@@ -72,25 +83,4 @@
     </div>
   </nav>
 
-
-
-<style type="text/css">
-
-  
-  
-  .menu-vertical {
-    position: absolute;
-    display: none;
-    list-style: none;
-    width: 110px;
-    background-color: #CE2408;
-  }
-
-  .navbar-nav li:hover .menu-vertical {
-    display: block;
-  }
-
-  .menu-vertical li a{
-    display: block;
-  }
-</style>
+<script type="text/javascript" src="../js/header.js"></script>

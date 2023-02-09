@@ -27,7 +27,7 @@
 
 
 <div class="tabla">
-	<div class="col-sm-10">
+	<div class="col-sm-9">
 		<div class="table-responsive">
 			<table class="table table-hover" id="tablaGestorDataTable">
 				<br>
@@ -100,7 +100,6 @@
 		</div>
 	</div>
 </div>
-
 
 <script type="text/javascript">
 	$(document).ready(function(){
