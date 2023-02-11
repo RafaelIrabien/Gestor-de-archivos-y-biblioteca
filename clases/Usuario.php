@@ -16,19 +16,22 @@ class Usuario extends Conectar{
 			return 2;
 		} else {
 
-			$sql = "INSERT INTO usuarios (nombre,
+			$sql = "INSERT INTO usuarios (id_rol,
+										  nombre,
 									      email,
 									      password)
-		                   VALUES (?, ?, ?)";
+		                   VALUES (?, ?, ?, ?)";
 
 			//prepare() es un metodo del api de mysqli
 			$query = $conexion->prepare($sql);
 
 			//Este es donde vamos a agregar todos los datos que vienen aqui
 			//Hay que agregar el tipo de dato que va a cachar (nombre es 	string, entonces se pone una s)
-			$query->bind_param('sss', $datos['nombre'],
-								  	  $datos['correo'],
-								  	  $datos['password']);
+			$query->bind_param('isss',  $datos['idRol'],
+									  	$datos['nombre'],
+								  	  	$datos['correo'],
+								  	  	$datos['password']
+								  	  );
 
 			//Se ejecuta el query y lo cerremos
 			$exito = $query->execute();
@@ -97,6 +100,7 @@ class Usuario extends Conectar{
 			$idUsuario = mysqli_fetch_array($result)['id_usuario'];
 
 			$_SESSION['id_usuario'] = $idUsuario;
+
 
 			return 1;
 		} else {

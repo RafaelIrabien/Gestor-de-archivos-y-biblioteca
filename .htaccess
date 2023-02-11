@@ -1,2 +1,18 @@
 RewriteEngine on
 Options -Indexes
+
+
+<files header.php>
+order allow,deny
+deny from all
+</files>
+
+<files footer.php>
+order allow,deny
+deny from all
+</files>
+
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus
+RewriteRule .* - [F]

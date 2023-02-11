@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,8 +28,13 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+     
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+       
+     
+
+
+      <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
             <a href="inicio.php"><span class="fa-solid fa-house-chimney"></span> Inicio
               <span class="sr-only">(current)</span>
@@ -42,16 +49,7 @@
             <a href="gestor.php"><span class="fa-solid fa-folder"></span> Mis archivos</a>
           </li>
 
-          <!-- <li class="nav-item list__item list__item--click">
-            <div class="list__button list__button--click">
-              <a href="#">
-                <span class="fa-solid fa-book"></span> 
-                Biblioteca
-              </a>
-            </div>
-          </li> -->
-          
-        
+
           <li class="nav-item list__item list__item--click">
             <div class="list__button list__button--click">
                 <a class="nav__link" href="#">
@@ -60,7 +58,6 @@
                 </a>
                 <img src="../librerias/assets/arrow.svg" class="list__arrow">
             </div>
-              
             <ul class="list__show menu-vertical">
                   <li class="list__inside">
                     <a class="nav__link nav__link--inside" href="perfil.php">
@@ -75,12 +72,35 @@
                  </li>
            </ul>
           </li>
+
+          <li class="nav-item list__item list__item--click">
+            <div class="list__button list__button--click">
+              <a href="usuarios.php">
+                <span class="fa-solid fa-users"></span> 
+                Usuarios
+              </a>
+            </div>
+          </li>
+
+           <li class="nav-item list__item list__item--click">
+            <div class="list__button list__button--click">
+              <a href="#">
+                <span class="fa-solid fa-book"></span> 
+                Biblioteca
+              </a>
+            </div>
+          </li>
+          </ul>
         
-           
-        
-        </ul>
+
+
+       
+
+            
       </div>
     </div>
   </nav>
+
+  
 
 <script type="text/javascript" src="../js/header.js"></script>

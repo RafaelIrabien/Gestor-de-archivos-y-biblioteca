@@ -1,3 +1,16 @@
+<?php 
+	require_once "clases/Conexion.php";
+
+	$c = new Conectar;
+    $conexion = $c->conexion();
+
+    $sql = "SELECT id_rol, rol FROM roles";
+    $resultado = mysqli_query($conexion, $sql);
+
+
+ ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +43,26 @@
 					<br>
 					<label>Contraseña:</label>
 					<input type="text" name="password" id="password" class="form-control" required="">
+					<br>
+					<label>Rol:</label>
+					<select id="Roles" name="Roles" class="form-control">
+						<?php 
+ 							while ($mostrar = mysqli_fetch_array($resultado)) {
+ 								
+ 									 $idRol = $mostrar['id_rol'];
+ 									 $Rol = $mostrar['rol'];
+ 							
+ 	 					?>
+ 	 					
+						<option value="<?php echo $idRol; ?>">
+ 	 						<?php echo $Rol; ?>
+ 	 					</option>
+
+ 	 					<?php 
+ 	 						} //Fin del while
+ 	 					 ?>
+ 	 		
+					</select>
 
 					<br>
 					<div class="row">
