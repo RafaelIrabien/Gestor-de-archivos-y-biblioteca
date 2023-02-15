@@ -95,12 +95,12 @@ class Usuario extends Conectar{
 			//Creamos una sesión de usuario y un id para el usuario
 			$_SESSION['nombre'] = $nombre;
 
-			$sql = "SELECT id_usuario FROM usuarios WHERE nombre = '$nombre' AND password = '$password' ";
+			$sql = "SELECT id_usuario, id_rol FROM usuarios WHERE nombre = '$nombre' AND password = '$password' ";
 			$result = mysqli_query($conexion, $sql);
 			$idUsuario = mysqli_fetch_array($result)['id_usuario'];
 
 			$_SESSION['id_usuario'] = $idUsuario;
-
+			
 
 			return 1;
 		} else {

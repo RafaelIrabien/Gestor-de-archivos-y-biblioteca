@@ -1,4 +1,19 @@
+<?php 
 
+  require_once "../clases/Conexion.php";
+  $c = new Conectar;
+  $conexion = $c->conexion();
+
+  $id_Usuario = $_SESSION['id_usuario'];
+
+  $sql = "SELECT id_usuario, id_rol FROM usuarios WHERE id_usuario = '$id_Usuario'";
+
+  $result = mysqli_query($conexion, $sql);
+
+  $fila = mysqli_fetch_array($result);
+
+
+ ?>
 
 <!DOCTYPE html>
 <html>
@@ -31,68 +46,26 @@
      
       <div class="collapse navbar-collapse" id="navbarResponsive">
        
+     <?php 
      
-
-
-      <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a href="inicio.php"><span class="fa-solid fa-house-chimney"></span> Inicio
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="categorias.php"><span class="fa-solid fa-tags"></span> Categorías</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="gestor.php"><span class="fa-solid fa-folder"></span> Mis archivos</a>
-          </li>
-
-
-          <li class="nav-item list__item list__item--click">
-            <div class="list__button list__button--click">
-                <a class="nav__link" href="#">
-                 <span class="fa-solid fa-user"></span>
-                  Usuario
-                </a>
-                <img src="../librerias/assets/arrow.svg" class="list__arrow">
-            </div>
-            <ul class="list__show menu-vertical">
-                  <li class="list__inside">
-                    <a class="nav__link nav__link--inside" href="perfil.php">
-                      <span></span> Perfil
-                    </a>
-                 </li>
-
-                 <li class="list__inside">
-                    <a class="nav__link nav__link--inside" href="../procesos/usuario/salir.php">
-                      <span class="fa-solid fa-arrow-right-from-bracket"></span> Cerrar sesión
-                    </a>
-                 </li>
-           </ul>
-          </li>
-
-          <li class="nav-item list__item list__item--click">
-            <div class="list__button list__button--click">
-              <a href="usuarios.php">
-                <span class="fa-solid fa-users"></span> 
-                Usuarios
-              </a>
-            </div>
-          </li>
-
-           <li class="nav-item list__item list__item--click">
-            <div class="list__button list__button--click">
-              <a href="#">
-                <span class="fa-solid fa-book"></span> 
-                Biblioteca
-              </a>
-            </div>
-          </li>
-          </ul>
+        if ($fila['id_rol'] == '1') {
+         include "header/maestro.php";
         
+         
+        
+      } elseif ($fila['id_rol'] == '2'){
+                include "header/secretario.php";
+      
+      } elseif ($fila['id_rol'] == '3') {
+                include "header/bibliotecario.php";
+                
+      }
 
+
+      
+
+
+       ?>
 
        
 

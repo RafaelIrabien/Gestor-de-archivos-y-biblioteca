@@ -1,3 +1,4 @@
+
 <?php 
 	
 	session_start();
@@ -85,7 +86,7 @@
 							 ?>
 			
 							<span class="btn btn-danger btn-sm" onclick="eliminarArchivo('<?php echo $id_Archivo ?>')">
-								<span class="fas fa-trash-alt"></span>
+								<span class="fas fa-thin fa-trash-can"></span>
 							</span>
 						</td>
 					</tr>

@@ -12,6 +12,14 @@
     <link rel="stylesheet" type="text/css" href="librerias/bootstrap_4/bootstrap.min.css">
 
 </head>
+
+<?php 
+  session_start();
+
+  if (!empty($_SESSION['nombre'])) {
+      header("location:vistas/inicio.php");
+  }
+ ?>
 <body>
 
 	<div class="wrapper fadeInDown">

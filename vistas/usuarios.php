@@ -1,11 +1,23 @@
 <?php 
 	session_start();
 
-	if(isset($_SESSION['nombre'])) {
-		include "header.php";
-		include "fondo.php";
-	
+	require_once "../clases/Conexion.php";
+  	$c = new Conectar;
+  	$conexion = $c->conexion();
 
+  	$id_Usuario = $_SESSION['id_usuario'];
+
+  	$sql = "SELECT id_usuario, id_rol FROM usuarios WHERE id_usuario = '$id_Usuario'";
+  	$result = mysqli_query($conexion, $sql);
+  	$fila = mysqli_fetch_array($result);
+	
+	
+	if($fila['id_rol'] == '2') {
+
+		if(isset($_SESSION['nombre'])) {
+			include "header.php";
+			include "fondo.php";
+	
  ?>
 
  	<!DOCTYPE html>
@@ -44,6 +56,11 @@
 
  <?php 
  		include "footer.php";
+ 		
+ 	} else {
+ 		header("location:../index.php");
+ 	}
+
  	} else {
  		header("location:../index.php");
  	}

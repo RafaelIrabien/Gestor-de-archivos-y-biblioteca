@@ -6,7 +6,7 @@
 		 public function obtenerRoles($idRol) {
 		 	$conexion = Conectar::conexion();
 
-		 	$sql = "SELECT id_rol, rol FROM roles WHERE id_rol = '$idRol'";
+		 	$sql = "SELECT rol FROM roles WHERE id_rol = '$idRol'";
 
     		$result = mysqli_query($conexion, $sql);
 

@@ -52,7 +52,7 @@
 					</span>
 				    
 						<span class="btn btn-danger btn-sm" onclick="eliminarCategoria('<?php echo $id_categoria ?>')">
-							<span class="fa-solid fa-trash"></span>
+							<span class="fas fa-thin fa-trash-can"></span>
 					</span>
 				    </td>
 				</tr>
