@@ -2,14 +2,15 @@
 
 	session_start();
 
-	require_once "../../clases/Conexion.php";
+	if(isset($_SESSION['nombre'])) {
 
-	
+	require_once "../../clases/Conexion.php";
 
 	$c = new Conectar;
 	$conexion = $c->conexion();
+	$id_Usuario = $_SESSION['id_usuario'];
 
-	$sql = "SELECT  
+	$sql = "SELECT  usuario.id_usuario AS idUsuario,
     				usuario.nombre AS nombreUsuario,
     				usuario.email AS Email,
     				rol.rol AS Rol
@@ -23,8 +24,6 @@
  ?>
 
 
-
-
 	<div class="tabla">
 		<div class="col-sm-9">
 			<div class="table-responsive">
@@ -33,6 +32,7 @@
 					<br>
 					<thead>
 						<tr>
+							
 							<th style="text-align: center;">Nombre</th>
 							<th style="text-align: center;">Correo</th>
 							<th style="text-align: center;">Rol</th>
@@ -42,14 +42,20 @@
 
 					<?php 
 							while ($mostrar = mysqli_fetch_array($result)) {
+								$id_Usuario = $mostrar['idUsuario'];
 						 ?>
 					<tbody>
 						<tr>
-						
+							
 							<td><?php echo $mostrar['nombreUsuario']; ?></td>
 							<td><?php echo $mostrar['Email']; ?></td>
 							<td><?php echo $mostrar['Rol']; ?></td>
-							<td></td>
+							<td>
+								<a class="btn btn-primary" href="usuarios/archivosUsuario.php" onsubmit="<?php $id_Usuario; ?>">
+									<span class="fas fa-regular fa-folder-open"></span>
+								</a>
+								
+							</td>
 						
 						</tr>
 						<?php 
@@ -63,8 +69,19 @@
 	</div>
 
 
+
+<script type="text/javascript" src="../../js/Gestor.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#tablaUsuariosDatatable').DataTable();
+
 	});
 </script>
+
+
+<?php 
+} else {
+	header("location:../../index.php");
+}
+
+ ?>

@@ -1,6 +1,9 @@
 
 <?php 
 	session_start();
+	if (isset($_SESSION['nombre'])) {
+		
+	
 	require_once "../../clases/Conexion.php";
 	
 	//Requerimos el id del usuario
@@ -73,3 +76,11 @@
 			$('#tablaCategoriasDatatable').DataTable();
 		});
 	</script>
+
+
+<?php 
+	}else {
+		header("location:../../index.php");
+	}
+
+ ?>

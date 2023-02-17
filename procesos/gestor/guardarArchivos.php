@@ -13,6 +13,7 @@
 		//Creamos una ruta donde esté el id de usuario
 		//La carpeta en la que se almacenarán
 		$carpetaUsuario = '../../archivos/'.$idUsuario;
+	
 
 		//Si no existe la carpeta entonces la creamos
 		if (!file_exists($carpetaUsuario)) {
@@ -36,6 +37,7 @@
 			$rutaFinal = $carpetaUsuario. "/" . $nombreArchivo;
 
 			$datosRegistroArchivo = array(
+										
 										"idUsuario" => $idUsuario,
 										"idCategoria" => $idCategoria,
 										"nombreArchivo" => $nombreArchivo,

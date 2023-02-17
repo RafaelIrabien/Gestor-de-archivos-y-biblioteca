@@ -37,7 +37,7 @@
 		public function eliminarArchivo($idArchivo){
 			$c = Conectar::conexion();
 
-			$sql = "DELETE FROM archivos WHERE id_archivo = ? ";
+			$sql = "DELETE * FROM archivos WHERE id_archivo = ? ";
 
 			//Prepara la instrucción SQL para su ejecución mediante el método prepare() del objeto de conexion de la BD.
 			$query = $c->prepare($sql);

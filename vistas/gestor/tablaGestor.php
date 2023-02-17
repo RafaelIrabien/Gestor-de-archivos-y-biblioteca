@@ -2,6 +2,10 @@
 <?php 
 	
 	session_start();
+
+	if (isset($_SESSION['nombre'])) {
+		
+	
 	require_once "../../clases/Conexion.php";
 	$c = new Conectar;
 	$conexion = $c->conexion();
@@ -107,3 +111,12 @@
 		$('#tablaGestorDataTable').DataTable();
 	});
 </script>
+
+
+
+<?php 
+	} else {
+		header("location:../../index.php");
+	}
+
+ ?>
