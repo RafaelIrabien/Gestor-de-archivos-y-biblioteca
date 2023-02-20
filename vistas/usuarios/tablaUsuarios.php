@@ -42,7 +42,7 @@
 
 					<?php 
 							while ($mostrar = mysqli_fetch_array($result)) {
-								$id_Usuario = $mostrar['idUsuario'];
+								$id_usuario = $mostrar['idUsuario'];
 						 ?>
 					<tbody>
 						<tr>
@@ -51,9 +51,13 @@
 							<td><?php echo $mostrar['Email']; ?></td>
 							<td><?php echo $mostrar['Rol']; ?></td>
 							<td>
-								<a class="btn btn-primary" href="usuarios/archivosUsuario.php" onsubmit="<?php $id_Usuario; ?>">
+
+								<span class="btn btn-primary" data-toggle="modal" data-target="#modalArchivos"onclick="obtenerArchivosUsuario('<?php echo $id_usuario; ?>')">
 									<span class="fas fa-regular fa-folder-open"></span>
-								</a>
+								</span>
+								<!-- <a class="btn btn-primary" href="usuarios/archivosUsuario.php" onclick="obtenerArchivosUsuario('<?// php echo $id_usuario; ?>')">
+									<span class="fas fa-regular fa-folder-open"></span>
+								</a> -->
 								
 							</td>
 						
@@ -70,7 +74,8 @@
 
 
 
-<script type="text/javascript" src="../../js/Gestor.js"></script>
+
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#tablaUsuariosDatatable').DataTable();

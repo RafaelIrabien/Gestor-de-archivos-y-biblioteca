@@ -1,38 +1,14 @@
 <?php 
-	session_start();
+	
 
-	if (isset($_SESSION['nombre'])) {
-
-		
-		
-	require_once "../../clases/Conexion.php";
-
-	$c = new Conectar;
-	$conexion = $c->conexion();
-
-	$idUsuario = $_SESSION['id_usuario'];
-
+	//if (isset($_SESSION['nombre'])) {
+	/*
 	$sql = "SELECT id_archivo, id_usuario, nombre, tipo, ruta FROM archivos";
 
-	$result = mysqli_query($conexion, $sql);
+	$result = mysqli_query($conexion, $sql); */
 	
 
  ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	 <link rel="stylesheet" type="text/css" href="../../librerias/fontawesome/css/all.css">
-	<link rel="stylesheet" type="text/css" href="../../librerias/bootstrap_4/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../../css/tablas.css">
-	<link rel="stylesheet" type="text/css" href="../../librerias/datatable/dataTables.bootstrap4.min.css">
-
-
-	<title></title>
-</head>
-<body>
 
 	<div class="tabla">
 		<div class="col-sm-7">
@@ -42,34 +18,40 @@
 					<br>
 					<thead>
 						<tr>
-							
+							<th hidden=""></th>
+							<th hidden=""></th>
 							<th style="text-align: center;">Nombre</th>
 							<th style="text-align: center;">Tipo de archivo</th>
 							<th style="text-align: center;">Descargar</th>
 						</tr>
 					</thead>
 
-					<?php 
-						while ($mostrar = mysqli_fetch_array($result)) {
-
-							$rutaDescarga = "../../archivos/".$mostrar['id_usuario']."/".$mostrar['nombre'];
-							$nombreArchivo = $mostrar['nombre'];
 						
+					<?php 
+						
+						/*
+
+						while ($archivo) {
+
+							$rutaDescarga = "../../archivos/".$archivo['id_usuario']."/".$archivo['nombre'];
+							$nombreArchivo = $archivo['nombre'];
+						*/
 					 ?>
 
 					<tbody>
 						<tr>
-							
-							<td><?php echo $mostrar['nombre']; ?></td>
-							<td><?php echo $mostrar['tipo']; ?></td>
-							<td>
-								<a href="<?php echo $rutaDescarga; ?>" download="<?php $nombreArchivo ?>" class="btn btn-success btn-sm">
+							<td id="id_Archivo" hidden=""></td>
+							<td id="id_Usuario" hidden=""></td>
+							<td id="nombreA"><?php // echo $mostrar['nombre']; ?></td>
+							<td id="tipoA"><?php // echo $mostrar['tipo']; ?></td>
+							<td id="rutaA">
+								<a href="<?php // echo $rutaDescarga; ?>" download="<?php $nombreArchivo ?>" class="btn btn-success btn-sm">
 									<span class="fas fa-download"></span>
 								</a>
 							</td>
 						</tr>
 					<?php 
-						} //Fin de while
+						//} //Fin de while
 					 ?>
 					</tbody>
 
@@ -81,22 +63,10 @@
 
 
 
-
-
-</body>
-</html>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#tablaArchivosDatatable').DataTable();
-	});
-</script>
-
-
 <?php 
-
+/*
 	} else {
 		header("location:../../index.php");
 	}
-
+*/
  ?>

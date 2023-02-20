@@ -119,6 +119,28 @@
 
 
 
+		public function obtenerArchivoUsuario($idUsuario) {
+			$conexion = Conectar::conexion();
+
+			$sql = "SELECT id_archivo, id_usuario, nombre, tipo, ruta FROM archivos WHERE id_usuario = '$idUsuario'";
+
+			$result = mysqli_query($conexion, $sql);
+
+			
+			$archivo = mysqli_fetch_array($result);
+				$datos = array(
+						"idArchivo" => $archivo['id_archivo'],
+						"idUsuario" => $archivo['id_usuario'],
+						"Nombre" => $archivo['nombre'],
+						"Tipo" => $archivo['tipo'],
+						"Ruta" => $archivo['ruta']
+							);
+				
+				return $datos;
+			
+			
+		}
+
 	}
 
  ?>
