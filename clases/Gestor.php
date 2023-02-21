@@ -126,9 +126,12 @@
 
 			$result = mysqli_query($conexion, $sql);
 
+			$resultados = array();
+
+
+			while ($archivo = mysqli_fetch_array($result)) {
 			
-			$archivo = mysqli_fetch_array($result);
-				$datos = array(
+			$datos = array(
 						"idArchivo" => $archivo['id_archivo'],
 						"idUsuario" => $archivo['id_usuario'],
 						"Nombre" => $archivo['nombre'],
@@ -136,7 +139,13 @@
 						"Ruta" => $archivo['ruta']
 							);
 				
-				return $datos;
+			$resultados[] = $datos;
+
+			}
+
+			mysqli_close($conexion);
+
+			return $resultados;
 			
 			
 		}

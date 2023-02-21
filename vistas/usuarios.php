@@ -96,17 +96,15 @@
             <tr>
               <td id="id_Archivo" hidden=""></td>
               <td id="id_Usuario" hidden=""></td>
-              <td id="nombreA"><?php// echo $archivo['nombre']; ?></td>
-              <td id="tipoA"><?php// echo $archivo['tipo']; ?></td>
+              <td id="nombreA"></td>
+              <td id="tipoA"></td>
               <td id="rutaA">
-                <a href="<?php// echo $rutaDescarga; ?>" download="<?php $nombreArchivo ?>" class="btn btn-success btn-sm">
+                <a href="" download="" class="btn btn-success btn-sm">
                   <span class="fas fa-download"></span>
                 </a>
               </td>
             </tr>
-          <?php 
-          //  } //Fin de while
-           ?>
+          
           </tbody>
 
         </table>
