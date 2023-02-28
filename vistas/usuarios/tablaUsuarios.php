@@ -8,14 +8,15 @@
 
 	$c = new Conectar;
 	$conexion = $c->conexion();
-	$id_Usuario = $_SESSION['id_usuario'];
 
 	$sql = "SELECT  usuario.id_usuario AS idUsuario,
     				usuario.nombre AS nombreUsuario,
+    				
     				usuario.email AS Email,
     				rol.rol AS Rol
 			FROM
     			usuarios AS usuario
+    				
         			INNER JOIN
     			roles AS rol ON usuario.id_rol = rol.id_rol";
 
@@ -25,7 +26,7 @@
 
 
 	<div class="tabla">
-		<div class="col-sm-9">
+		<div class="col-sm-10">
 			<div class="table-responsive">
 				
 				<table class="table table-hover" id="tablaUsuariosDatatable">
@@ -34,37 +35,65 @@
 						<tr>
 							
 							<th style="text-align: center;">Nombre</th>
+							<th style="text-align: center;">Foto</th>
 							<th style="text-align: center;">Correo</th>
 							<th style="text-align: center;">Rol</th>
 							<th style="text-align: center;">Acciones</th>
 						</tr>
 					</thead>
 
-					<?php 
+					
+					<tbody>
+						<?php 
 							while ($mostrar = mysqli_fetch_array($result)) {
 								$id_usuario = $mostrar['idUsuario'];
+								
+
 						 ?>
-					<tbody>
 						<tr>
 							
 							<td><?php echo $mostrar['nombreUsuario']; ?></td>
+
+							<?php 
+							 $sql2 = "SELECT foto FROM fotos WHERE id_usuario = '$id_usuario'";
+							 $result2 = mysqli_query($conexion, $sql2);
+
+								if ($fila = mysqli_fetch_array($result2)) { 
+									$nombreFoto = $fila['foto'];
+								$ruta = "../archivos/" . $id_usuario . "/Foto_Perfil/" .  $nombreFoto;
+							?>
+								
+							<td><div class="img" style="background-image: url('<?php echo $ruta; ?>');"></div></td>
+
+							<?php 
+							  } else { 
+
+							?>
+
+							<td><div class="img" style="background-image: url(../img/Foto_perfil.png);"></div></td>
+						<?php 
+							} 
+
+						?>
 							<td><?php echo $mostrar['Email']; ?></td>
 							<td><?php echo $mostrar['Rol']; ?></td>
 							<td>
 
-								<span class="btn btn-primary" data-toggle="modal" data-target="#modalArchivos"onclick="obtenerArchivosUsuario('<?php echo $id_usuario; ?>')">
+								<span class="btn btn-primary" data-toggle="modal" data-target="#modalArchivos" onclick="obtenerArchivosUsuario('<?php echo $id_usuario; ?>')">
 									<span class="fas fa-regular fa-folder-open"></span>
 								</span>
 								<!-- <a class="btn btn-primary" href="usuarios/archivosUsuario.php" onclick="obtenerArchivosUsuario('<?// php echo $id_usuario; ?>')">
 									<span class="fas fa-regular fa-folder-open"></span>
 								</a> -->
-								
 							</td>
 						
 						</tr>
-						<?php 
-							}
-						 ?>
+
+						 <?php
+						 	} 
+						  ?>
+						 
+						
 					</tbody>
 				</table>
 				<br>

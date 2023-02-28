@@ -14,10 +14,9 @@
   	$sql = "SELECT id_usuario, id_rol FROM usuarios WHERE id_usuario = '$id_Usuario'";
   	$result = mysqli_query($conexion, $sql);
   	$fila = mysqli_fetch_array($result);
-	
-	
-	if($fila['id_rol'] == '2') {
-
+	  $id = $fila['id_usuario'];
+	   if($fila['id_rol'] == '2') {
+   
 	
 
  ?>
@@ -79,32 +78,24 @@
             </tr>
           </thead>
 
-            
-          <?php 
-
-
-         /*
-
-            while ($archivo = mysqli_fetch_array($result)) {
-
-              $rutaDescarga = "../../archivos/".$archivo['id_usuario']."/".$archivo['nombre'];
-              $nombreArchivo = $archivo['nombre'];
-            */
-           ?>
 
           <tbody>
+
+          <?php 
+            
+           ?>
             <tr>
-              <td id="id_Archivo" hidden=""></td>
-              <td id="id_Usuario" hidden=""></td>
-              <td id="nombreA"></td>
-              <td id="tipoA"></td>
+              <td id="id_Archivo" hidden=""><?php echo $row['id_archivo']; ?></td>
+              <td id="id_Usuario" hidden=""><?php echo $row['id_usuario']; ?></td>
+              <td id="nombreA"><?php echo $row['nombre']; ?></td>
+              <td id="tipoA"><?php echo $row['tipo']; ?></td>
               <td id="rutaA">
                 <a href="" download="" class="btn btn-success btn-sm">
                   <span class="fas fa-download"></span>
                 </a>
               </td>
             </tr>
-          
+            <?php  ?>
           </tbody>
 
         </table>
@@ -134,7 +125,7 @@
   <script type="text/javascript">
   	$(document).ready(function(){
   		$('#tablaUsuarios').load('usuarios/tablaUsuarios.php');
-  	})
+  	});
   </script>
 
 

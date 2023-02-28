@@ -37,7 +37,7 @@
 		public function eliminarArchivo($idArchivo){
 			$c = Conectar::conexion();
 
-			$sql = "DELETE * FROM archivos WHERE id_archivo = ? ";
+			$sql = "DELETE FROM archivos WHERE id_archivo = ? ";
 
 			//Prepara la instrucción SQL para su ejecución mediante el método prepare() del objeto de conexion de la BD.
 			$query = $c->prepare($sql);
@@ -126,26 +126,26 @@
 
 			$result = mysqli_query($conexion, $sql);
 
-			$resultados = array();
+			//$resultados = array();
 
 
-			while ($archivo = mysqli_fetch_array($result)) {
-			
+			while($archivo = mysqli_fetch_array($result)) {
+		
 			$datos = array(
 						"idArchivo" => $archivo['id_archivo'],
 						"idUsuario" => $archivo['id_usuario'],
 						"Nombre" => $archivo['nombre'],
 						"Tipo" => $archivo['tipo'],
-						"Ruta" => $archivo['ruta']
-							);
+						"Ruta" => $archivo['ruta']."<br>"
+			 				);
 				
-			$resultados[] = $datos;
+			//$resultados = $datos;
 
-			}
+		}
 
 			mysqli_close($conexion);
 
-			return $resultados;
+			return $datos;
 			
 			
 		}

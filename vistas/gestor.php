@@ -58,7 +58,7 @@
         		<div id="cetegoriasLoad"></div>
         		<br>
         		<label>Selecciona archivos:</label>
-        		<input type="file" name="archivos[]"  id="archivos[]" class="form-control" multiple="">
+        		<input type="file" name="archivos[]"  id="archivos[]"  multiple="">
         	</form>
       </div>
 

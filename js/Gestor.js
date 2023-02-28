@@ -93,6 +93,8 @@
 			url: "../procesos/gestor/obtenerArchivoUsuario.php",
 			success:function(respuesta){
 				respuesta = jQuery.parseJSON(respuesta);
+
+
 				
 				$('#id_Archivo').html(respuesta['idArchivo']);
 				$('#id_Usuario').html(respuesta['idUsuario']);
@@ -100,7 +102,6 @@
 				$('#tipoA').html(respuesta['Tipo']);
 				$('#rutaA').html(respuesta['Ruta']);
 		
-				
 				
 			}
 		});

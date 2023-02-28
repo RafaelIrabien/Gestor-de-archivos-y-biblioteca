@@ -129,10 +129,25 @@ class Usuario extends Conectar{
 
 	}
 
-	public function mostrarNombre(){
+	
 
-		echo $_SESSION['nombre'];
+	public function agregarFotoPerfil($datos) {
+		$conexion = Conectar::conexion();
+		
+		$sql = "INSERT INTO fotos (id_usuario, foto) VALUES (?, ?)";
+
+		$query = $conexion->prepare($sql);
+
+		$query->bind_param("is", $datos["idUsuario"],
+								 $datos["Foto"]);
+
+		$respuesta = $query->execute();
+		$query->close();
+		return $respuesta;
 	}
+
+
+
 
 
 } //Fin de la clase Usuarios

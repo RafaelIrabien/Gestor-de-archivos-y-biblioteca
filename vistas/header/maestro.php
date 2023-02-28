@@ -18,7 +18,7 @@
           </li>
 
 
-          <li class="nav-item list__item list__item--click">
+          <!-- <li class="nav-item list__item list__item--click">
             <div class="list__button list__button--click">
                 <a class="nav__link" href="#">
                  <span class="fa-solid fa-user"></span>
@@ -29,7 +29,7 @@
             <ul class="list__show menu-vertical">
                   <li class="list__inside">
                     <a class="nav__link nav__link--inside" href="perfil.php">
-                      <span></span> Perfil
+                      <span class="fa-solid fa-user-circle"></span> Perfil
                     </a>
                  </li>
 
@@ -39,7 +39,7 @@
                     </a>
                  </li>
            </ul>
-          </li>
+          </li> -->
 
            <li class="nav-item list__item list__item--click">
             <div class="list__button list__button--click">

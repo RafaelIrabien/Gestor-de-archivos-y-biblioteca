@@ -25,7 +25,7 @@
     			usuarios AS usuario ON archivo.id_usuario = usuario.id_usuario
 					INNER JOIN
 				categorias AS categoria ON archivo.id_categoria = categoria.id_categoria
-    			AND archivo.id_usuario = '$id_Usuario'";
+    			WHERE archivo.id_usuario = '$id_Usuario'";
 
     $result = mysqli_query($conexion, $sql);
  ?>

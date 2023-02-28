@@ -8,7 +8,7 @@
 
 			$conexion = Conectar::conexion();
 
-			$sql = "INSERT INTO categorias (id_usuario, nombre) VALUES (?, ?) ";
+			$sql = "INSERT INTO categorias (id_usuario, nombre) VALUES (?, ?)";
 
 			$query = $conexion->prepare($sql);
 

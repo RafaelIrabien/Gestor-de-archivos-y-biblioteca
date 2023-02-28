@@ -15,6 +15,10 @@
 	//Llamamos al método conexion()
 	$conexion = $conexion->conexion();
 
+	$sql = "SELECT id_categoria, nombre, fecha_insert FROM categorias WHERE id_usuario = '$id_Usuario' ";
+
+	$result = mysqli_query($conexion, $sql);
+
  ?>
 
 
@@ -31,20 +35,14 @@
 				 </tr>
 			</thead>
 			<br>
-			<?php 
-				$sql = "SELECT id_categoria, nombre, fecha_insert FROM categorias WHERE id_usuario = '$id_Usuario' ";
-
-				$result = mysqli_query($conexion, $sql);
-
+			
+			<tbody>
+				<?php 
+				
 				//Bucle que se repite las veces que sean necesarias
 				while ($mostrar = mysqli_fetch_array($result)) {
 					$id_categoria = $mostrar['id_categoria'];
-			 ?>
-			 
-			
-
-			<tbody>
-
+			 	?>
 			
 				<tr>
 					<td><?php echo $mostrar['nombre']; ?></td>

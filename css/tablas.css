@@ -17,6 +17,16 @@
 
 	}
 
+	.img {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		background-position: 50%;
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-color: white;
+	}
+
 	.display-4 {
 		text-align: center;
 		font-weight: bold;
