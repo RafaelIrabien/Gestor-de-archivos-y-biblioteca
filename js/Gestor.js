@@ -110,16 +110,16 @@
           			}
 
 				var tr = $('<tr></tr>'); //Crear una nueva fila de la tabla
-				
+				var rutaDescarga = "../archivos/" + res[i].id_Usuario + "/" + res[i].Nombre;
 				//Agregar una columna por cada atributo
 
 				tr.append("<td hidden=''>" + res[i].idArchivo + "</td>");
 				tr.append("<td hidden=''>" + res[i].id_Usuario + "</td>");
 				tr.append("<td>" + res[i].Nombre + "</td>");
 				tr.append("<td>" + res[i].Tipo + "</td>");
-				tr.append("<td>" + "<a href='" + res[i].Ruta + "'>Download</a>"  + "</td>");
+				tr.append("<td>" + "<a class='btn btn-success btn-sm' href='" + rutaDescarga + "' download='" + res[i].Nombre + "'><span class='fas fa-download'></span></a>"  + "</td>");
 				tbody.append(tr);
-				//var fila = "<tr><td>" + res[i].idArchivo + "</td><td>" + res[i].id_Usuario + "</td><td>" + res[i].Nombre + "</td><td>" + res[i].Tipo + "</td><td><a href='" + res[i].Ruta + "' target='_blank'>Descargar</a></td></tr>";
+				
         		
         	}
 		}	
