@@ -25,3 +25,12 @@
 				}
 		});
 	}
+
+
+	/*function obtenerDatosFoto(idFoto) {
+		$.ajax({
+			  type: "POST",
+			  data: "idFoto=" + idFoto,
+			  url: "../procesos/usuario/obtenerFotoPerfil.php",
+		});
+	}*/

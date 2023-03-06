@@ -147,6 +147,22 @@ class Usuario extends Conectar{
 	}
 
 
+	public function obtenerFotoPerfil($idFoto) {
+		$conexion = Conectar::conexion();
+		$sql = "SELECT * FROM fotos WHERE id_foto = '$idFoto'";
+		$result = mysqli_query($conexion, $sql);
+
+		$foto = mysqli_fetch_array($result);
+
+		$datos = array(
+				  "idFoto" => $foto['id_foto'],
+				  "Foto" => $foto['foto']				
+		);
+
+		return $datos;
+	}
+
+
 
 
 

@@ -16,7 +16,7 @@ h2 {
 	width: 600px;
 	border: 5px solid black;
 	border-radius: 10px;
-	background: white;
+	background: #FFC44F;
 }
 
 form {
@@ -46,10 +46,17 @@ input[type=file]{
 }
 
 .image-upload img{
-	width: 200px;
+	
 	cursor: pointer;
 	border: 1px solid black;
-	border-radius: 100%;
+	border-radius: 100%; 
+	width:200px; 
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	
+	
 }
 
 .image-upload img:hover {
@@ -59,4 +66,8 @@ input[type=file]{
 
 #instruccion {
 	 text-align: center;
+}
+
+
+#id-foto {
 }

@@ -36,7 +36,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="inicio.php">
+      <a class="navbar-brand"  href="inicio.php">
         <img src="../img/logo_2.png" alt="..." width="140px">
       </a>
 
@@ -68,13 +68,11 @@
        ?>
 
        <?php 
-            require_once "../clases/Conexion.php";
-            $conexion = new Conectar;
-            $c = $conexion->conexion();
-            $id_Usuario = $_SESSION['id_usuario'];
+         
+           
 
             $sql = "SELECT foto FROM fotos WHERE id_usuario = '$id_Usuario'";
-            $result = mysqli_query($c, $sql);
+            $result = mysqli_query($conexion, $sql);
 
             if ($foto = mysqli_fetch_array($result)) {
                $nombreFoto = $foto['foto'];

@@ -25,7 +25,7 @@
 			<br>
 		<div class="container">
 			<h1 class="display-4">Mis archivos</h1>
-			
+		
 			<div id="btn">
 			<span class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAgregarArchivos">
 				<span class="fa fa-solid fa-cloud-arrow-up"></span>

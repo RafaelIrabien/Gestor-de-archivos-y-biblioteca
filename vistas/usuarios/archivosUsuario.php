@@ -3,58 +3,42 @@
 
 	//if (isset($_SESSION['nombre'])) {
 	/*
-	$sql = "SELECT id_archivo, id_usuario, nombre, tipo, ruta FROM archivos";
-
-	$result = mysqli_query($conexion, $sql); */
-	
+	require_once "../../clases/Conexion.php";
+	$c = new Conectar;
+	$conexion = $c->conexion();
+	$sql = "SELECT id_usuario FROM usuarios";
+	$result = mysqli_query($conexion, $sql);
+	$archivo= mysqli_fetch_array($result);
+	$id = $archivo['id_usuario']; 
+	*/
 
  ?>
 
 	<div class="tabla">
-		<div class="col-sm-7">
+		<div class="col-sm-10">
 			<div class="table-responsive">
 				
-				<table class="table table-hover" id="tablaArchivosDatatable">
+				<table class="table table-hover">
 					<br>
 					<thead>
 						<tr>
 							<th hidden=""></th>
 							<th hidden=""></th>
-							<th style="text-align: center;">Nombre</th>
-							<th style="text-align: center;">Tipo de archivo</th>
-							<th style="text-align: center;">Descargar</th>
+							<th >Nombre</th>
+							<th >Tipo de archivo</th>
+							<th >Descargar</th>
 						</tr>
 					</thead>
-
-						
-					<?php 
-						
-						/*
-
-						while ($archivo) {
-
-							$rutaDescarga = "../../archivos/".$archivo['id_usuario']."/".$archivo['nombre'];
-							$nombreArchivo = $archivo['nombre'];
-						*/
-					 ?>
-
-					<tbody>
+					<tbody id="tablaArchivosUsuario">
 						<tr>
-							<td id="id_Archivo" hidden=""></td>
-							<td id="id_Usuario" hidden=""></td>
-							<td id="nombreA"><?php // echo $mostrar['nombre']; ?></td>
-							<td id="tipoA"><?php // echo $mostrar['tipo']; ?></td>
-							<td id="rutaA">
-								<a href="<?php // echo $rutaDescarga; ?>" download="<?php $nombreArchivo ?>" class="btn btn-success btn-sm">
-									<span class="fas fa-download"></span>
-								</a>
-							</td>
+						<td id="id_Archivo"></td>
+						<td id="id_Usuario"></td>
+						<td id="nombreA"></td>
+						<td id="tipoA"></td>
+						<td id="rutaA"></td>
 						</tr>
-					<?php 
-						//} //Fin de while
-					 ?>
+						
 					</tbody>
-
 				</table>
 <br>
 			</div>

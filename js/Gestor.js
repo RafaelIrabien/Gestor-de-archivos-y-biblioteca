@@ -85,24 +85,56 @@
 		});
 	}
 
-
+	
 	function obtenerArchivosUsuario(idUsuario) {
 		$.ajax({
 			type: "POST",
 			data: "idUsuario=" + idUsuario,
 			url: "../procesos/gestor/obtenerArchivoUsuario.php",
 			success:function(respuesta){
-				respuesta = jQuery.parseJSON(respuesta);
-
-
-				
-				$('#id_Archivo').html(respuesta['idArchivo']);
-				$('#id_Usuario').html(respuesta['idUsuario']);
-				$('#nombreA').html(respuesta['Nombre']);
-				$('#tipoA').html(respuesta['Tipo']);
-				$('#rutaA').html(respuesta['Ruta']);
+				res= jQuery.parseJSON(respuesta);
+			
+			var tbody = $('#tablaArchivosUsuario'); //Seleccionar el elemento tbody
 		
+			//Vaciar el tbody en caso de que ya haya filas
+			tbody.empty();
+			for (let i = 0; i < res.length; i++) { //Iterar a través de la matriz de archivos
+				if (res[i].id_Usuario === idUsuario) { //Ignorar las filas que no sean del usuario seleccionado
+					
+					 if (i == 0) {
+            			var th = $('<tr>');
+            			th.append($('<th style="text-align: center;">').text('Nombre'));
+            			th.append($('<th style="text-align: center;">').text('Tipo'));
+            			th.append($('<th style="text-align: center;">').text('Opciones'));
+            			tbody.append(th);
+          			}
+
+				var tr = $('<tr></tr>'); //Crear una nueva fila de la tabla
 				
-			}
-		});
-	}
+				//Agregar una columna por cada atributo
+
+				tr.append("<td hidden=''>" + res[i].idArchivo + "</td>");
+				tr.append("<td hidden=''>" + res[i].id_Usuario + "</td>");
+				tr.append("<td>" + res[i].Nombre + "</td>");
+				tr.append("<td>" + res[i].Tipo + "</td>");
+				tr.append("<td>" + "<a href='" + res[i].Ruta + "'>Download</a>"  + "</td>");
+				tbody.append(tr);
+				//var fila = "<tr><td>" + res[i].idArchivo + "</td><td>" + res[i].id_Usuario + "</td><td>" + res[i].Nombre + "</td><td>" + res[i].Tipo + "</td><td><a href='" + res[i].Ruta + "' target='_blank'>Descargar</a></td></tr>";
+        		
+        	}
+		}	
+	} 
+  });
+}
+
+
+/*
+	function Archivos(res) {
+		
+		const tabla = document.querySelector('tabla_archivos');
+
+		for (let i = 0; i < res.length; i++) {
+
+			
+		}
+	} */

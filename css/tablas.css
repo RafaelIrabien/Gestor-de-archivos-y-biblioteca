@@ -1,9 +1,7 @@
 	
-	table, td {
+	td {
 		text-align: center;
-		
 		background-color: #FFC043;
-		
 	}
 
 	tr:hover {
@@ -11,10 +9,37 @@
 	}
 
 	th {
-		font-size: 18px;
+		font-size: 17px;
 		color: white;
-		background-color: #CE2408;
+		background-color: #151515;
+	}
 
+	th:first-child {
+		border-top-left-radius: 10px;
+	}
+
+	th:last-child {
+		border-top-right-radius: 10px;
+	}
+
+	tr:last-child td:first-child{
+		border-bottom-left-radius: 10px;
+	}
+
+	tr:last-child td:last-child{
+		border-bottom-right-radius: 10px;
+	}
+
+	.h1 {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		background-color: #ffffff20;
+		border: 0.5px solid #ffffff30;
+		backdrop-filter: blur(7px);
+		border-radius: 20px;
+		margin: 0 auto;
+		
 	}
 
 	.img {

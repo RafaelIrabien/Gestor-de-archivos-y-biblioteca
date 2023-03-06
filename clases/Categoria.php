@@ -56,8 +56,6 @@
 
 		}
 
-
-
 		public function actualizarCategoria($datos){
 			$conexion = Conectar::conexion();
 

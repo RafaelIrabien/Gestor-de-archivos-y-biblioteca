@@ -126,30 +126,30 @@
 
 			$result = mysqli_query($conexion, $sql);
 
-			//$resultados = array();
-
-
-			while($archivo = mysqli_fetch_array($result)) {
-		
-			$datos = array(
+			$datos = [];
+			while($archivo = mysqli_fetch_array($result)){ 
+			
+			$datosFile = [
 						"idArchivo" => $archivo['id_archivo'],
-						"idUsuario" => $archivo['id_usuario'],
+						"id_Usuario" => $archivo['id_usuario'],
 						"Nombre" => $archivo['nombre'],
 						"Tipo" => $archivo['tipo'],
-						"Ruta" => $archivo['ruta']."<br>"
-			 				);
-				
-			//$resultados = $datos;
+						"Ruta" => $archivo['ruta']
+			 				];
 
-		}
+			$datos[] = $datosFile;
 
+			}
+			
+			return $datos;
 			mysqli_close($conexion);
 
-			return $datos;
-			
 			
 		}
+
+		
 
 	}
 
  ?>
+

@@ -10,11 +10,12 @@
   	$conexion = $c->conexion();
 
   	$id_Usuario = $_SESSION['id_usuario'];
+   
 
   	$sql = "SELECT id_usuario, id_rol FROM usuarios WHERE id_usuario = '$id_Usuario'";
   	$result = mysqli_query($conexion, $sql);
   	$fila = mysqli_fetch_array($result);
-	  $id = $fila['id_usuario'];
+	 // $id = $fila['id_usuario'];
 	   if($fila['id_rol'] == '2') {
    
 	
@@ -60,56 +61,37 @@
 
       <div class="modal-body">
 
-       
+       <div></div>
 
   <div class="tabla">
     <div class="col-sm-10">
       <div class="table-responsive">
         
-        <table class="table table-hover" id="tablaArchivosDatatable">
+        <table class="table table-hover" id="tablaArchivosUsuario">
           <br>
-          <thead>
-            <tr>
-              <th hidden=""></th>
-              <th hidden=""></th>
-              <th style="text-align: center;">Nombre</th>
-              <th style="text-align: center;">Tipo de archivo</th>
-              <th style="text-align: center;">Descargar</th>
-            </tr>
+          <thead id="theadArchivos">
+            
           </thead>
 
-
           <tbody>
-
-          <?php 
+           
             
-           ?>
-            <tr>
-              <td id="id_Archivo" hidden=""><?php echo $row['id_archivo']; ?></td>
-              <td id="id_Usuario" hidden=""><?php echo $row['id_usuario']; ?></td>
-              <td id="nombreA"><?php echo $row['nombre']; ?></td>
-              <td id="tipoA"><?php echo $row['tipo']; ?></td>
-              <td id="rutaA">
-                <a href="" download="" class="btn btn-success btn-sm">
-                  <span class="fas fa-download"></span>
-                </a>
-              </td>
-            </tr>
-            <?php  ?>
           </tbody>
 
-        </table>
+        </table>  
 <br>
       </div>
     </div>
   </div>
-
-      </div>
-
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       
+ 
+  </div>
+ 
       </div>
+
+     
     </div>
   </div>
 </div>
@@ -125,6 +107,7 @@
   <script type="text/javascript">
   	$(document).ready(function(){
   		$('#tablaUsuarios').load('usuarios/tablaUsuarios.php');
+     // $('#tablaArchivosUsuario').load('usuarios/archivosUsuario.php');
   	});
   </script>
 
