@@ -38,7 +38,7 @@
 							<th style="text-align: center;">Foto</th>
 							<th style="text-align: center;">Correo</th>
 							<th style="text-align: center;">Rol</th>
-							<th style="text-align: center;">Acciones</th>
+							<th style="text-align: center;">Ver archivos</th>
 						</tr>
 					</thead>
 

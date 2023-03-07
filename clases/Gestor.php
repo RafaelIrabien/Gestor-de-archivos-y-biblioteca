@@ -122,7 +122,17 @@
 		public function obtenerArchivoUsuario($idUsuario) {
 			$conexion = Conectar::conexion();
 
-			$sql = "SELECT id_archivo, id_usuario, nombre, tipo, ruta FROM archivos WHERE id_usuario = '$idUsuario'";
+			$sql = "SELECT archivo.id_archivo AS id_archivo,
+						   archivo.nombre AS nombre, 
+						   archivo.tipo AS tipo, 
+						   archivo.ruta AS ruta,
+						   usuario.id_usuario AS idusuario, 
+						   categoria.categoria AS id_categoria
+					FROM 
+						archivos AS archivo
+					INNER JOIN
+						categorias AS categoria ON archivo.id_categoria = categoria.id_categoria
+					WHERE idusuario = '$idUsuario'";
 
 			$result = mysqli_query($conexion, $sql);
 
@@ -131,7 +141,8 @@
 			
 			$datosFile = [
 						"idArchivo" => $archivo['id_archivo'],
-						"id_Usuario" => $archivo['id_usuario'],
+						"id_Usuario" => $archivo['idusuario'],
+						"idCategoria" => $archivo['id_categoria'],
 						"Nombre" => $archivo['nombre'],
 						"Tipo" => $archivo['tipo'],
 						"Ruta" => $archivo['ruta']

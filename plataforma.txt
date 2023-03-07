@@ -35,6 +35,12 @@ CREATE TABLE `usuarios` (
   `foto` longblob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+CREATE TABLE `fotos` (
+  `id_foto` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `foto` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 ALTER TABLE `archivos`
   ADD PRIMARY KEY (`id_archivo`),
@@ -70,6 +76,10 @@ ALTER TABLE `roles`
 ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
+ALTER TABLE `fotos`
+  ADD PRIMARY KEY (`id_foto`),
+  ADD KEY `fkFototosUsuarios_idx` (`id_usuario`);
+
 
 ALTER TABLE `archivos`
   ADD CONSTRAINT `fkArchivosCategorias` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id_categoria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -77,4 +87,11 @@ ALTER TABLE `archivos`
 
 ALTER TABLE `categorias`
   ADD CONSTRAINT `fkCategoriaUsuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
+
+ALTER TABLE `fotos`
+  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+ALTER TABLE `fotos`
+  ADD CONSTRAINT `fkFototosUsuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;

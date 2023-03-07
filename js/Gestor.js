@@ -103,6 +103,7 @@
 					
 					 if (i == 0) {
             			var th = $('<tr>');
+            			th.append($('<th style="text-align: center;">').text('Categoría'));
             			th.append($('<th style="text-align: center;">').text('Nombre'));
             			th.append($('<th style="text-align: center;">').text('Tipo'));
             			th.append($('<th style="text-align: center;">').text('Opciones'));
@@ -115,6 +116,7 @@
 
 				tr.append("<td hidden=''>" + res[i].idArchivo + "</td>");
 				tr.append("<td hidden=''>" + res[i].id_Usuario + "</td>");
+				tr.append("<td>" + res[i].idCategoria + "</td>");
 				tr.append("<td>" + res[i].Nombre + "</td>");
 				tr.append("<td>" + res[i].Tipo + "</td>");
 				tr.append("<td>" + "<a class='btn btn-success btn-sm' href='" + rutaDescarga + "' download='" + res[i].Nombre + "'><span class='fas fa-download'></span></a>"  + "</td>");
