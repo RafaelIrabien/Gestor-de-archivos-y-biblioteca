@@ -126,13 +126,15 @@
 						   archivo.nombre AS nombre, 
 						   archivo.tipo AS tipo, 
 						   archivo.ruta AS ruta,
-						   usuario.id_usuario AS idusuario, 
-						   categoria.categoria AS id_categoria
+						   usuario.id_usuario AS id_usuario, 
+						   categoria.nombre AS id_categoria
 					FROM 
 						archivos AS archivo
 					INNER JOIN
+						usuarios AS usuario ON archivo.id_usuario = usuario.id_usuario
+					INNER JOIN
 						categorias AS categoria ON archivo.id_categoria = categoria.id_categoria
-					WHERE idusuario = '$idUsuario'";
+					WHERE archivo.id_usuario = '$idUsuario'";
 
 			$result = mysqli_query($conexion, $sql);
 
@@ -141,7 +143,7 @@
 			
 			$datosFile = [
 						"idArchivo" => $archivo['id_archivo'],
-						"id_Usuario" => $archivo['idusuario'],
+						"id_Usuario" => $archivo['id_usuario'],
 						"idCategoria" => $archivo['id_categoria'],
 						"Nombre" => $archivo['nombre'],
 						"Tipo" => $archivo['tipo'],
