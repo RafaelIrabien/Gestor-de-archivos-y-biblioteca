@@ -163,6 +163,23 @@ class Usuario extends Conectar{
 	}
 
 
+	public function imprimirFotoPerfil() {
+		$conexion = Conectar::conexion();
+
+		$id_Usuario = $_SESSION['id_usuario'];
+		$sql = "SELECT foto FROM fotos WHERE id_usuario = '$id_Usuario'";
+      	$result = mysqli_query($conexion, $sql);
+
+      	if ($foto = mysqli_fetch_array($result)) {
+            $nombreFoto = $foto['foto'];
+            $ruta = "../archivos/" . $id_Usuario . "/Foto_Perfil/" .  $nombreFoto;
+
+            echo $ruta;
+           }	
+
+	}
+
+
 
 
 

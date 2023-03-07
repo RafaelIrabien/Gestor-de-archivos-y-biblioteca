@@ -116,7 +116,7 @@
  		
  		
  	} else {
- 		header("location:../index.php");
+ 		header("location:inicio.php");
  	}
 
  	} else {

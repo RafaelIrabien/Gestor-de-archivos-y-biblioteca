@@ -22,6 +22,15 @@
 
     $result = mysqli_query($conexion, $sql);
 
+    $id_Usuario = $_SESSION['id_usuario'];
+  	
+  	$sql2 = "SELECT id_usuario, id_rol FROM usuarios WHERE id_usuario = '$id_Usuario'";
+  	$result2 = mysqli_query($conexion, $sql2);
+  	$fila = mysqli_fetch_array($result2);
+	 // $id = $fila['id_usuario'];
+	   if($fila['id_rol'] == '2') {
+    	
+    
  ?>
 
 
@@ -113,7 +122,12 @@
 </script>
 
 
-<?php 
+<?php
+} else {
+	header("location:../inicio.php");
+}
+
+
 } else {
 	header("location:../../index.php");
 }
