@@ -27,10 +27,16 @@
 	}
 
 
-	/*function obtenerDatosFoto(idFoto) {
+	function obtenerDatosFoto(idFoto) {
 		$.ajax({
 			  type: "POST",
 			  data: "idFoto=" + idFoto,
-			  url: "../procesos/usuario/obtenerFotoPerfil.php",
+			  url: "../procesos/usuario/perfil/obtenerFotoPerfil.php",
+			  success:function(respuesta) {
+			  	respuesta = jQuery.parseJSON(respuesta);
+
+			  	$('#id_Foto').val(respuesta['idFoto']);
+			  	$('#fotoU').val(respuesta['Foto']);
+			  }
 		});
-	}*/
+	}

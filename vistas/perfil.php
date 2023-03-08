@@ -44,7 +44,7 @@
 
 
 	  <?php 
-	  	$sql2 = "SELECT foto FROM fotos WHERE id_usuario = '$id_Usuario'";
+	  	$sql2 = "SELECT id_foto, foto FROM fotos WHERE id_usuario = '$id_Usuario'";
             $result2 = mysqli_query($conexion, $sql2);
 
             if ($foto = mysqli_fetch_array($result2)) {
@@ -63,7 +63,7 @@
 	    	</label>
 	    </div>
 	    	<br>
-	    	<span type="button" class="btn btn-primary"  data-toggle="modal" data-target="#modalEditarFoto">Editar
+	    	<span type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEditarFoto" onclick="obtenerDatosFoto('<?php echo $foto['id_foto']; ?>')">Editar
 	    	</span>
 	   
 
@@ -116,7 +116,7 @@
 
 <!-- Modal para Editar Foto -->
 <div class="modal fade" id="modalEditarFoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 style="margin-left: 50px;" class="modal-title" id="exampleModalLabel">Actualizar foto</h5>
@@ -126,10 +126,11 @@
       </div>
 
       <div class="modal-body">
-          <form id="frmActualizarCategoria">
-            <label>Foto actual:</label>
-            <input type="text" id="id_Categoria" name="id_Categoria" hidden="">
-            <input type="text" id="categoriaU" name="categoriaU" id="nombreCategoria" class="form-control">
+          <form id="frmVisualizarFotoPerfil">
+            <input type="text" id="id_Foto" name="id_Foto" hidden="">
+            <img src="<?php echo $ruta; ?>" id="fotoU" name="fotoU" id="Foto" width="400px" style="display:block;
+						margin:auto;">
+            
           </form>  
       </div>
 
