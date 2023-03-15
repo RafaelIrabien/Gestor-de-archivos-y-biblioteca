@@ -50,14 +50,15 @@
             if ($foto = mysqli_fetch_array($result2)) {
                $nombreFoto = $foto['foto'];
                $ruta = "../archivos/" . $id_Usuario . "/Foto_Perfil/" . $nombreFoto;
+
 	   ?>
 
 
-	<div id="instruccion">Click en la imagen para subir una foto:</div>
+	
 	    <div class="image-upload">
-	    	<label for="file-input">
-	    		<div class="circular--landscape">
-	    		<img src="<?php echo $ruta; ?>" alt="Click aquí para subir su foto" title="Click aquí para subir su foto">
+	    	<label>
+	    		<div id="FotoPerfil" class="circular--landscape">
+	    		<img src="<?php echo $ruta; ?>">
 	    	<!--	<div><img src="" id="img-foto"></div> -->
 	    		</div>
 	    	</label>
@@ -114,29 +115,37 @@
 	<br>
 
 
+
+
+
 <!-- Modal para Editar Foto -->
 <div class="modal fade" id="modalEditarFoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="margin-left: 50px;" class="modal-title" id="exampleModalLabel">Actualizar foto</h5>
+        <h5 style="margin-left: 420px;" class="modal-title" id="exampleModalLabel">Actualizar foto</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
 
       <div class="modal-body">
-          <form id="frmVisualizarFotoPerfil">
+      	 
+      	<div>
+      		<label for="file-input">
+          <form id="frmVisualizarFotoPerfil" method="POST" class="table-responsive" enctype="multipart/form-data">
+          
             <input type="text" id="id_Foto" name="id_Foto" hidden="">
-            <img src="<?php echo $ruta; ?>" id="fotoU" name="fotoU" id="Foto" width="400px" style="display:block;
-						margin:auto;">
+            <img src="<?php echo $ruta; ?>" width="400px" style="display:block; margin:auto;" id="img-foto">
             
-          </form>  
+            <input type="file" name="img-foto" accept="image/*" onchange="vista_preliminar(event)" style="display:block; margin:auto;">
+          </form>
+        </div>       
       </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-warning" id="btnActualizarCategoria">Actualizar</button>
+        <button type="button" class="btn btn-warning" id="btnActualizarFoto">Actualizar</button>
       </div>
     </div>
   </div>
@@ -188,6 +197,12 @@
  		//Evento para guardar foto de perfil
  		$('#btnGuardarFotoPerfil').click(function(){
  			agregarFotoPerfil();
- 		});
  	});
+
+ 		//Llamar a la función actualizarFotoPerfil() del js
+ 		$('#btnActualizarFoto').click(function(){
+ 			actualizarFotoPerfil();
+ 	});
+
+});
  </script>

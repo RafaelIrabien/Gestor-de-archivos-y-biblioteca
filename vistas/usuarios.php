@@ -1,9 +1,7 @@
 <?php 
 	session_start();
 
-    if(isset($_SESSION['nombre'])) {
-      include "header.php";
-      include "fondo.php";
+   
 
 	require_once "../clases/Conexion.php";
   	$c = new Conectar;
@@ -18,6 +16,8 @@
 	 // $id = $fila['id_usuario'];
 	   if($fila['id_rol'] == '2') {
    
+     if(isset($_SESSION['nombre'])) {
+      include "header.php";
 	
 
  ?>
@@ -34,7 +34,6 @@
  	<body>
 
  		<div>
-		<br>
 		<div class="contenido_usuario">
 			<br>
 		<div class="container">
@@ -53,7 +52,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="margin-left: 30px;" class="modal-title" id="exampleModalLabel">Actualizar categoría</h5>
+        <h5 style="margin-left: 390px;" class="modal-title" id="exampleModalLabel">Archivos del usuario</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -85,14 +84,40 @@
   </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-      
- 
-  </div>
- 
       </div>
-
-     
+ 
     </div>
+   </div>
+  </div>
+</div>
+
+
+
+
+
+  <!-- Modal para Ver Archivos del usuario seleccionado -->
+<div class="modal fade" id="modalVer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="margin-left: 30px;" class="modal-title" id="exampleModalLabel">Archivos del usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+          <div class="tabla">
+            <div class="col-sm-10">
+              <div class="table-responsive">
+              </div>
+            </div>
+          </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+ 
+    </div>
+   </div>
   </div>
 </div>
  	
@@ -100,7 +125,10 @@
  	</html>
 
 
-<?php include "footer.php"; ?>
+<?php 
+
+include "fondo.php";
+include "footer.php"; ?>
 
 
 <script type="text/javascript" src="../js/Gestor.js"></script>
@@ -112,15 +140,17 @@
   </script>
 
 
+ 
+
   <?php 
- 		
- 		
- 	} else {
- 		header("location:inicio.php");
- 	}
 
  	} else {
  		header("location:../index.php");
  	}
+
+  } else {
+    header("location:inicio.php");
+
+  }
 
   ?>

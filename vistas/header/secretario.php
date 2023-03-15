@@ -25,6 +25,42 @@
             </div>
           </li>
 
+
+            <div class="nav-item list__item list__item--click">
+            <div class="list__button list__button--click">
+              <a class="nav__link" href="#">
+               <span class="fa-solid fa-share-from-square"></span>
+               Compartir
+              </a>
+              <img src="../librerias/assets/arrow.svg" class="list__arrow">
+            </div>
+
+            <ul class="list__show menu-vertical">
+              <li class="list__inside">
+                <a class="nav__link nav__link--inside" href="enlaces.php">
+                <span class="fa fa-link"></span>
+                Enlaces
+                </a>
+              </li>
+
+              <li class="list__inside">
+                <a class="nav__link nav__link--inside" href="archivos.php">
+                <span class="fa fa-file"></span>
+                Archivos
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <li class="nav-item">
+              <a href="#">
+               <span class="fa-solid fa-book"></span>
+               Biblioteca
+              </a>
+          </li>
+
+        
+
              
         </ul>
 
@@ -41,8 +77,8 @@
     $result = mysqli_query($conexion, $sql);
 
     if ($foto = mysqli_fetch_array($result)) {
-            $nombreFoto = $foto['foto'];
-            $ruta = "../archivos/" . $id_Usuario . "/Foto_Perfil/" .  $nombreFoto;
+            $Foto = base64_encode($foto['foto']);
+          
 
  ?>
 
@@ -50,19 +86,19 @@
           <div class="nav-item list__item list__item--click">
             <div class="list__button list__button--click">
                 <a class="nav__link" href="#">
-                  <div class="foto" style="background-image: url('<?php echo $ruta; ?>');"></div>
+                  <div class="foto" style="background-image: url('data:image/jpeg;base64,<?php echo $Foto; ?>');"></div>
                 </a>
             </div>
             <ul class="list__show menu-vertical">
                   <li class="list__inside">
-                    <a class="nav__link nav__link--inside" href="perfil.php">
+                    <a class="nav__link nav__link--inside" href="perfil2.php">
                       <span class="fa-solid fa-user-circle"></span> Perfil
                     </a>
                  </li>
 
                  <li class="list__inside">
                     <a class="nav__link nav__link--inside" href="../procesos/usuario/salir.php">
-                      <span class="fa-solid fa-arrow-right-from-bracket"></span> Cerrar sesión
+                      <span class="fa-solid fa-arrow-right-from-bracket"></span> Salir
                     </a>
                  </li>
            </ul>
@@ -82,14 +118,14 @@
             </div>
             <ul class="list__show menu-vertical">
                   <li class="list__inside">
-                    <a class="nav__link nav__link--inside" href="perfil.php">
+                    <a class="nav__link nav__link--inside" href="perfil2.php">
                       <span class="fa-solid fa-user-circle"></span> Perfil
                     </a>
                  </li>
 
                  <li class="list__inside">
                     <a class="nav__link nav__link--inside" href="../procesos/usuario/salir.php">
-                      <span class="fa-solid fa-arrow-right-from-bracket"></span> Cerrar sesión
+                      <span class="fa-solid fa-arrow-right-from-bracket"></span> Salir
                     </a>
                  </li>
            </ul>

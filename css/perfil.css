@@ -7,6 +7,10 @@
 	
 }
 
+p {
+	font-size: 19px;
+}
+
 h2 {
 	text-align: center;
 	border-bottom: 2px solid black;
@@ -50,8 +54,8 @@ input[type=file]{
 	cursor: pointer;
 	border: 1px solid black;
 	border-radius: 100%; 
-	width:200px; 
-	height: 200px;
+	width:250px; 
+	height: 250px;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
@@ -69,5 +73,19 @@ input[type=file]{
 }
 
 
-#id-foto {
+
+
+
+
+.container {
+	position: relative;
+
+}
+
+
+.container #span{
+	position: absolute;
+	top: 78%;
+	left: 66%;
+
 }

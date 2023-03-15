@@ -4,7 +4,7 @@
 		var formData = new FormData(document.getElementById('frmFoto'));
 
 		$.ajax({
-				url: "../procesos/usuario/perfil/guardarFotoPerfil.php",
+				url: "../procesos/usuario/perfil/proceso_guardar.php",
 				type: "POST",
 				datatype: "html",
 				data: formData,
@@ -27,16 +27,44 @@
 	}
 
 
-	function obtenerDatosFoto(idFoto) {
+	function obtenerDatosNombre(id_Usuario) {
 		$.ajax({
 			  type: "POST",
-			  data: "idFoto=" + idFoto,
-			  url: "../procesos/usuario/perfil/obtenerFotoPerfil.php",
+			  data: "id_Usuario=" + id_Usuario,
+			  url: "../procesos/usuario/perfil/obtenerNombre.php",
 			  success:function(respuesta) {
 			  	respuesta = jQuery.parseJSON(respuesta);
 
-			  	$('#id_Foto').val(respuesta['idFoto']);
-			  	$('#fotoU').val(respuesta['Foto']);
+			  	$('#id_Usuario').val(respuesta['idUsuario']);
+			  	$('#Nombre').val(respuesta['Nombre']);
+			  	$('#Email').val(respuesta['Email']);
 			  }
 		});
+	}
+
+
+	function actualizarNombre() {
+		//Si el control o input viene vacío, entonces muestra un mensaje
+		if ($('#Nombre').val() == "") {
+			swal("No hay nombre de usuario");
+		} else {
+
+			$.ajax({
+				type: "POST",
+				//Mandamos el formulario completo
+				data: $('#frmActualizarNombre').serialize(),
+				url: "../procesos/usuario/perfil/actualizarNombre.php",
+				success:function(respuesta) {
+					respuesta = respuesta.trim();
+
+					if (respuesta == 1) {
+						window.location.reload(true);
+						swal(":D", "Nombre de usuario actualizado con éxito", "success");
+					} else {
+						swal(":(", "Falló al actualizar", "error");
+					}
+				}
+			});
+		}
+
 	}

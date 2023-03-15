@@ -121,7 +121,12 @@
 				tr.append("<td>" + res[i].Tipo + "</td>");
 				tr.append("<td>" + 
 					"<a class='btn btn-success btn-sm' href='" + rutaDescarga + "' download='" + res[i].Nombre + "'><span class='fas fa-download'></span></a>"
-					  + "<span class='btn btn-primary btn-sm' onclick='" + obtenerArchivoPorId(console.log(idArchivo))  + "'>" + "<span class='fas fa-eye'></span></span>"
+					  + "<span id='ver' class='btn btn-primary btn-sm'><span class='fas fa-eye'></span></span>" 
+					  + $(function(){
+					  	$('#ver').on('click',  function(){
+					  	 $('#modalVer').modal()
+					  	})
+					   }),
 					  + "</td>");
 				tbody.append(tr);
 				

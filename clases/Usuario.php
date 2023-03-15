@@ -131,42 +131,39 @@ class Usuario extends Conectar{
 
 	
 
-	public function agregarFotoPerfil($datos) {
+
+	public function obtenerNombreUsuario($id_Usuario) {
 		$conexion = Conectar::conexion();
-		
-		$sql = "INSERT INTO fotos (id_usuario, foto) VALUES (?, ?)";
-
-		$query = $conexion->prepare($sql);
-
-		$query->bind_param("is", $datos["idUsuario"],
-								 $datos["Foto"]);
-
-		$respuesta = $query->execute();
-		$query->close();
-		return $respuesta;
-	}
-
-
-	public function obtenerFotoPerfil($idFoto) {
-		$conexion = Conectar::conexion();
-		$sql = "SELECT id_foto, foto FROM fotos WHERE id_foto = '$idFoto'";
+		$sql = "SELECT id_usuario, nombre, email FROM usuarios WHERE id_usuario = '$id_Usuario'";
 		$result = mysqli_query($conexion, $sql);
 
-		$foto = mysqli_fetch_array($result);
+		$nombre = mysqli_fetch_array($result);
 
 		$datos = array(
-				  "idFoto" => $foto['id_foto'],
-				  "Foto" => $foto['foto']				
+				  "idUsuario" => $nombre['id_usuario'],
+				  "Nombre" => $nombre['nombre'],
+				  "Email" => $nombre['email']			
 		);
 
 		return $datos;
 	}
 
+	public function actualizarNombreUsuario($datos) {
+		$conexion = Conectar::conexion();
+		
+		$sql = "UPDATE usuarios SET nombre = ?, email = ? WHERE id_usuario = ? ";
+
+		$query = $conexion->prepare($sql);
+		$query->bind_param("ssi", $datos['nombre'],
+								 $datos['email'],
+								 $datos['id_usuario']);
+		$result = $query->execute();
+		$query->close();
+
+		return $result;
+	}
 
 	
-
-
-
 
 
 } //Fin de la clase Usuarios

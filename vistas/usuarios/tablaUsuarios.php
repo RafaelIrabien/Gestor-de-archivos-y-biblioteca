@@ -68,11 +68,11 @@
 							 $result2 = mysqli_query($conexion, $sql2);
 
 								if ($fila = mysqli_fetch_array($result2)) { 
-									$nombreFoto = $fila['foto'];
-								$ruta = "../archivos/" . $id_usuario . "/Foto_Perfil/" .  $nombreFoto;
+									$Foto = base64_encode($fila['foto']);
+								
 							?>
 								
-							<td><div class="img" style="background-image: url('<?php echo $ruta; ?>');"></div></td>
+							<td><div class="img" style="background-image: url('data:image/jpeg;base64,<?php echo $Foto; ?>');"></div></td>
 
 							<?php 
 							  } else { 
@@ -91,9 +91,7 @@
 								<span class="btn btn-primary" data-toggle="modal" data-target="#modalArchivos" onclick="obtenerArchivosUsuario('<?php echo $id_usuario; ?>')">
 									<span class="fas fa-regular fa-folder-open"></span>
 								</span>
-								<!-- <a class="btn btn-primary" href="usuarios/archivosUsuario.php" onclick="obtenerArchivosUsuario('<?// php echo $id_usuario; ?>')">
-									<span class="fas fa-regular fa-folder-open"></span>
-								</a> -->
+								
 							</td>
 						
 						</tr>
