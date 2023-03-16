@@ -44,7 +44,7 @@
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="margin-left: 6px;" class="modal-title" id="exampleModalLabel">Agregar nueva categoría</h5>
+        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Agregar nueva categoría</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -69,7 +69,7 @@
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="margin-left: 30px;" class="modal-title" id="exampleModalLabel">Actualizar categoría</h5>
+        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Actualizar categoría</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

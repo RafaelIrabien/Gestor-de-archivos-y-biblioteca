@@ -15,7 +15,7 @@
 	//Llamamos al método conexion()
 	$conexion = $conexion->conexion();
 
-	$sql = "SELECT id_categoria, nombre, fecha_insert FROM categorias WHERE id_usuario = '$id_Usuario' ";
+	$sql = "SELECT id_enlace, enlace FROM enlaces WHERE id_usuario = '$id_Usuario' ";
 
 	$result = mysqli_query($conexion, $sql);
 
@@ -23,14 +23,13 @@
 
 
 	<div class="tabla">
-	<div class="col-sm-10">
+	<div class="col-sm-11">
 	<div class="table-responsive">
 
-		<table class="table table-hover" id="tablaCategoriasDatatable">
+		<table class="table table-hover" id="tablaEnlacesDatatable">
 			<thead>
 				 <tr>
-					<th style="text-align: center;">Nombre</th>
-					<th style="text-align: center;">Fecha</th>
+					<th style="text-align: center;">Enlace</th>
 					<th style="text-align: center;">Acciones</th>
 				 </tr>
 			</thead>
@@ -41,14 +40,16 @@
 				
 				//Bucle que se repite las veces que sean necesarias
 				while ($mostrar = mysqli_fetch_array($result)) {
-					$id_categoria = $mostrar['id_categoria'];
+					$id_enlace = $mostrar['id_enlace'];
 			 	?>
 			
 				<tr>
-					<td><?php echo $mostrar['nombre']; ?></td>
-					<td><?php echo $mostrar['fecha_insert']; ?></td>
+					
+
+					<td onclick="Copiar(this)"><?php echo $mostrar['enlace']; ?></td>
 					<td>
-						<span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalActualizarCategoria" onclick="obtenerDatosCategoria('<?php echo $id_categoria ?>')">
+					
+						<span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalEditarEnlace" onclick="obtenerDatosEnlace('<?php echo $id_enlace; ?>')">
 							<span class="fa-solid fa-pen-to-square"></span>
 					</span>
 				    
@@ -71,7 +72,7 @@
 
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('#tablaCategoriasDatatable').DataTable();
+			$('#tablaEnlacesDatatable').DataTable();
 		});
 	</script>
 

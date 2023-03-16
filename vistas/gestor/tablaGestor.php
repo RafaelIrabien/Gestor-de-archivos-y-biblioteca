@@ -32,7 +32,7 @@
 
 
 <div class="tabla">
-	<div class="col-sm-9">
+	<div class="col-sm-11">
 		<div class="table-responsive">
 			<table class="table table-hover" id="tablaGestorDataTable">
 				<br>

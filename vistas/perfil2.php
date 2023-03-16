@@ -125,7 +125,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="margin-left: 180px;" class="modal-title" id="exampleModalLabel">Actualizar foto</h5>
+        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Actualizar foto</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -166,8 +166,8 @@
 <div class="modal fade" id="modalEditarNombre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content modal-sm">
-      <div class="modal-header">
-        <h5 style="margin-left: 50px;" class="modal-title" id="exampleModalLabel">Actualizar nombre</h5>
+      <div class="modal-header w-100 text-center">
+        <h5 class="modal-title" id="exampleModalLabel">Actualizar nombre</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

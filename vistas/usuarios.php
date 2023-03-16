@@ -52,7 +52,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="margin-left: 390px;" class="modal-title" id="exampleModalLabel">Archivos del usuario</h5>
+        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Archivos del usuario</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
