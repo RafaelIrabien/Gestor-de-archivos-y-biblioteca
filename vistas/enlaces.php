@@ -84,7 +84,7 @@
         </button>
       </div>
       <div class="modal-body">
-        	<form id="frmEditarEnlaces">
+        	<form id="frmActualizarEnlaces">
         		<label>Enlace:</label>
         		<input type="text" name="id_Enlace" id="id_Enlace" hidden="">
         		<input type="text" name="EnlaceE" id="EnlaceE" class="form-control">
@@ -92,7 +92,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary" id="btnGuardarEnlace">Guardar</button>
+        <button type="button" class="btn btn-warning" id="btnActualizarEnlace">Actualizar</button>
       </div>
     </div>
   </div>
@@ -114,6 +114,10 @@
 
 		$('#btnGuardarEnlace').click(function(){
 			agregarEnlace();
+		});
+
+		$('#btnActualizarEnlace').click(function(){
+			actualizarEnlace();
 		});
 
 	});

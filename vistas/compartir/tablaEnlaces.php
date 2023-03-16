@@ -23,12 +23,13 @@
 
 
 	<div class="tabla">
-	<div class="col-sm-11">
+	<div class="col-sm-12">
 	<div class="table-responsive">
 
 		<table class="table table-hover" id="tablaEnlacesDatatable">
 			<thead>
 				 <tr>
+				 	<th style="text-align: center;">No.</th>
 					<th style="text-align: center;">Enlace</th>
 					<th style="text-align: center;">Acciones</th>
 				 </tr>
@@ -44,8 +45,7 @@
 			 	?>
 			
 				<tr>
-					
-
+					<td style="font-weight: bold;"><?php echo $id_enlace; ?></td>
 					<td onclick="Copiar(this)"><?php echo $mostrar['enlace']; ?></td>
 					<td>
 					

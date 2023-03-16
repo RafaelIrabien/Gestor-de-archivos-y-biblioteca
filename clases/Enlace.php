@@ -39,7 +39,15 @@
 		public function actualizarEnlace($datos) {
 			$conexion = Conectar::conexion();
 
-			$sql =
+			$sql = "UPDATE enlaces SET enlace = ? WHERE id_enlace = ?";
+
+			$query = $conexion->prepare($sql);
+			$query->bind_param("si", $datos['enlace'],
+									 $datos['id_enlace']);
+			$respuesta = $query->execute();
+			$query->close();
+
+			return $respuesta;
 		}
 
 

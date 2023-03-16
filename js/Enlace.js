@@ -48,6 +48,35 @@
 	}
 
 
+	function actualizarEnlace() {
+		//Si el control o input viene vacío entonces muestra un mensaje
+		if ($('#EnlaceE').val() == "" ) {
+			swal("No hay enlace");
+			return false;
+		} else {
+
+			$.ajax({
+					type: "POST",
+					//Mandamos el formulario completi
+					data: $('#frmActualizarEnlaces').serialize(),
+					url: "../procesos/compartir/enlaces/actualizarEnlace.php",
+					success:function(respuesta) {
+						respuesta = respuesta.trim();
+
+						if (respuesta == 1) {
+							//Actualiza la tabla
+							$('#tablaEnlaces').load('compartir/tablaEnlaces.php');
+							swal(":D", "Enlace actualizado con éxito", "success");
+						} else {
+							swal(":(", "Falló al actualizar", "error");
+						}
+					}
+
+			});
+		}
+	}
+
+
 
 
 
