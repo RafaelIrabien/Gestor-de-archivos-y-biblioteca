@@ -165,9 +165,9 @@
 	<!-- Modal para Editar Nombre -->
 <div class="modal fade" id="modalEditarNombre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content modal-sm">
-      <div class="modal-header w-100 text-center">
-        <h5 class="modal-title" id="exampleModalLabel">Actualizar nombre</h5>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Actualizar datos</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -183,8 +183,8 @@
           <input type="text" id="id_Usuario" name="id_Usuario" hidden="">
 
          	<input type="text" id="Nombre" name="Nombre" class="form-control">
-
-       <input type="text" id="Email" name="Email" class="form-control">
+         	<br>
+       		<input type="text" id="Email" name="Email" class="form-control">
           <br>
          
 

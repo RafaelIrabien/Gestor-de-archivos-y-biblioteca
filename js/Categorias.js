@@ -41,7 +41,7 @@
     } else {
         //Muestra mensaje de advertencia
         swal({
-          title: "¿Estás seguro de eliminar esta categoría?",
+          title: "¿Está seguro de eliminar esta categoría?",
           text: "Una vez eliminada, no podrá recuperarse",
           icon: "warning",
           buttons: true,

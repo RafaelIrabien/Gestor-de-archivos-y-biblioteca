@@ -51,6 +51,20 @@
 		}
 
 
+		public function eliminarEnlace($idEnlace) {
+			$conexion = Conectar::conexion();
+
+			$sql = "DELETE FROM enlaces WHERE id_enlace = ?";
+
+			$query = $conexion->prepare($sql);
+			$query->bind_param("i", $idEnlace);
+			$respuesta = $query->execute();
+			$query->close();
+
+			return $respuesta;
+		}
+
+
 	} // Fin de la clase Enlaces
 
 

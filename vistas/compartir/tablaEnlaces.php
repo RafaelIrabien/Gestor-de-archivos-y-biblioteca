@@ -53,7 +53,7 @@
 							<span class="fa-solid fa-pen-to-square"></span>
 					</span>
 				    
-						<span class="btn btn-danger btn-sm" onclick="eliminarCategoria('<?php echo $id_categoria ?>')">
+						<span class="btn btn-danger btn-sm" onclick="eliminarEnlace('<?php echo $id_enlace; ?>')">
 							<span class="fas fa-thin fa-trash-can"></span>
 					</span>
 				    </td>

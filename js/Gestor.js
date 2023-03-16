@@ -43,7 +43,7 @@
 		} else {
 			//Muestra mensaje de advertencia
 			swal({
-				title: "¿Estás seguro de eliminar este archivo?",
+				title: "¿Está seguro de eliminar este archivo?",
 				text: "Una vez eliminado, no podrá recuperarse",
 				icon: "warning",
 				buttons: true,

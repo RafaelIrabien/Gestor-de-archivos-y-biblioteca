@@ -78,6 +78,49 @@
 
 
 
+	function eliminarEnlace(idEnlace) {
+		idEnlace = parseInt(idEnlace);
+
+		if (idEnlace < 1) {
+			swal("No tiene identificador de enlace");
+			return false;
+
+		} else {
+			//Muestra mensaje de advertencia
+			swal({
+				title: "¿Está seguro de eliminar este enlace?",
+				text: "Una vez eliminado, no podrá recuperarse",
+				icon: "warning",
+				buttons: true,
+				dangerMode: true,
+			})
+			.then((willDelete) => {
+				if (willDelete) {
+					$.ajax({
+							type: "POST",
+							data: "idEnlace=" + idEnlace,
+							url: "../procesos/compartir/enlaces/eliminarEnlace.php",
+							success:function(respuesta) {
+								respuesta = respuesta.trim();
+
+								if (respuesta == 1) {
+									//Cargar la tabla nuevamente
+									$('#tablaEnlaces').load('compartir/tablaEnlaces.php');
+									swal("Eliminado con éxito", {
+										icon: "success",
+									});
+								} else {
+									swal(":(", "Falló al eliminar", "error");
+								}
+							}
+					});
+				}
+			});
+		}
+	}
+
+
+
 
 
 
