@@ -36,8 +36,7 @@
 			<thead>
 				 <tr>
 				 	<th style="text-align: center;">Nombre</th>
-					<th style="text-align: center;">Tipo</th>
-					<th style="text-align: center;">Ruta</th>
+					<th style="text-align: center; width: 70px;">Tipo</th>
 					<th style="text-align: center;">Acciones</th>
 				 </tr>
 			</thead>
@@ -48,18 +47,19 @@
 				
 				//Bucle que se repite las veces que sean necesarias
 				while ($mostrar = mysqli_fetch_array($result)) {
+					$nombreArchivo = $mostrar['nombre'];
+					$rutaDescarga = "../archivos/" . $id_Usuario . "/Archivos_Compartidos/" . $nombreArchivo;
 					$idArchivoC = $mostrar['id_archivo_compartir'];
 			 	?>
 			
 				<tr>
-					<td><?php echo $mostrar['nombre']; ?></td>
+					<td><?php echo $nombreArchivo; ?></td>
 					<td><?php echo $mostrar['tipo']; ?></td>
-					<td><?php echo $mostrar['ruta'] ?></td>
 					<td>
 					
-						<span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalEditarEnlace" onclick="obtenerDatosEnlace('<?php echo $idArchivoC; ?>')">
-							<span class="fa-solid fa-pen-to-square"></span>
-					</span>
+						<a href="<?php echo $rutaDescarga; ?>" download="<?php echo $nombreArchivo; ?>" class="btn btn-success btn-sm">
+							<span class="fas fa-download"></span>
+						</a>
 				    
 						<span class="btn btn-danger btn-sm" onclick="eliminarArchivo('<?php echo $idArchivoC; ?>')">
 							<span class="fas fa-thin fa-trash-can"></span>
