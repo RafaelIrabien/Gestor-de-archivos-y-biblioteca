@@ -61,7 +61,7 @@
 							<span class="fa-solid fa-pen-to-square"></span>
 					</span>
 				    
-						<span class="btn btn-danger btn-sm" onclick="eliminarEnlace('<?php echo $idArchivoC; ?>')">
+						<span class="btn btn-danger btn-sm" onclick="eliminarArchivo('<?php echo $idArchivoC; ?>')">
 							<span class="fas fa-thin fa-trash-can"></span>
 					</span>
 				    </td>

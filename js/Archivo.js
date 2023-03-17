@@ -28,3 +28,45 @@
 				}
 		});
 	}
+
+
+
+	function eliminarArchivo(idArchivo) {
+		//parseInt analiza un argumento de cadena y devuelve un número entero
+		//El resultado de esta operación se vuelve a almacenar en la variable
+		idArchivo = parseInt(idArchivo);
+
+		if (idArchivo < 1) {
+			swal("No tiene identificador de archivo");
+			return false;
+		} else {
+			//Muestra mensaje de advertencia
+			swal({
+				title: "¿Está seguro de eliminar este archivo",
+				text: "Una vez eliminado, no podrá recuperarse",
+				icon: "warning",
+				buttons: true,
+				dangerMode: true,
+			})
+			.then((willDelete) => {
+				if (willDelete) {
+					$.ajax({
+							type: "POST",
+							data: "idArchivo=" + idArchivo,
+							url: "../procesos/compartir/archivos/eliminarArchivo.php",
+							success:function(respuesta) {
+
+								if (respuesta == 1) {
+									$('#tablaArchivos').load('compartir/tablaArchivos.php');
+									swal("Archivo eliminado con éxito", {
+										icon: "success",
+									});
+								} else {
+									swal(":(", "Falló al eliminar", "error");
+								}
+							}
+					});
+				}
+			});
+		}
+	}

@@ -89,6 +89,34 @@
 		}
 
 
+		public function obtenerNombreArchivo($idArchivo) {
+			$c = Conectar::conexion();
+
+			$sql = "SELECT nombre FROM archivos_compartir WHERE id_archivo_compartir = '$idArchivo'";
+
+			$resultado = mysqli_query($c, $sql);
+
+			//El nombre va a servir para poder acceder a la ruta
+			return mysqli_fetch_array($resultado)['nombre'];
+		}
+
+
+
+		public function eliminarArchivo($idArchivo) {
+			$conexion = Conectar::conexion();
+
+			$sql = "DELETE FROM archivos_compartir WHERE id_archivo_compartir = ?";
+
+			$query = $conexion->prepare($sql);
+			$query->bind_param('i', $idArchivo);
+
+			$result = $query->execute();
+			$query->close();
+
+			return $result;
+		}
+
+
 	} //Fin de la clase Archivos
 
 

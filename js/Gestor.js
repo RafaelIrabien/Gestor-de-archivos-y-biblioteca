@@ -37,7 +37,7 @@
 		idArchivo = parseInt(idArchivo);
 
 		if (idArchivo < 1) {
-			swal("No tiene id de archivo");
+			swal("No tiene identificador de archivo");
 			return false;
 
 		} else {
