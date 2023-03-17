@@ -68,4 +68,28 @@
 	} // Fin de la clase Enlaces
 
 
+
+
+
+	class Archivos extends Conectar {
+
+		public function agregarArchivo($datos) {
+			$conexion = Conectar::conexion();
+
+			$sql = "INSERT INTO archivos_compartir (id_usuario, nombre, tipo, ruta) VALUES (?, ?, ?, ?)";
+
+			$query = $conexion->prepare($sql);
+			$query->bind_param("isss", $datos["idUsuario"],
+									   $datos["Nombre"],
+									   $datos["Tipo"],
+									   $datos["Ruta"]);
+			$respuesta = $query->execute();
+			$query->close();
+			return $respuesta;
+		}
+
+
+	} //Fin de la clase Archivos
+
+
  ?>

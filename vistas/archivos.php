@@ -43,7 +43,7 @@
 				</span>
 			</div>
 			<br>
-			<div id="tablaCompartir"></div>
+			<div id="tablaArchivos"></div>
 		</div>
 	</div>
 
@@ -53,20 +53,20 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="margin-left: 165px;" class="modal-title" id="exampleModalLabel">Agregar enlace</h5>
+        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Agregar archivo</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        	<form id="frmCategorias">
-        		<label>Enlace:</label>
-        		<input type="text" name="nombreCategoria" id="nombreCategoria" class="form-control">
+        	<form id="frmArchivos" enctype="multipart/form-data" method="POST">
+        		<label>Selecciona archivos:</label>
+        		<input type="file" name="archivos[]" id="archivos[]" multiple="">
         	</form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary" id="btnGuardarCategoria">Guardar</button>
+        <button type="button" class="btn btn-primary" id="btnGuardarArchivos">Guardar</button>
       </div>
     </div>
   </div>
@@ -88,3 +88,16 @@ include "footer.php";
 }
 
  ?>
+
+
+
+ <script type="text/javascript" src="../js/Archivo.js"></script>
+ <script type="text/javascript">
+ 	$(document).ready(function(){
+ 		$('#tablaArchivos').load("compartir/tablaArchivos.php");
+
+ 		$('#btnGuardarArchivos').click(function(){
+ 			agregarArchivo();
+ 		});
+ 	});
+ </script>

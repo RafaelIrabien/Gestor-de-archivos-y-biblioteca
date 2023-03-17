@@ -26,6 +26,16 @@
           </li>
 
 
+           <li class="nav-item">
+              <a href="#">
+               <span class="fa-solid fa-book"></span>
+               Biblioteca
+              </a>
+          </li>
+
+
+
+
             <div class="nav-item list__item list__item--click">
             <div class="list__button list__button--click">
               <a class="nav__link" href="#">
@@ -52,12 +62,7 @@
             </ul>
           </div>
 
-          <li class="nav-item">
-              <a href="#">
-               <span class="fa-solid fa-book"></span>
-               Biblioteca
-              </a>
-          </li>
+         
 
         
 
@@ -83,7 +88,7 @@
  ?>
 
 
-          <div class="nav-item list__item list__item--click">
+          <div id="F" class="nav-item list__item list__item--click">
             <div class="list__button list__button--click">
                 <a class="nav__link" href="#">
                   <div class="foto" style="background-image: url('data:image/jpeg;base64,<?php echo $Foto; ?>');"></div>
@@ -110,7 +115,7 @@
  ?>
 
 
-          <div class="nav-item list__item list__item--click">
+          <div id="F" class="nav-item list__item list__item--click">
             <div class="list__button list__button--click">
                 <a class="nav__link" href="#">
                   <div class="foto" style="background-image: url(../img/Foto_perfil.png);"></div>

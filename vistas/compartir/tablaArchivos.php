@@ -14,7 +14,7 @@
 
 	//Llamamos al método conexion()
 	$conexion = $conexion->conexion();
-	$sql = "SELECT id_enlace, enlace FROM enlaces WHERE id_usuario = '$id_Usuario' ";
+	$sql = "SELECT id_archivo_compartir, nombre, tipo, ruta FROM archivos_compartir WHERE id_usuario = '$id_Usuario' ";
 	$result = mysqli_query($conexion, $sql);
 
 	$sql2 = "SELECT id_usuario, id_rol FROM usuarios WHERE id_usuario = '$id_Usuario'";
@@ -32,11 +32,12 @@
 	<div class="col-sm-12">
 	<div class="table-responsive">
 
-		<table class="table table-hover" id="tablaEnlacesDatatable">
+		<table class="table table-hover" id="tablaArchivosDatatable">
 			<thead>
 				 <tr>
-				 	<th style="text-align: center;">No.</th>
-					<th style="text-align: center;">Enlace</th>
+				 	<th style="text-align: center;">Nombre</th>
+					<th style="text-align: center;">Tipo</th>
+					<th style="text-align: center;">Ruta</th>
 					<th style="text-align: center;">Acciones</th>
 				 </tr>
 			</thead>
@@ -47,19 +48,20 @@
 				
 				//Bucle que se repite las veces que sean necesarias
 				while ($mostrar = mysqli_fetch_array($result)) {
-					$id_enlace = $mostrar['id_enlace'];
+					$idArchivoC = $mostrar['id_archivo_compartir'];
 			 	?>
 			
 				<tr>
-					<td style="font-weight: bold;"><?php echo $id_enlace; ?></td>
-					<td onclick="Copiar(this)"><?php echo $mostrar['enlace']; ?></td>
+					<td><?php echo $mostrar['nombre']; ?></td>
+					<td><?php echo $mostrar['tipo']; ?></td>
+					<td><?php echo $mostrar['ruta'] ?></td>
 					<td>
 					
-						<span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalEditarEnlace" onclick="obtenerDatosEnlace('<?php echo $id_enlace; ?>')">
+						<span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalEditarEnlace" onclick="obtenerDatosEnlace('<?php echo $idArchivoC; ?>')">
 							<span class="fa-solid fa-pen-to-square"></span>
 					</span>
 				    
-						<span class="btn btn-danger btn-sm" onclick="eliminarEnlace('<?php echo $id_enlace; ?>')">
+						<span class="btn btn-danger btn-sm" onclick="eliminarEnlace('<?php echo $idArchivoC; ?>')">
 							<span class="fas fa-thin fa-trash-can"></span>
 					</span>
 				    </td>
@@ -78,7 +80,7 @@
 
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('#tablaEnlacesDatatable').DataTable();
+			$('#tablaArchivosDatatable').DataTable();
 		});
 	</script>
 

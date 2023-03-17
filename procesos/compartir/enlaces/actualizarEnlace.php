@@ -1,5 +1,5 @@
 <?php 
-	require_once "../../../clases/Enlace.php";
+	require_once "../../../clases/Compartir.php";
 
 	$enlaces = new Enlaces;
 

@@ -28,7 +28,7 @@
   	$result2 = mysqli_query($conexion, $sql2);
   	$fila = mysqli_fetch_array($result2);
 	 // $id = $fila['id_usuario'];
-	   if($fila['id_rol'] == '2') {
+	   if ($fila['id_rol'] == '2') {
     	
     
  ?>
