@@ -57,6 +57,7 @@ nav {
     transition: height .4s;
     height: 0;
     position: absolute;
+    z-index: 3;
     display: block;
     background-color: #151515;
     overflow: hidden;

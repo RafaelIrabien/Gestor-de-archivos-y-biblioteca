@@ -21,16 +21,6 @@
  		<div class="contenido_categorias">
       <br>
 				<div class="container">
-					<h1 class="display-4">Categorías</h1>
-
-            <div id="btn">
-							<span class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAgregarCategoria">
-								<span class="fa-solid fa-folder-plus"></span>
-								Agregar nueva categoría 
-							</span>
-            </div>
-						
-					<br>
 						<div id="tablaCategorias"></div>
 				</div>
         <br>

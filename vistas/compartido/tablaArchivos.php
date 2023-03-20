@@ -1,4 +1,3 @@
-
 <?php 
 	session_start();
 	if (isset($_SESSION['nombre'])) {
@@ -7,23 +6,15 @@
 	require_once "../../clases/Conexion.php";
 	
 	//Requerimos el id del usuario
-	$id_Usuario = $_SESSION['id_usuario'];
+	
 
 	//Instaciamos la clase Conexion
 	$conexion = new Conectar;
 
 	//Llamamos al método conexion()
 	$conexion = $conexion->conexion();
-	$sql = "SELECT id_archivo_compartir, nombre, tipo, ruta FROM archivos_compartir WHERE id_usuario = '$id_Usuario' ";
+	$sql = "SELECT id_archivo_compartir, id_usuario, nombre, tipo, ruta FROM archivos_compartir";
 	$result = mysqli_query($conexion, $sql);
-
-	$sql2 = "SELECT id_usuario, id_rol FROM usuarios WHERE id_usuario = '$id_Usuario'";
-	$result2 = mysqli_query($conexion, $sql2);
-	$fila = mysqli_fetch_array($result2);
-
-	if ($fila['id_rol'] == '2') {
-		
-	
 
  ?>
 
@@ -32,14 +23,7 @@
 	<div class="col-sm-10">
 	<div class="table-responsive">
 		<h1 class="display-4">Archivos</h1>
-			<div id="btn">
-				<span class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalCompartir">
-				  <span class="fa-solid fa-file-arrow-up"></span>
-				 	Agregar archivo
-				</span>
-			</div>
 			<br>
-
 		<table class="table table-hover" id="tablaArchivosDatatable">
 			<thead>
 				 <tr>
@@ -66,6 +50,7 @@
 				//Bucle que se repite las veces que sean necesarias
 				while ($mostrar = mysqli_fetch_array($result)) {
 					$nombreArchivo = $mostrar['nombre'];
+					$id_Usuario = $mostrar['id_usuario'];
 					$rutaDescarga = "../archivos/" . $id_Usuario . "/Archivos_Compartidos/" . $nombreArchivo;
 					$idArchivoC = $mostrar['id_archivo_compartir'];
 			 	?>
@@ -86,7 +71,7 @@
 							
 						 ?>
 
-						<span class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalVisualizarArchivos" onclick="obtenerArchivoPorId('<?php echo $idArchivoC; ?>')">
+						<span class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalVerArchivos" onclick="obtenerArchivoPorId('<?php echo $idArchivoC; ?>')">
 							<span class="fas fa-eye"></span>
 						</span>
 
@@ -94,10 +79,6 @@
 								}
 							}
 						 ?>
-				    
-						<span class="btn btn-danger btn-sm" onclick="eliminarArchivo('<?php echo $idArchivoC; ?>')">
-							<span class="fas fa-thin fa-trash-can"></span>
-					</span>
 				    </td>
 				</tr>
 
@@ -120,10 +101,6 @@
 
 
 <?php 
-	} else {
-		header("location:../inicio.php");
-	}
-
 
 	}else {
 		header("location:../../index.php");

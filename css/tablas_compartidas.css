@@ -63,13 +63,14 @@
 		display: flex;
 		justify-content: center;
 	}
+
 	.tabla {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		background-color: #ffffff25;
-		border: 0.5px solid #ffffff35;
-		backdrop-filter: blur(10px);
+		background-color: white;
+		border: 0.5px solid #ffffff60;
+		
 		border-radius: 20px;
 	}
 

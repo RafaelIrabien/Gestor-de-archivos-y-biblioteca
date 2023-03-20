@@ -25,6 +25,15 @@
 	<div class="tabla">
 	<div class="col-sm-10">
 	<div class="table-responsive">
+		<h1 class="display-4">Categorías</h1>
+
+            <div id="btn">
+				<span class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAgregarCategoria">
+				   <span class="fa-solid fa-folder-plus"></span>
+					Agregar nueva categoría 
+				</span>
+            </div>	
+			<br>
 
 		<table class="table table-hover" id="tablaCategoriasDatatable">
 			<thead>

@@ -37,9 +37,6 @@
 		<div class="contenido_usuario">
 			<br>
 		<div class="container">
-			<h1 class="display-4">Usuarios</h1>
-			
-			<br>
 			<div id="tablaUsuarios"></div>
 		</div>
 	</div>

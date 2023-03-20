@@ -35,14 +35,6 @@
 	<div class="contenido compartir">
 		<br>
 		<div class="container">
-			<h1 class="display-4">Enlaces</h1>
-			<div id="btn">
-				<span class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalEnlace">
-				  <span class="fa fa-upload"></span>
-				  Agregar enlace
-				</span>
-			</div>
-			<br>
 			<div id="tablaEnlaces"></div>
 		</div>
 	</div>

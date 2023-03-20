@@ -37,6 +37,8 @@
 	<div class="tabla">
 		<div class="col-sm-10">
 			<div class="table-responsive">
+				<h1 class="display-4">Usuarios</h1>
+				<br>
 				
 				<table class="table table-hover" id="tablaUsuariosDatatable">
 					<br>
