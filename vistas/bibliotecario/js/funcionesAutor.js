@@ -61,3 +61,26 @@
 				}
 		});
 	}
+
+
+
+	function EliminarAutor(){
+		var parametros = {
+			"vcod" : $('#txtcodautorEli').val(),
+		};
+
+		$.ajax({
+				type: "POST",
+				data: parametros,
+				url: "DEliminarAutor.php",
+				beforeSend:function(){
+					$('#CajaMensaje').html("Procesando");
+				},
+
+				success:function(datos){
+					document.forms['FormEliminarAutor'].reset();
+					$('#CajaMensaje').slideDown("fast");
+					$('#CajaMensaje').html(datos);
+				}
+		});
+	}

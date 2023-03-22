@@ -73,6 +73,15 @@
 					</form>
 				</div>
 
+				<hr>
+
+				<div id="EliminarAutor">
+					<form id="FormEliminarAutor">
+						<input type="text" id="txtcodautorEli" placeholder="Ingrese código de autor" required>
+						<button type="button" onclick="EliminarAutor();">Eliminar</button>
+					</form>
+				</div>
+
 
 			<div id="CajaMensaje">
 				
