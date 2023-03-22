@@ -57,12 +57,21 @@
 			<div id="caja2">
 				<div id="agregarAutor">
 					<form id="FormAgregarAutor">
-						<input type="text" name="txtautor" id="txtautor" placeholder="Nuevo autor">
+						<input type="text" name="txtautor" id="txtautor" placeholder="Nuevo autor" required>
 						<button type="button" onclick="GuardarAutor();">Agregar autor</button>
 					</form>
 				</div>
 
 				<hr>
+
+				<div id="modificarAutor">
+					<form id="FormModificarAutor">
+						<input type="text" name="txtcodautorMod" id="txtcodautorMod" placeholder="Código de autor" required>
+						<input type="text" name="txtautorMod" id="txtautorMod" placeholder="Cambiar nombre por ..." required>
+
+						<button type="button" onclick="ModificarAutor();">Modificar</button>
+					</form>
+				</div>
 
 
 			<div id="CajaMensaje">

@@ -37,3 +37,27 @@
 				}
 		});
 	}
+
+
+
+	function ModificarAutor(){
+		var parametros = {
+			"vcod" : $('#txtcodautorMod').val(),
+			"vautor" : $('#txtautorMod').val()
+		};
+
+		$.ajax({
+				type: "POST",
+				data: parametros,
+				url: "DModificarAutor.php",
+				beforeSend:function(){
+					$('#CajaMensaje').html("Procesando")
+				},
+
+				success:function(datos){
+					document.forms['FormModificarAutor'].reset();
+					$('#CajaMensaje').slideDown("fast");
+					$('#CajaMensaje').html(datos);
+				}
+		});
+	}
