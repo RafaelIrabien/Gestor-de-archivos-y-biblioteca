@@ -1,5 +1,5 @@
-
 <ul class="navbar-nav ml-auto">
+ 
           <div id="inicio">
           <li class="nav-item active">
             <a href="inicio.php"><span class="fa-solid fa-house-chimney"></span> Inicio
@@ -16,22 +16,59 @@
             <a href="gestor.php"><span class="fa-solid fa-cloud"></span> Mis archivos</a>
           </li>
 
-
-          
-
-
-         <li class="nav-item list__item list__item--click">
+          <li class="nav-item list__item list__item--click">
             <div class="list__button list__button--click">
-              <a href="bibliotecario/index_bibliotecario.php">
-                <span class="fa-solid fa-book"></span> 
-                Biblioteca
+              <a href="usuarios.php">
+                <span class="fa-solid fa-users"></span> 
+                Usuarios
               </a>
             </div>
-          </li> 
+          </li>
 
-</ul>
 
-      
+           <li class="nav-item">
+              <a href="#">
+               <span class="fa-solid fa-book"></span>
+               Biblioteca
+              </a>
+          </li>
+
+
+
+
+            <div class="nav-item list__item list__item--click">
+            <div class="list__button list__button--click">
+              <a class="nav__link" href="#">
+               <span class="fa-solid fa-share-from-square"></span>
+               Compartir
+              </a>
+              <img src="../librerias/assets/arrow.svg" class="list__arrow">
+            </div>
+
+            <ul class="list__show menu-vertical">
+              <li class="list__inside">
+                <a class="nav__link nav__link--inside" href="enlaces.php">
+                <span class="fa fa-link"></span>
+                Enlaces
+                </a>
+              </li>
+
+              <li class="list__inside">
+                <a class="nav__link nav__link--inside" href="archivos.php">
+                <span class="fa fa-file"></span>
+                Archivos
+                </a>
+              </li>
+            </ul>
+          </div>
+
+         
+
+        
+
+             
+        </ul>
+
 
 
 
@@ -46,12 +83,12 @@
 
     if ($foto = mysqli_fetch_array($result)) {
             $Foto = base64_encode($foto['foto']);
-           
+          
 
  ?>
 
 
-          <div class="nav-item list__item list__item--click">
+          <div id="F" class="nav-item list__item list__item--click">
             <div class="list__button list__button--click">
                 <a class="nav__link" href="#">
                   <div class="foto" style="background-image: url('data:image/jpeg;base64,<?php echo $Foto; ?>');"></div>
@@ -78,7 +115,7 @@
  ?>
 
 
-          <div class="nav-item list__item list__item--click">
+          <div id="F" class="nav-item list__item list__item--click">
             <div class="list__button list__button--click">
                 <a class="nav__link" href="#">
                   <div class="foto" style="background-image: url(../img/Foto_perfil.png);"></div>

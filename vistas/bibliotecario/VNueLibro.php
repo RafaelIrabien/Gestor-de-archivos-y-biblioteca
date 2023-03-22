@@ -1,0 +1,96 @@
+<?php 
+	include('conexion.php');
+
+	$tablaAutor = $cnmysql->query("SELECT * FROM autores");
+
+	$tablaEditorial = $cnmysql->query("SELECT * FROM editoriales");
+
+ ?>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css_l/hoja_NueLibro.css">
+	<title></title>
+</head>
+
+	<script type="text/javascript">
+		$('#FormNuevoLibro').on("submit", function(e){
+			e.preventDefault();
+
+			var formData = new FormData(document.getElementById('FormNuevoLibro'));
+
+			$.ajax({
+					url: "DNuevoLibro.php",
+					type: "POST",
+					data: formData,
+					dataType: "HTML",
+					cache: false,
+					contentType: false,
+					processData: false
+					}).done(function(datos){
+						$('#ContenidoLi').html(datos);
+					});
+		});
+	</script>
+<body>
+	
+	<div id="CModLi">
+		<div id="formulario">
+			<h1>Nuevo libro</h1>
+
+			<form id="FormNuevoLibro" enctype="multipart/form-data" method="POST">
+				<div>
+					<label for="txttitulo">Titulo:</label>
+					<input type="text" required name="txttitulo" id="txttitulo">
+				</div>
+
+				<div>
+					<label for="cboautor">Autor:</label>
+					<select id="cboautor" name="cboautor">
+						<?php 
+							while ($fila = mysqli_fetch_array($tablaAutor)) {
+
+								echo "<option value='" . $fila['id_autor'] . "'>" . $fila['nombre'] . "</option>";
+							}
+						 ?>
+					</select>
+				</div>
+
+				<div>
+					<label for="cboeditorial">Autor:</label>
+					<select id="cboeditorial" name="cboeditorial">
+						<?php 
+							while ($fila = mysqli_fetch_array($tablaEditorial)) {
+
+								echo "<option value='" . $fila['id_editorial'] . "'>" . $fila['editorial'] . "</option>";
+							}
+						 ?>
+					</select>
+				</div>
+
+				<div>
+				<label for="txtubicacion">Casillero:</label>
+				<input type="text" required id="txtubicacion" name="txtubicacion">
+				</div>
+
+				<div>
+				<label for="txtejemplar">Cantidad:</label>
+				<input type="number" required id="txtejemplar" value="" name="txtejemplar" min="1">
+				</div>
+
+				<div id= 'botones'>
+					<button type="submit">Guardar</button>
+					<button type="button" onclick="VistaLibro();">Cancelar</button>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

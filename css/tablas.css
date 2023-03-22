@@ -2,7 +2,9 @@
 	td {
 		text-align: center;
 		background-color: #FFC043;
+		color: solid black;
 	}
+
 
 	tr:hover {
 		background-color: white;

@@ -32,13 +32,13 @@
 	<div class="col-sm-12">
 	<div class="table-responsive">
 		<h1 class="display-4">Enlaces</h1>
+		<br>
 			<div id="btn">
 				<span class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalEnlace">
 				  <span class="fa fa-upload"></span>
 				  Agregar enlace
 				</span>
 			</div>
-			<br>
 			
 		<table class="table table-hover" id="tablaEnlacesDatatable">
 			<thead>

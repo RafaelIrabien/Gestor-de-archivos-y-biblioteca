@@ -24,6 +24,10 @@ CREATE TABLE `roles` (
   `rol` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+INSERT INTO `roles` (`id_rol`, `rol`) VALUES
+(1, 'Maestro'),
+(2, 'Secretario'),
+(3, 'Bibliotecario');
 
 
 CREATE TABLE `usuarios` (
@@ -41,6 +45,22 @@ CREATE TABLE `fotos` (
   `foto` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+
+CREATE TABLE `archivos_compartir` (
+  `id_archivo_compartir` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `tipo` varchar(255) DEFAULT NULL,
+  `ruta` text DEFAULT NULL,
+  `fecha` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+CREATE TABLE `enlaces` (
+  `id_enlace` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `enlace` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 ALTER TABLE `archivos`
   ADD PRIMARY KEY (`id_archivo`),
@@ -95,3 +115,23 @@ ALTER TABLE `fotos`
 ALTER TABLE `fotos`
   ADD CONSTRAINT `fkFototosUsuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
+
+ALTER TABLE `archivos_compartir`
+  ADD PRIMARY KEY (`id_archivo_compartir`),
+  ADD KEY `fkArchivosCompartirUsuarios_idx` (`id_usuario`);
+
+ALTER TABLE `archivos_compartir`
+  MODIFY `id_archivo_compartir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+ALTER TABLE `enlaces`
+  ADD PRIMARY KEY (`id_enlace`),
+  ADD KEY `fkEnlacesUsuarios_idx` (`id_usuario`);
+
+ALTER TABLE `enlaces`
+  MODIFY `id_enlace` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+ALTER TABLE `archivos_compartir`
+  ADD CONSTRAINT `fkArchivosCompartirUsuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+TER TABLE `enlaces`
+  ADD CONSTRAINT `fkEnlacesUsuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;

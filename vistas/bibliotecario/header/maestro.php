@@ -22,13 +22,12 @@
 
          <li class="nav-item list__item list__item--click">
             <div class="list__button list__button--click">
-              <a href="bibliotecario/index_bibliotecario.php">
+              <a href="#">
                 <span class="fa-solid fa-book"></span> 
                 Biblioteca
               </a>
             </div>
           </li> 
-
 </ul>
 
       
@@ -41,7 +40,7 @@
     $conexion = $c->conexion();
 
     $id_Usuario = $_SESSION['id_usuario'];
-    $sql = "SELECT foto FROM fotos WHERE id_usuario = '$id_Usuario'";
+    $sql = "SELECT id_foto, foto FROM fotos WHERE id_usuario = '$id_Usuario'";
     $result = mysqli_query($conexion, $sql);
 
     if ($foto = mysqli_fetch_array($result)) {

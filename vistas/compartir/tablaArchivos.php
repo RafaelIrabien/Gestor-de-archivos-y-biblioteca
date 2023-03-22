@@ -32,13 +32,13 @@
 	<div class="col-sm-10">
 	<div class="table-responsive">
 		<h1 class="display-4">Archivos</h1>
+		<br>
 			<div id="btn">
 				<span class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalCompartir">
 				  <span class="fa-solid fa-file-arrow-up"></span>
 				 	Agregar archivo
 				</span>
 			</div>
-			<br>
 
 		<table class="table table-hover" id="tablaArchivosDatatable">
 			<thead>

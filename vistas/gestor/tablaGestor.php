@@ -35,14 +35,14 @@
 	<div class="col-sm-11">
 		<div class="table-responsive">
 			<h1 class="display-4">Mis archivos</h1>
-		
+			<br>
 			<div id="btn">
 			<span class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAgregarArchivos">
 				<span class="fa fa-solid fa-cloud-arrow-up"></span>
 			 	Agregar Archivos
 			</span>
 			</div>
-			<br>
+		
 			
 			<table class="table table-hover" id="tablaGestorDataTable">
 				<br>
