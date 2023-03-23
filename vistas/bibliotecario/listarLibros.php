@@ -79,7 +79,15 @@ ORDER BY LI.id_libro DESC;
 				<td><?php echo $fila['Editorial']; ?></td>
 				<td><?php echo $fila['casillero']; ?></td>
 				<td><?php echo $fila['cantidad']; ?></td>
-				<td></td>
+				<td>
+					<span class="btn btn-warning btn-sm" style="cursor:pointer" onclick="VModificarLibro(<?php echo $fila['id_libro']; ?>)">
+						<span class="fas fa-edit"></span>
+					</span>
+
+					<span class="btn btn-danger btn-sm" style="cursor:pointer" onclick="VEliminarLibro(<?php echo $fila['id_libro']; ?>)">
+						<span class="fas fa-thin fa-trash-can"></span>
+					</span>
+				</td>
 			</tr>
 			<?php 
 				}

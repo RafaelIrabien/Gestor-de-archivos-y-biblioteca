@@ -37,30 +37,36 @@
 	}
 
 
+
+
+
+	function VModificarLibro(Cod){
+		var parametros = {
+			"vcod" : Cod
+		};
+
+		$.ajax({
+				type: "POST",
+				data: parametros,
+				url: "VModificarLibro.php",
+				beforeSend:function(){
+					$('#ContenidoLi').html("Procesando");
+				},
+				success:function(datos){
+					$('#ContenidoLi').html(datos);
+				}
+		});
+	}
+
+
+
+
+
+
 /*
-function VModificarLi(Cod){
-
-	var parametros = {
-		"vcod": Cod
-	};
-
-	$.ajax({
-		data: parametros,
-		url: 'VModLibro.php',
-		type: 'POST',
-		beforeSend: function(){
-			$("#ContenidoLi").html("Procesando");
-		},
-		success: function(datos){
-			$("#ContenidoLi").html(datos);
-		}
-	});
 
 
-
-}
-
-function VEliminarLi(Cod){
+function VEliminarLibro(Cod){
 	var parametros = {
 	"vcod": Cod
 	};

@@ -28,6 +28,7 @@
 
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/vistas.js"></script>
+	<script type="text/javascript" src="js/funcionesLibro.js"></script>
 	<script type="text/javascript" src="js/funcionesAutor.js"></script>
 	<script type="text/javascript" src="js/funcionesEditorial.js"></script>
 
