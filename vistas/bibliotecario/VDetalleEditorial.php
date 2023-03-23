@@ -77,9 +77,23 @@
 				<div id="agregarEditorial">
 					<form id="FormAgregarEditorial">
 						<input type="text" id="txtEditorial" placeholder="Nueva editorial" required>
+
 						<button type="button" onclick="GuardarEditorial();">Agregar editorial</button>
 					</form>
 				</div>
+
+				<hr>
+
+				<div id="modificarEditorial">
+					<form id="FormModificarEditorial">
+						<input type="text" id="txtcodEditorialMod" placeholder="Código de editorial" required>
+
+						<input type="text" id="txtEditorialMod" placeholder="Cambiar editorial por ..." required>
+
+						<button type="button" onclick="ModificarEditorial();">Modificar Editorial</button>
+					</form>
+				</div>
+
 			</div>
 		</div>
 	</div>

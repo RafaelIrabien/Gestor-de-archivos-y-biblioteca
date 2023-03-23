@@ -28,6 +28,8 @@
 
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/vistas.js"></script>
+	<script type="text/javascript" src="js/funcionesAutor.js"></script>
+	<script type="text/javascript" src="js/funcionesEditorial.js"></script>
 
 	<link rel="stylesheet" href="css_l/hoja_index_bibliotecario.css">
 	<title>Biblioteca</title>
