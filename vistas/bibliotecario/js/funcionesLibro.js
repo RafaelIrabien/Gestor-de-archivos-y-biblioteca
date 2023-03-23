@@ -19,6 +19,7 @@
 	}
 
 
+
 	function VNuevoLi(){
 		var parametros = {};
 
@@ -35,8 +36,6 @@
 				}
 		});
 	}
-
-
 
 
 
@@ -60,56 +59,42 @@
 
 
 
+	function VEliminarLibro(Cod){
+		var parametros = {
+			"vcod" : Cod
+		};
+
+		$.ajax({
+				type: "POST",
+				data: parametros,
+				url: "VEliminarLibro.php",
+				beforeSend:function(){
+					$('#ContenidoLi').html("Procesando");
+				},
+				success:function(datos){
+					$('#ContenidoLi').html(datos);
+				}
+		});
+	}
 
 
 
-/*
+	function DEliminarLibro(Cod){
+		var parametros = {
+			"vcod" : Cod
+		};
 
+		$.ajax({
+				type: "POST",
+				data: parametros,
+				url: "DEliminarLibro.php",
+				beforeSend:function(){
+					$('#ContenidoLi').html("Procesando");
+				},
+				success:function(datos){
+					$('#ContenidoLi').html(datos);
+				}
+		});
 
-function VEliminarLibro(Cod){
-	var parametros = {
-	"vcod": Cod
-	};
-
-	$.ajax({
-		data: parametros,
-		url: 'VEliLibro.php',
-		type: 'POST',
-		beforeSend: function(){
-			$("#ContenidoLi").html("Procesando");
-		},
-		success: function(datos){
-			$("#ContenidoLi").html(datos);
-		}
-	});
-
-}
-
-
-
-
-
-
-
-
-function DEliminarLi(Cod){
-
-	var parametros = {
-		"vcod": Cod
-	};
-
-	$.ajax({
-		data: parametros,
-		url: 'DEliLibro.php',
-		type: 'POST',
-		beforeSend: function(){
-			$("#ContenidoLi").html("Procesando");
-		},
-		success: function(datos){
-			$("#ContenidoLi").html(datos);
-		}
-	});
-
-}
-*/
+	}
 	
