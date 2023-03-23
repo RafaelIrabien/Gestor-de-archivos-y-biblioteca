@@ -1,6 +1,21 @@
 <?php 
 	session_start();
-	include "header.php";
+
+	require_once "../../clases/Conexion.php";
+  	$c = new Conectar;
+  	$conexion = $c->conexion();
+
+  	$id_Usuario = $_SESSION['id_usuario'];
+   
+
+  	$sql = "SELECT id_usuario, id_rol FROM usuarios WHERE id_usuario = '$id_Usuario'";
+  	$result = mysqli_query($conexion, $sql);
+  	$fila = mysqli_fetch_array($result);
+	 // $id = $fila['id_usuario'];
+	if($fila['id_rol'] == '3') {
+
+	 if(isset($_SESSION['nombre'])) {
+		include "header.php";
  ?>
 
 
@@ -54,5 +69,12 @@
 
 
 <?php 
+	} else {
+		header("location:../../index.php");
+	}
+
+} else {
+	header("location:../inicio.php");
+}
 
  ?>

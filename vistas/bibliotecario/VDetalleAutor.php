@@ -1,3 +1,23 @@
+<?php 
+	session_start();
+	include('conexion.php');
+
+	$id_Usuario = $_SESSION['id_usuario'];
+   
+
+  	$sql1 = "SELECT id_usuario, id_rol FROM usuarios WHERE id_usuario = '$id_Usuario'";
+  	$result1 = $cnmysql->query($sql1);
+  	$fila1 = mysqli_fetch_array($result1);
+	 // $id = $fila['id_usuario'];
+	if($fila1['id_rol'] == '3') {
+
+	 if(isset($_SESSION['nombre'])) {
+		
+
+ ?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,7 +89,7 @@
 						<input type="text" name="txtcodautorMod" id="txtcodautorMod" placeholder="Código de autor" required>
 						<input type="text" name="txtautorMod" id="txtautorMod" placeholder="Cambiar nombre por ..." required>
 
-						<button type="button" onclick="ModificarAutor();">Modificar</button>
+						<button type="button" onclick="ModificarAutor();">Modificar autor</button>
 					</form>
 				</div>
 
@@ -78,19 +98,36 @@
 				<div id="EliminarAutor">
 					<form id="FormEliminarAutor">
 						<input type="text" id="txtcodautorEli" placeholder="Ingrese código de autor" required>
-						<button type="button" onclick="EliminarAutor();">Eliminar</button>
+						<button type="button" onclick="EliminarAutor();">Eliminar autor</button>
 					</form>
 				</div>
 
+
+			</div>
 
 			<div id="CajaMensaje">
 				
 			</div>
 
-
+			<div id="Regreso">
+				<button onclick="VistaLibro();">Regresar</button>
 			</div>
+
 		</div>
 	</div>
 
 </body>
 </html>
+
+
+<?php 
+ 	} else {
+		header("location:../../index.php");
+	}
+
+} else {
+	header("location:../inicio.php");
+}
+
+
+  ?>
