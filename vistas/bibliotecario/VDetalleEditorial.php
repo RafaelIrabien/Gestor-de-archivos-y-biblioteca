@@ -94,6 +94,24 @@
 					</form>
 				</div>
 
+				<hr>
+
+				<div id="EliminarEditorial">
+					<form id="FormEliminarEditorial">
+						<input type="tetx" id="txtcodEditorialEli" placeholder="Ingrese código de editorial" required>
+
+						<button type="button" onclick="EliminarEditorial();">Eliminar editorial</button>
+					</form>
+				</div>
+
+			</div>
+
+			<div id="CajaMensaje">
+				
+			</div>
+
+			<div id="Regreso">
+				<button onclick="VistaLibro();">Volver</button>
 			</div>
 		</div>
 	</div>
