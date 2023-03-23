@@ -24,6 +24,28 @@
 	<link rel="stylesheet" type="text/css" href="css_l/hoja_prestamo.css">
 	<title></title>
 </head>
+
+	<script type="text/javascript">
+
+		$(function VistaDefault(){
+			var parametros = {
+				"dbusqueda" : $('#txtbusqueda').val()
+			};
+
+			$.ajax({
+				type: "POST",
+				data: parametros,
+				url: "listarStockLibros.php",
+				beforeSend:function(){
+					$('#ListaLibros').html("Procesando")
+				},
+				success:function(datos){
+					$('#ListaLibros').html(datos);
+				}
+			});
+		})
+	</script>
+
 <body>
 	<div id="ContPrestamo">
 		
@@ -67,9 +89,23 @@
 				</div>
 
 				<div id="MsjVerificarPrestamo">
-					
+
 				</div>
 			</form>
+		</div>
+
+
+		<div id="ContListLibros">
+			<h1>Lista de libros</h1>
+				<div id="busqueda">
+						
+				<input type="text" id="txtbusqueda" placeholder="Titulo, Autor, Editorial, Genero">
+				<button type="button">Buscar</button>
+				</div>
+
+				<div id="ListaLibros">
+					
+				</div>
 		</div>
 	</div>
 
