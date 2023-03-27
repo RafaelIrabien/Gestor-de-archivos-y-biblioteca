@@ -56,8 +56,7 @@
 				<th style="text-align: center;">Lector</th>
 				<th style="text-align: center;">Fecha entrega</th>
 				<th style="text-align: center;">Fecha de devolución</th>
-				<th style="text-align: center;">Estado</th>
-				<th style="text-align: center;">Acciones</th>
+				<th style="text-align: center;">Fecha de retorno</th>
 			</tr>
 
 		<tbody>
@@ -71,14 +70,6 @@
 				<td><?php echo $fila['Fecha Entrega']; ?></td>
 				<td><?php echo $fila['Fecha de Devolución']; ?></td>
 				<td><?php echo $fila['Fecha de Retorno']; ?></td>
-				<td>
-
-					<span class="btn btn-success">
-							<a style="cursor:pointer; color: white;" onclick="VRetornarLibro(<?php $fila['CodDp'] ?>)">Retornar
-							</a>
-					</span>
-				
-				</td>
 			</tr>
 			<?php 
 				}

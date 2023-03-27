@@ -79,7 +79,7 @@
 				<td>
 
 					<span class="btn btn-success">
-							<a style="cursor:pointer; color: white;" onclick="VRetornarLibro(<?php $fila['CodDp'] ?>)">Retornar
+							<a style="cursor:pointer; color: white;" onclick="VRetornarLibro(<?php echo $fila['CodDp']; ?>)">Retornar
 							</a>
 					</span>
 				

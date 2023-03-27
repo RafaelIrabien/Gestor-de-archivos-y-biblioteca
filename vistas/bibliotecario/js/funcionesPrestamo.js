@@ -20,36 +20,6 @@
 }
 
 
-/*
-	function GuardarPrestamo(){
-	var parametros ={
-		
-		"codBibliotecario" : $('#txtCodBi').val(),
-		"codLector" : $('#cboLector').val(),
-		"fechaDevolucion" : $("#dtpFecha").val(),
-		"CodLibro" : $("#txtCodLibro").val()
-	};
-
-
-	$.ajax({
-		data: parametros,
-		url: 'DGuardarPrestamo.php',
-		type: 'POST',
-		beforeSend: function(){
-			$("#CajaMensaje").html("Procesando")
-		},
-		success: function(datos){
-			ListarStockLibro();
-			
-			$("#txtCodLibro").val('');
-			$("#MsjVerificarLector").slideUp("fast");
-			$("#MsjVerificarPrestamo").slideDown("fast");
-			$("#MsjVerificarPrestamo").html(datos);
-		}
-	});
-
-}*/
-
 	function GuardarPrestamo(){
 		var parametros = {
 			"Lector" : $('#lector').val(),
@@ -112,3 +82,46 @@
 			$('#ListaLR').html(datos);
 		}
 	});
+
+}
+
+	function VRetornarLibro(Cod){
+	var parametros = {
+	"vcod": Cod
+	};
+
+	$.ajax({
+		data: parametros,
+		url: 'VRetornarLibro.php',
+		type: 'POST',
+		beforeSend: function(){
+			$("#ContenidoLP").html("Procesando")
+		},
+		success: function(datos){
+			$("#ContenidoLP").html(datos);
+		}
+	});
+
+}
+
+
+
+	function DRetornarLibro(Cod){
+
+	var parametros = {
+		"vcod": Cod
+	};
+
+	$.ajax({
+		data: parametros,
+		url: 'DRetornarLibro.php',
+		type: 'POST',
+		beforeSend: function(){
+			$("#ContenidoLP").html("Procesando")
+		},
+		success: function(datos){
+			$("#ContenidoLP").html(datos);
+		}
+	});
+
+}
