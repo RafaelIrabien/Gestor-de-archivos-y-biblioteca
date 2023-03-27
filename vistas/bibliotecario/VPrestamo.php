@@ -1,10 +1,20 @@
 <?php 
 	session_start();
+
+	$fecha = date('Y-m-d');
+
+	$nuevaFecha = strtotime('-1 day', strtotime($fecha));
+	$nuevaFechaYear = strtotime('+1 year', strtotime($fecha));
+
+	$fechaActual = date('Y-m-d', $nuevaFecha);
+	$fechaMaxima = date('Y-m-d', $nuevaFechaYear);
+
+
+
 	include "conexion.php";
 
 	$id_Usuario = $_SESSION['id_usuario'];
    
-
   	$sql1 = "SELECT id_usuario, id_rol FROM usuarios WHERE id_usuario = '$id_Usuario'";
   	$result1 = $cnmysql->query($sql1);
   	$fila1 = mysqli_fetch_array($result1);
@@ -12,6 +22,9 @@
 	if($fila1['id_rol'] == '3') {
 
 	 if(isset($_SESSION['nombre'])) {
+
+
+	 	//$lectores = $cnmysql->query("SELECT * FROM lectores");;
  ?>
 
 
@@ -21,7 +34,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css_l/hoja_prestamo.css">
+	<link rel="stylesheet" type="text/css" href="css_l/hoja_Prestamo.css">
 	<title></title>
 </head>
 
@@ -51,11 +64,11 @@
 		
 		<div id="ContDatos">
 			<h1>Préstamo</h1>
-			<form id="FormPrestamo">
+			<form id="FormPrestamo" method="POST">
 				<div>
-					<label>Nombre del lector:</label>
+					<label for="lector">Nombre del lector:</label>
 					<div>
-						<input type="text" name="lector">
+						<input type="text" name="lector" id="lector" required>
 					</div>
 				</div>
 
@@ -65,7 +78,7 @@
 
 				<div>
 					<label for="dtpFecha">Fecha Devolución:</label>
-					<input type="date" name="dtpFecha" id="dtpFecha" step="1" min="" max="" value="">
+					<input type="date" name="dtpFecha" id="dtpFecha" step="1" min="<?php echo $fechaActual; ?>" max="<?php echo $fechaMaxima; ?>" value="<?php echo $fechaActual; ?>">
 				</div>
 
 				<div>
@@ -83,9 +96,13 @@
 					<button type="button" onclick="GuardarPrestamo();">
 						Guardar Préstamo
 					</button>
-					<button type="button" onclick="VistaInicio();">
+				
+					<a href="index_bibliotecario.php">
+						<button type="button">
 						Cancelar Préstamo
+						
 					</button>
+					</a>
 				</div>
 
 				<div id="MsjVerificarPrestamo">
@@ -100,7 +117,7 @@
 				<div id="busqueda">
 						
 				<input type="text" id="txtbusqueda" placeholder="Titulo, Autor, Editorial, Genero">
-				<button type="button">Buscar</button>
+				<button type="button" onclick="ListarStockLibro();">Buscar</button>
 				</div>
 
 				<div id="ListaLibros">

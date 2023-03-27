@@ -31,6 +31,7 @@
 	<script type="text/javascript" src="js/funcionesLibro.js"></script>
 	<script type="text/javascript" src="js/funcionesAutor.js"></script>
 	<script type="text/javascript" src="js/funcionesEditorial.js"></script>
+	<script type="text/javascript" src="js/funcionesPrestamo.js"></script>
 
 	<link rel="stylesheet" href="css_l/hoja_index_bibliotecario.css">
 	<title>Biblioteca</title>

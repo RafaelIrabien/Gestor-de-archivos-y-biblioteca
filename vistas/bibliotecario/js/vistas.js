@@ -79,7 +79,7 @@
 		$.ajax({
 				type: "POST",
 				data: parametros,
-				url: "Vlibrosprestados",
+				url: "V_LibrosPrestados.php",
 				beforeSend:function(){
 					$('#contenido').html();
 				},
