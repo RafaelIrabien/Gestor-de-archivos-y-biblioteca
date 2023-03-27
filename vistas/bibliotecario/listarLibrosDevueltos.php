@@ -14,19 +14,20 @@
 	 if(isset($_SESSION['nombre'])) {
 
 
-	$vbusqueda = $_POST["dbusqueda"];
+	 	$nombreLector = $_POST['dbusqueda'];
 
 	$query= "
-	SELECT DP.id_detalle AS 'CodDp', LI.titulo AS 'Titulo del Libro',PR.nombre_lector AS 'Lector', PR.fecha_entrega AS 'Fecha Entrega', PR.fecha_devolucion AS 'Fecha de Devolución', ES.estado AS 'Estado'
+	SELECT DP.id_detalle AS 'CodDp', LI.titulo AS 'Titulo del Libro',PR.nombre_lector AS 'Lector', PR.fecha_entrega AS 'Fecha Entrega',PR.fecha_devolucion AS 'Fecha de Devolución', DP.Fecha_Retorno AS 'Fecha de Retorno'
 	FROM detalle_prestamos DP
 	INNER JOIN libros LI on LI.id_libro = DP.id_libro
 	INNER JOIN prestamos PR on PR.id_prestamo = DP.id_prestamo
 	INNER JOIN estado ES on ES.id_estado = DP.id_estado
 	WHERE
-	(LI.titulo LIKE '$vbusqueda%' OR
-	PR.nombre_lector LIKE '$vbusqueda%')
-	AND (ES.id_estado = 1)
-	ORDER BY DP.id_detalle DESC";
+	PR.nombre_lector LIKE '$nombreLector%'
+	AND
+	ES.id_estado = '2';
+ ";
+
 
 	$resultado = $cnmysql->query($query);
 
@@ -40,19 +41,13 @@
 
 
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../../css/tablas.css">
+	<link rel="stylesheet" type="text/css" href="css_l/hoja_ImprLibrosRetornados.css" media="print">
 	<title></title>
 </head>
 <body>
-
-
 
 	<table class="table table-hover">
 		<theader>
@@ -75,7 +70,7 @@
 				<td><?php echo $fila['Lector']; ?></td>
 				<td><?php echo $fila['Fecha Entrega']; ?></td>
 				<td><?php echo $fila['Fecha de Devolución']; ?></td>
-				<td><?php echo $fila['Estado']; ?></td>
+				<td><?php echo $fila['Fecha de Retorno']; ?></td>
 				<td>
 
 					<span class="btn btn-success">
@@ -92,16 +87,14 @@
 		</theader>
 	</table>
 
-
 </body>
 </html>
 
 
-
-
  <?php 
+
  		}else{
-		echo "No se encontraron resultados";
+		echo "No Se Encontraron resultados";
 	}
 
  	} else {

@@ -78,20 +78,37 @@
 
 	function ListarLibrosPrestados(){
 	var parametros = {
-		"dbusqueda": $("#txtbusqueda").val()
+		"dbusqueda": $('#txtbusqueda').val()
 	};
 
 	$.ajax({
 		data: parametros,
-		url: 'listarLibrosPrestados.php',
-		type: 'POST',
+		url: "listarLibrosPrestados.php",
+		type: "POST",
 		beforeSend: function(){
-			$("#ListaLP").html("Procesando")
+			$('#ListaLP').html("Procesando")
 		},
 		success: function(datos){
-			$("#ListaLP").html(datos);
+			$('#ListaLP').html(datos);
 		}
 	});
-
-
 }
+
+
+
+	function ListarLibrosDevueltos(){
+	var parametros = {
+		"dbusqueda": $('#txtbusqueda').val()
+	};
+
+	$.ajax({
+		data: parametros,
+		url: "listarLibrosDevueltos.php",
+		type: "POST",
+		beforeSend: function(){
+			$('#ListaLR').html("Procesando")
+		},
+		success: function(datos){
+			$('#ListaLR').html(datos);
+		}
+	});
