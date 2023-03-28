@@ -44,7 +44,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css_l/hoja_ImprLibrosRetornados.css" media="print">
+	<link rel="stylesheet" type="text/css" href="../../css/tablas.css">
 	<title></title>
 </head>
 <body>

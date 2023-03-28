@@ -36,7 +36,23 @@
 
 		$result_2 = $cnmysql->query($sql_2);
 
+
 		if ($result_2) {
+			
+			$query = "SELECT disponibles FROM libros WHERE id_libro = '$dCodLibro'";
+			$resultado = $cnmysql->query($query);
+
+			$fila = mysqli_fetch_array($resultado);
+			$Disponible = $fila['disponibles'];
+
+			$cantidadNueva = abs($Disponible - 1);
+
+			$query_2 = "UPDATE libros SET disponibles = '$cantidadNueva' WHERE id_libro = '$dCodLibro'";
+			$resultado_2 = $cnmysql->query($query_2);
+
+
+
+
 			$sql_3 = "SELECT id_prestamo FROM prestamos ORDER BY id_prestamo DESC LIMIT 1";
 			$result_3 = $cnmysql->query($sql_3);
 			$dato = mysqli_fetch_array($result_3);

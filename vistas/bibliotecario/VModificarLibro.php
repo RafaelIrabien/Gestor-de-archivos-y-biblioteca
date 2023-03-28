@@ -27,6 +27,7 @@
 		$idAutor = $fila['id_autor'];
 		$idEditorial = $fila['id_editorial'];
 		$Cantidad = $fila['cantidad'];
+		$Disponible = $fila['disponibles'];
 		$Casillero = $fila['casillero'];
 
 
@@ -135,6 +136,11 @@
 				<div>
 					<label for="txtejemplar">Cantidad:</label>
 					<input type="number" id="txtejemplar" name="txtejemplar" value="<?php echo $Cantidad; ?>" min="1" required>
+				</div>
+
+					<div>
+					<label for="txtdisponible">Disponibles:</label>
+					<input type="number" id="txtdisponible" name="txtdisponible" value="<?php echo $Disponible; ?>" min="1" required>
 				</div>
 
 

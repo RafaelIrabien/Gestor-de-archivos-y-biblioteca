@@ -16,7 +16,7 @@
 
 	 	$vbusqueda = $_POST['dbusqueda'];
 
-	 	$sql = "SELECT LI.id_libro AS Codigo, LI.titulo AS Titulo, AU.nombre AS Autor, ED.editorial AS Editorial, LI.cantidad AS Cantidad
+	 	$sql = "SELECT LI.id_libro AS Codigo, LI.titulo AS Titulo, AU.nombre AS Autor, ED.editorial AS Editorial, LI.cantidad AS Cantidad, LI.disponibles AS Disponible
 	 		FROM libros LI
 	 		
 	 		INNER JOIN autores AU ON AU.id_autor = LI.id_autor
@@ -56,6 +56,7 @@
 				<th>Autor</th>
 				<th>Editorial</th>
 				<th>Cantidad</th>
+				<th>Disponibles</th>
 			</tr>
 		</thead>
 
@@ -70,6 +71,7 @@
 				<td><?php echo $fila['Autor']; ?></td>
 				<td><?php echo $fila['Editorial']; ?></td>
 				<td><?php echo $fila['Cantidad']; ?></td>
+				<td><?php echo $fila['Disponible']; ?></td>
 			</tr>
 			<?php 
 				}

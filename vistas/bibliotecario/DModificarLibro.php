@@ -7,8 +7,9 @@
 	$dEditorial = $_POST['cboeditorial'];
 	$dUbicacion = $_POST['txtubicacion'];
 	$dCantidad = $_POST['txtejemplar'];
+	$dDisponible = $_POST['txtdisponible'];
 
-	$sql_1 = "SELECT * FROM detalle_prestamos WHERE id_ibro = '$dCod' AND id_estado = 1";
+	$sql_1 = "SELECT * FROM detalle_prestamos WHERE id_libro = '$dCod' AND id_estado = 1";
 	$resultado = $cnmysql->query($sql_1);
 	$cantidad = mysqli_num_rows($resultado);
 	
@@ -25,7 +26,7 @@
 	
 	$nuevaCantidad = $dCantidad - $cantidad;
 
-	$sql = "UPDATE libros SET titulo = '$dTitulo', id_autor = '$dAutor', id_editorial = '$dEditorial', cantidad = '$nuevaCantidad', casillero = '$dUbicacion' WHERE id_libro = '$dCod'";
+	$sql = "UPDATE libros SET titulo = '$dTitulo', id_autor = '$dAutor', id_editorial = '$dEditorial', cantidad = '$nuevaCantidad', disponibles = '$dDisponible', casillero = '$dUbicacion' WHERE id_libro = '$dCod'";
 
 	$result = $cnmysql->query($sql);
 

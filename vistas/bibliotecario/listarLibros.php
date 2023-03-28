@@ -19,7 +19,7 @@ $id_Usuario = $_SESSION['id_usuario'];
 
 $query= "
 
-SELECT LI.id_libro, LI.titulo, AU.nombre as Autor, ED.editorial as Editorial, LI.casillero, LI.cantidad FROM libros LI
+SELECT LI.id_libro, LI.titulo, AU.nombre as Autor, ED.editorial as Editorial, LI.casillero, LI.cantidad, LI.disponibles FROM libros LI
 INNER JOIN autores AU on AU.id_autor = LI.id_autor
 
 INNER JOIN editoriales ED on ED.id_editorial = LI.id_editorial
@@ -64,6 +64,7 @@ ORDER BY LI.id_libro DESC;
 				<th style="text-align: center;">Editorial</th>
 				<th style="text-align: center;">Casillero</th>
 				<th style="text-align: center;">Cantidad</th>
+				<th style="text-align: center;">Disponibles</th>
 				<th style="text-align: center;">Acciones</th>
 			</tr>
 
@@ -79,6 +80,7 @@ ORDER BY LI.id_libro DESC;
 				<td><?php echo $fila['Editorial']; ?></td>
 				<td><?php echo $fila['casillero']; ?></td>
 				<td><?php echo $fila['cantidad']; ?></td>
+				<td><?php echo $fila['disponibles']; ?></td>
 				<td>
 					<span class="btn btn-warning btn-sm" style="cursor:pointer" onclick="VModificarLibro(<?php echo $fila['id_libro']; ?>)">
 						<span class="fas fa-edit"></span>
@@ -95,7 +97,6 @@ ORDER BY LI.id_libro DESC;
 		</tbody>
 		</theader>
 	</table>
-
 
 </body>
 </html>

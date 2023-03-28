@@ -53,7 +53,7 @@
 								url: "listarAutor.php",
 							}).responseText;
 
-							document.getElementById('listAutores').innerHTML = tabla;
+							document.getElementById('listAutores').innerHTML(tabla);
 		}
 
 		setInterval(tiempoReal, 1000);

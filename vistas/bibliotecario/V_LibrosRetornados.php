@@ -36,10 +36,10 @@
 	</script>
 	
 
-	<link rel="stylesheet" type="text/css" href="css_l/hoja_ImprLibrosRetornados.css" media="print">
+	
 	<title></title>
 
-	<link rel="stylesheet" type="text/css" href="css_l/hoja_librosRetornados.css">
+	<link rel="stylesheet" type="text/css" href="css_l/retornados.css">
 </head>
 <body>
 
@@ -88,7 +88,7 @@
 					</div>	
 
 					<div id="BusquedaLR">
-					<input type="text" id="txtbusqueda" name="" placeholder="Nro Carnet Lector">
+					<input type="text" id="txtbusqueda" name="" placeholder="Nombre del lector">
 					<button type="button" onclick="ListarLibrosDevueltos();">Buscar</button>
 					</div>
 
