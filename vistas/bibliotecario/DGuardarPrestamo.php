@@ -32,7 +32,16 @@
 		*/
 
 
-		$sql_2 = "INSERT INTO prestamos(nombre_lector, fecha_entrega, fecha_devolucion) VALUES( '$dLector', CURDATE(), '$dFechaDevolucion')";
+		$sql = "INSERT INTO lectores(nombre) VALUES('$dLector')";
+		$result = $cnmysql->query($sql);
+
+		$q = "SELECT id_lector FROM lectores WHERE nombre = '$dLector'";
+		$r = $cnmysql->query($q);
+		$row = mysqli_fetch_array($r);
+		$idLector = $row['id_lector'];
+
+
+		$sql_2 = "INSERT INTO prestamos (id_lector, fecha_entrega, fecha_devolucion) VALUES('$idLector', CURDATE(), '$dFechaDevolucion')";
 
 		$result_2 = $cnmysql->query($sql_2);
 
@@ -79,7 +88,9 @@
 				border:2px dotted #E33E3E;'
 				><strong>¡Error!: </strong>Los datos presentan errores, verifique por favor</p>";
 			}
-		}
+
+		//Fin de if($Result_2)
+		} 
 
 
 	} else {

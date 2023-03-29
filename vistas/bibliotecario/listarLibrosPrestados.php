@@ -17,14 +17,15 @@
 	$vbusqueda = $_POST["dbusqueda"];
 
 	$query= "
-	SELECT DP.id_detalle AS 'CodDp', LI.titulo AS 'Titulo del Libro',PR.nombre_lector AS 'Lector', PR.fecha_entrega AS 'Fecha Entrega', PR.fecha_devolucion AS 'Fecha de Devolución', ES.estado AS 'Estado'
+	SELECT DP.id_detalle AS 'CodDp', LI.titulo AS 'Titulo del Libro', LE.nombre AS 'Lector', PR.fecha_entrega AS 'Fecha Entrega', PR.fecha_devolucion AS 'Fecha de Devolución', ES.estado AS 'Estado'
 	FROM detalle_prestamos DP
-	INNER JOIN libros LI on LI.id_libro = DP.id_libro
-	INNER JOIN prestamos PR on PR.id_prestamo = DP.id_prestamo
-	INNER JOIN estado ES on ES.id_estado = DP.id_estado
+	INNER JOIN libros LI ON LI.id_libro = DP.id_libro
+	INNER JOIN prestamos PR ON PR.id_prestamo = DP.id_prestamo
+	INNER JOIN estado ES ON ES.id_estado = DP.id_estado
+	INNER JOIN lectores LE ON LE.id_lector = PR.id_lector
 	WHERE
 	(LI.titulo LIKE '$vbusqueda%' OR
-	PR.nombre_lector LIKE '$vbusqueda%')
+	LE.nombre LIKE '$vbusqueda%')
 	AND (ES.id_estado = 1)
 	ORDER BY DP.id_detalle DESC";
 
@@ -78,10 +79,13 @@
 				<td><?php echo $fila['Estado']; ?></td>
 				<td>
 
-					<span class="btn btn-success">
-							<a style="cursor:pointer; color: white;" onclick="VRetornarLibro(<?php echo $fila['CodDp']; ?>)">Retornar
+					
+							<a style="cursor:pointer; color: white;" onclick="VRetornarLibro(<?php echo $fila['CodDp']; ?>)">
+								<span class="btn btn-success">
+									Retornar
+								</span>
 							</a>
-					</span>
+					
 				
 				</td>
 			</tr>

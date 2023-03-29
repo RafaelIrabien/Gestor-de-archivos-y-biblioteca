@@ -24,7 +24,8 @@
 	 if(isset($_SESSION['nombre'])) {
 
 
-	 	//$lectores = $cnmysql->query("SELECT * FROM lectores");;
+	 	$lectores = $cnmysql->query("SELECT * FROM lectores");
+	 	$fila = mysqli_fetch_array($lectores);
  ?>
 
 
@@ -69,6 +70,8 @@
 					<label for="lector">Nombre del lector:</label>
 					<div>
 						<input type="text" name="lector" id="lector" required>
+
+						<button type="button" onclick="VerificarLector();">Verificar</button>
 					</div>
 				</div>
 

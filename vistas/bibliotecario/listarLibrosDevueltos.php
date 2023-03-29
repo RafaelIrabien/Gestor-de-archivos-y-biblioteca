@@ -17,13 +17,14 @@
 	 	$nombreLector = $_POST['dbusqueda'];
 
 	$query= "
-	SELECT DP.id_detalle AS 'CodDp', LI.titulo AS 'Titulo del Libro',PR.nombre_lector AS 'Lector', PR.fecha_entrega AS 'Fecha Entrega',PR.fecha_devolucion AS 'Fecha de Devolución', DP.Fecha_Retorno AS 'Fecha de Retorno'
+	SELECT DP.id_detalle AS 'CodDp', LI.titulo AS 'Titulo del Libro', LE.nombre AS 'Lector', PR.fecha_entrega AS 'Fecha Entrega',PR.fecha_devolucion AS 'Fecha de Devolución', DP.Fecha_Retorno AS 'Fecha de Retorno'
 	FROM detalle_prestamos DP
-	INNER JOIN libros LI on LI.id_libro = DP.id_libro
-	INNER JOIN prestamos PR on PR.id_prestamo = DP.id_prestamo
-	INNER JOIN estado ES on ES.id_estado = DP.id_estado
+	INNER JOIN libros LI ON LI.id_libro = DP.id_libro
+	INNER JOIN prestamos PR ON PR.id_prestamo = DP.id_prestamo
+	INNER JOIN estado ES ON ES.id_estado = DP.id_estado
+	INNER JOIN lectores LE ON LE.id_lector = PR.id_lector
 	WHERE
-	PR.nombre_lector LIKE '$nombreLector%'
+	LE.nombre LIKE '$nombreLector%'
 	AND
 	ES.id_estado = '2';
  ";

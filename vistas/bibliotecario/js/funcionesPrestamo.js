@@ -20,6 +20,28 @@
 }
 
 
+
+	function VerificarLector(){
+		var parametros = {
+			"codLector" : $('#lector').val(),
+		};
+
+		$.ajax({
+				type: "POST",
+				data: parametros,
+				url: "DVerificarLector.php", 
+				beforeSend:function(){
+					$('#MsjVerificarLector').html("Procesando")
+				},
+				success:function(datos){
+					$('#MsjVerificarLector').slideDown("fast");
+					$('#MsjVerificarLector').html(datos);
+				}
+		});
+	}
+
+
+
 	function GuardarPrestamo(){
 		var parametros = {
 			"Lector" : $('#lector').val(),

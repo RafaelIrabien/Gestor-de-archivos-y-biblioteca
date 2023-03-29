@@ -9,7 +9,10 @@
 	if($result){
 		include('V_Libro.php');
 	} else {
+
 		echo "<h1 style='color:#fff;'>Error al eliminar</h1>";
+		
+		
 	}
 
  ?>

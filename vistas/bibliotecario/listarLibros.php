@@ -65,7 +65,7 @@ ORDER BY LI.id_libro DESC;
 				<th style="text-align: center;">Casillero</th>
 				<th style="text-align: center;">Cantidad</th>
 				<th style="text-align: center;">Disponibles</th>
-				<th style="text-align: center;">Acciones</th>
+				<th colspan="2" style="text-align: center;">Acciones</th>
 			</tr>
 
 		<tbody>
@@ -85,7 +85,8 @@ ORDER BY LI.id_libro DESC;
 					<span class="btn btn-warning btn-sm" style="cursor:pointer" onclick="VModificarLibro(<?php echo $fila['id_libro']; ?>)">
 						<span class="fas fa-edit"></span>
 					</span>
-
+				</td>
+				<td>
 					<span class="btn btn-danger btn-sm" style="cursor:pointer" onclick="VEliminarLibro(<?php echo $fila['id_libro']; ?>)">
 						<span class="fas fa-thin fa-trash-can"></span>
 					</span>
