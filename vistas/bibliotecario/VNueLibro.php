@@ -29,6 +29,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css_l/hoja_NueLibro.css">
+	<link rel="stylesheet" type="text/css" href="../../css/tablas.css">
 	<title></title>
 </head>
 
@@ -55,11 +56,11 @@
 	
 	<div id="CModLi">
 		<div id="formulario">
-			<h1>Nuevo libro</h1>
+			<h2>Nuevo libro</h2>
 
 			<form id="FormNuevoLibro" enctype="multipart/form-data" method="POST">
 				<div>
-					<label for="txttitulo">Titulo:</label>
+					<label for="txttitulo">Título:</label>
 					<input type="text" required name="txttitulo" id="txttitulo">
 				</div>
 
@@ -76,7 +77,7 @@
 				</div>
 
 				<div>
-					<label for="cboeditorial">Autor:</label>
+					<label for="cboeditorial">Editorial:</label>
 					<select id="cboeditorial" name="cboeditorial">
 						<?php 
 							while ($fila = mysqli_fetch_array($tablaEditorial)) {
@@ -103,8 +104,8 @@
 				</div>
 
 				<div id= 'botones'>
-					<button type="submit">Guardar</button>
-					<button type="button" onclick="VistaLibro();">Cancelar</button>
+					<span class="btn btn-primary" type="submit">Guardar</span>
+					<span class="btn btn-secondary" type="button" onclick="VistaLibro();">Cancelar</span>
 				</div>
 
 			</form>

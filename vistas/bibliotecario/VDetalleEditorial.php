@@ -24,6 +24,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" type="text/css" href="css_l/hoja_DetEditorial.css">
+	<link rel="stylesheet" type="text/css" href="../../css/tablas.css">
 	<title></title>
 </head>
 	<script type="text/javascript">
@@ -62,7 +63,7 @@
 <body>
 	<div id="contenidoDetEditorial">
 		<div id="cajaMayor">
-			<h1>Opciones de Editorial</h1>
+			<h2>Opciones de Editorial</h2>
 
 			<div id="caja1">
 				<fieldset>
@@ -78,7 +79,7 @@
 					<form id="FormAgregarEditorial">
 						<input type="text" id="txtEditorial" placeholder="Nueva editorial" required>
 
-						<button type="button" onclick="GuardarEditorial();">Agregar editorial</button>
+						<span class="btn btn-primary" type="button" onclick="GuardarEditorial();">Agregar editorial</span>
 					</form>
 				</div>
 
@@ -90,7 +91,7 @@
 		
 						<input type="text" id="txtEditorialMod" placeholder="Cambiar editorial por ..." required>
 
-						<button type="button" onclick="ModificarEditorial();">Modificar Editorial</button>
+						<span class="btn btn-warning" type="button" onclick="ModificarEditorial();">Modificar Editorial</span>
 					</form>
 				</div>
 
@@ -100,7 +101,7 @@
 					<form id="FormEliminarEditorial">
 						<input type="tetx" id="txtcodEditorialEli" placeholder="Ingrese código de editorial" required>
 
-						<button type="button" onclick="EliminarEditorial();">Eliminar editorial</button>
+						<span class="btn btn-danger" type="button" onclick="EliminarEditorial();">Eliminar editorial</span>
 					</form>
 				</div>
 
@@ -111,7 +112,7 @@
 			</div>
 
 			<div id="Regreso">
-				<button onclick="VistaLibro();">Volver</button>
+				<span class="btn btn-secondary" onclick="VistaLibro();">Regresar</span>
 			</div>
 		</div>
 	</div>

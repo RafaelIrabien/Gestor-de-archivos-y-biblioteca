@@ -47,6 +47,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" type="text/css" href="css_l/hoja_NueLibro.css">
+	<link rel="stylesheet" type="text/css" href="../../css/tablas.css">
 	<title></title>
 </head>
 
@@ -73,13 +74,13 @@
 <body>
 	<div id="CModLi">
 		<div id="formulario">
-			<h1>Modificar Libro</h1>
+			<h2>Modificar Libro</h2>
 
 			<form id="FormModificarLibro" method="POST">
 				<input type="hidden" name="txtcod" id="txtcod" value="<?php echo $dCodLibro; ?>">
 
 				<div>
-					<label for="txttitulo">Titulo:</label>
+					<label for="txttitulo">Título:</label>
 					<input type="text" name="txttitulo" id="txttitulo" value="<?php echo $Titulo; ?>" required>
 				</div>
 
@@ -145,8 +146,8 @@
 
 
 				<div id="botones">
-					<button type="submit">Modificar</button>
-					<button type="button" onclick="VistaLibro();">Cancelar</button>
+					<span class="btn btn-warning" type="submit">Modificar</span>
+					<span class="btn btn-secondary" onclick="VistaLibro();">Cancelar</span>
 				</div>
 			</form>
 		</div>

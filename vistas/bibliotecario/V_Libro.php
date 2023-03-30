@@ -28,6 +28,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css_l/hoja_libro.css">
+	<link rel="stylesheet" type="text/css" href="../../css/tablas.css">
 	
 	<script type="text/javascript" src="js/funcionesLibro.js"></script>
 	<script type="text/javascript" src="js/funcionesAutor.js"></script>
@@ -63,15 +64,15 @@
 				<div id="busqueda">
 
 					<div id="NuevoLi">
-						<button onclick="VNuevoLi();">Agregar libro</button>
-						<button onclick="VistaDetalleAutor();">Opciones de autor</button>
-						<button onclick="VistaDetalleEditorial();">Opciones de Editorial</button>
+						<span class="btn btn-primary" onclick="VNuevoLi();">Agregar libro</span>
+						<span class="btn btn-primary" onclick="VistaDetalleAutor();">Opciones de autor</span>
+						<span class="btn btn-primary" onclick="VistaDetalleEditorial();">Opciones de Editorial</span>
 					</div>
 					
 
 					<div id="BusquedaLi">
-					<input type="text" id= "txtbusqueda" name="" placeholder="Titulo,Autor,Editorial,Genero">
-					<button type="button" onclick="ListarLibro();">Buscar</button>
+					<input type="text" id= "txtbusqueda" name="" placeholder="Título, Autor, Editorial">
+					<span class="btn btn-primary" onclick="ListarLibro();">Buscar</span>
 					
 					</div>
 				</div>

@@ -51,8 +51,8 @@
 
 			<p>¿Desea eliminar este libro del registro?</p>
 			<div>
-				<button type="button" onclick="DEliminarLibro(<?php echo $dCod; ?>);">Aceptar</button>
-				<button type="button" onclick="VistaLibro();">Cancelar</button>
+				<span class="btn btn-danger" type="button" onclick="DEliminarLibro(<?php echo $dCod; ?>);">Aceptar</span>
+				<span class="btn btn-secondary" type="button" onclick="VistaLibro();">Cancelar</span>
 			</div>
 		</div>
 	</div>

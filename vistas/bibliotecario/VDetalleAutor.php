@@ -25,6 +25,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" type="text/css" href="css_l/hoja_DetAutor.css">
+	<link rel="stylesheet" type="text/css" href="../../css/tablas.css">
 	<title></title>
 </head>
 
@@ -63,7 +64,7 @@
 <body>
 	<div id="contenidoDetAutor">
 		<div id="cajaMayor">
-			<h1>Opciones de autor</h1>
+			<h2>Opciones de autor</h2>
 
 			<div id="caja1">
 				<fieldset>
@@ -78,7 +79,7 @@
 				<div id="agregarAutor">
 					<form id="FormAgregarAutor">
 						<input type="text" name="txtautor" id="txtautor" placeholder="Nuevo autor" required>
-						<button type="button" onclick="GuardarAutor();">Agregar autor</button>
+						<span class="btn btn-primary" type="button" onclick="GuardarAutor();">Agregar autor</span>
 					</form>
 				</div>
 
@@ -89,7 +90,7 @@
 						<input type="text" name="txtcodautorMod" id="txtcodautorMod" placeholder="Código de autor" required>
 						<input type="text" name="txtautorMod" id="txtautorMod" placeholder="Cambiar nombre por ..." required>
 
-						<button type="button" onclick="ModificarAutor();">Modificar autor</button>
+						<span class="btn btn-warning" type="button" onclick="ModificarAutor();">Modificar autor</span>
 					</form>
 				</div>
 
@@ -98,7 +99,7 @@
 				<div id="EliminarAutor">
 					<form id="FormEliminarAutor">
 						<input type="text" id="txtcodautorEli" placeholder="Ingrese código de autor" required>
-						<button type="button" onclick="EliminarAutor();">Eliminar autor</button>
+						<span class="btn btn-danger" type="button" onclick="EliminarAutor();">Eliminar autor</span>
 					</form>
 				</div>
 
@@ -110,7 +111,7 @@
 			</div>
 
 			<div id="Regreso">
-				<button onclick="VistaLibro();">Regresar</button>
+				<span class="btn btn-secondary" onclick="VistaLibro();">Regresar</span>
 			</div>
 
 		</div>
