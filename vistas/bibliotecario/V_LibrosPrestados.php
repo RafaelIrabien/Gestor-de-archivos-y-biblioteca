@@ -75,12 +75,12 @@
 				<div id="busqueda">
 
 					<div id="NuevoLP">
-					<button onclick="imprSelec('ListaLP');">Imprimir</button>
+					<span class="btn btn-primary" onclick="imprSelec('ListaLP');">Imprimir</span>
 					</div>	
 
 					<div id="BusquedaLP">
-					<input type="text" id= "txtbusqueda" name="" placeholder="Nombre del lector">
-					<button type="button" onclick="ListarLibrosPrestados();">Buscar</button>
+					<input  type="text" id= "txtbusqueda" name="" placeholder="Nombre del lector">
+					<span class="btn btn-primary" type="button" onclick="ListarLibrosPrestados();">Buscar</span>
 					
 					</div>
 

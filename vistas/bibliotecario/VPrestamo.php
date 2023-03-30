@@ -83,11 +83,11 @@
 				</div>
 
 				<div id="FechaCodigo">
-					<label for="dtpFecha">Fecha Devolución:</label>
+					<label for="dtpFecha">Fecha de devolución:</label>
 					<br>
 					<input class="form-control" type="date" name="dtpFecha" id="dtpFecha" step="1" min="<?php echo $fechaActual; ?>" max="<?php echo $fechaMaxima; ?>" value="<?php echo $fechaActual; ?>">
 				<br>
-					<label for="txtCodLibro">Códico Libro:</label>
+					<label for="txtCodLibro">Códico del libro:</label>
 					<div>
 						<input class="form-control" type="number" id="txtCodLibro" name="txtCodLibro" min="1">
 					</div>
@@ -99,12 +99,12 @@
 
 				<div id="botones">
 					<span class="btn btn-primary" onclick="GuardarPrestamo();">
-						Guardar Préstamo
+						Guardar
 					</span>
 				
 					<a href="index_bibliotecario.php">
 						<span class="btn btn-secondary">
-						Cancelar Préstamo
+						Cancelar
 						
 					</span>
 					</a>
@@ -122,7 +122,7 @@
 			
 				<div id="busqueda" class="input-group">
 					
-					<input class="form-control" type="text" id="txtbusqueda" placeholder="Titulo del libro">
+					<input class="form-control" type="text" id="txtbusqueda" placeholder="Título del libro">
 					<span class="btn btn-primary" onclick="ListarStockLibro();">
 					Buscar
 					</span>	

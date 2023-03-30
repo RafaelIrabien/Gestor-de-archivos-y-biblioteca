@@ -52,7 +52,7 @@
 		<thead>
 			<tr>
 				<th style="text-align: center;">Código</th>
-				<th style="text-align: center;">Titulo</th>
+				<th style="text-align: center;">Título</th>
 				<!--
 				<th>Autor</th>
 				<th>Editorial</th>
