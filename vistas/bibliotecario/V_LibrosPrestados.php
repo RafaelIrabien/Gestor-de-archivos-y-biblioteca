@@ -23,6 +23,7 @@
 	<title></title>
 
 	<link rel="stylesheet" type="text/css" href="css_l/hoja_librosPrestados.css">
+	<link rel="stylesheet" type="text/css" href="../../css/tablas.css">
 </head>
 <body>
 

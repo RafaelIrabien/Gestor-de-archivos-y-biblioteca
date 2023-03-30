@@ -40,6 +40,7 @@
 	<title></title>
 
 	<link rel="stylesheet" type="text/css" href="css_l/retornados.css">
+	<link rel="stylesheet" type="text/css" href="../../css/tablas.css">
 </head>
 <body>
 
@@ -84,12 +85,12 @@
 
 
 					<div id="ImprimirLR">
-					<button onclick="imprSelec('ListaLR');">Imprimir</button>
+					<span class="btn btn-primary" onclick="imprSelec('ListaLR');">Imprimir</span>
 					</div>	
 
 					<div id="BusquedaLR">
 					<input type="text" id="txtbusqueda" name="" placeholder="Nombre del lector">
-					<button type="button" onclick="ListarLibrosDevueltos();">Buscar</button>
+					<span class="btn btn-primary" onclick="ListarLibrosDevueltos();">Buscar</span>
 					</div>
 
 

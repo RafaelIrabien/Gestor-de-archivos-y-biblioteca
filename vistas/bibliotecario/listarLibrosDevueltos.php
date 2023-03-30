@@ -55,7 +55,7 @@
 			<tr>
 				<th style="text-align: center;">Título</th>
 				<th style="text-align: center;">Lector</th>
-				<th style="text-align: center;">Fecha entrega</th>
+				<th style="text-align: center;">Fecha de entrega</th>
 				<th style="text-align: center;">Fecha de devolución</th>
 				<th style="text-align: center;">Fecha de retorno</th>
 			</tr>
