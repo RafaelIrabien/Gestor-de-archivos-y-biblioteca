@@ -87,7 +87,7 @@
 				<div id="modificarEditorial">
 					<form id="FormModificarEditorial">
 						<input type="text" id="txtcodEditorialMod" placeholder="Código de editorial" required>
-
+		
 						<input type="text" id="txtEditorialMod" placeholder="Cambiar editorial por ..." required>
 
 						<button type="button" onclick="ModificarEditorial();">Modificar Editorial</button>

@@ -88,13 +88,18 @@
 				</div>
 
 				<div>
-				<label for="txtubicacion">Casillero:</label>
-				<input type="text" required id="txtubicacion" name="txtubicacion">
+					<label for="txtubicacion">Casillero:</label>
+					<input type="text" required id="txtubicacion" name="txtubicacion">
 				</div>
 
 				<div>
-				<label for="txtejemplar">Cantidad:</label>
-				<input type="number" required id="txtejemplar" value="" name="txtejemplar" min="1">
+					<label for="txtejemplar">Cantidad:</label>
+					<input type="number" required id="txtejemplar" value="" name="txtejemplar" min="1">
+				</div>
+
+				<div>
+					<label for="txtdisponible">Disponibles:</label>
+					<input type="number" required id="txtdisponible" value="" name="txtdisponible" min="1">
 				</div>
 
 				<div id= 'botones'>

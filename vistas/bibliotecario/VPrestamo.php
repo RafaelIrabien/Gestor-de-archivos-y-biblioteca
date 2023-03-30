@@ -35,8 +35,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css_l/hoja_Prestamo.css">
+
+	<link rel="stylesheet" type="text/css" href="css_l/Prestamos.css">
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../css/tablas.css">
 </head>
 
 	<script type="text/javascript">
@@ -68,10 +70,11 @@
 			<form id="FormPrestamo" method="POST">
 				<div>
 					<label for="lector">Nombre del lector:</label>
-					<div>
-						<input type="text" name="lector" id="lector" required>
-
-						<button type="button" onclick="VerificarLector();">Verificar</button>
+					<div style="text-align: center;">
+						<input class="form-control" type="text" name="lector" id="lector" required>
+						<br><br>
+						<span class="btn btn-warning" onclick="VerificarLector();">Verificar
+						</span>
 					</div>
 				</div>
 
@@ -79,15 +82,14 @@
 					
 				</div>
 
-				<div>
+				<div id="FechaCodigo">
 					<label for="dtpFecha">Fecha Devolución:</label>
-					<input type="date" name="dtpFecha" id="dtpFecha" step="1" min="<?php echo $fechaActual; ?>" max="<?php echo $fechaMaxima; ?>" value="<?php echo $fechaActual; ?>">
-				</div>
-
-				<div>
+					<br>
+					<input class="form-control" type="date" name="dtpFecha" id="dtpFecha" step="1" min="<?php echo $fechaActual; ?>" max="<?php echo $fechaMaxima; ?>" value="<?php echo $fechaActual; ?>">
+				<br>
 					<label for="txtCodLibro">Códico Libro:</label>
 					<div>
-						<input type="number" id="txtCodLibro" name="txtCodLibro" min="1">
+						<input class="form-control" type="number" id="txtCodLibro" name="txtCodLibro" min="1">
 					</div>
 				</div>
 
@@ -96,15 +98,15 @@
 				</div>
 
 				<div id="botones">
-					<button type="button" onclick="GuardarPrestamo();">
+					<span class="btn btn-primary" onclick="GuardarPrestamo();">
 						Guardar Préstamo
-					</button>
+					</span>
 				
 					<a href="index_bibliotecario.php">
-						<button type="button">
+						<span class="btn btn-secondary">
 						Cancelar Préstamo
 						
-					</button>
+					</span>
 					</a>
 				</div>
 
@@ -117,15 +119,22 @@
 
 		<div id="ContListLibros">
 			<h1>Lista de libros</h1>
-				<div id="busqueda">
-						
-				<input type="text" id="txtbusqueda" placeholder="Titulo, Autor, Editorial, Genero">
-				<button type="button" onclick="ListarStockLibro();">Buscar</button>
+			
+				<div id="busqueda" class="input-group">
+					
+					<input class="form-control" type="text" id="txtbusqueda" placeholder="Titulo del libro">
+					<span class="btn btn-primary" onclick="ListarStockLibro();">
+					Buscar
+					</span>	
+
+				
+				
 				</div>
 
 				<div id="ListaLibros">
 					
 				</div>
+				
 		</div>
 	</div>
 

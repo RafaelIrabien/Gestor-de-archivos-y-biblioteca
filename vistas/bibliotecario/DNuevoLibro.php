@@ -7,11 +7,12 @@
 	$dEditorial = $_POST['cboeditorial'];
 	$dUbicacion = $_POST['txtubicacion'];
 	$dCantidad = $_POST['txtejemplar'];
+	$dDisponible = $_POST['txtdisponible'];
 
-	if (!empty($dTitulo) && !empty($dAutor) && $dEditorial !='0' && !empty($dUbicacion) && !empty($dCantidad)) {
+	if (!empty($dTitulo) && !empty($dAutor) && $dEditorial !='0' && !empty($dUbicacion) && !empty($dCantidad) && !empty($dDisponible)) {
 		
 
-		$sql = "INSERT INTO libros (titulo, id_autor, id_editorial,   casillero, cantidad) VALUES ('$dTitulo', '$dAutor', '$dEditorial', '$dUbicacion', '$dCantidad')";
+		$sql = "INSERT INTO libros (titulo, id_autor, id_editorial,   casillero, cantidad, disponibles) VALUES ('$dTitulo', '$dAutor', '$dEditorial', '$dUbicacion', '$dCantidad', '$dDisponible')";
 
 		$result = $cnmysql->query($sql);
 

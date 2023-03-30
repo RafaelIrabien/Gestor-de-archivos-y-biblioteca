@@ -51,12 +51,14 @@
 	<table class="table table-hover">
 		<thead>
 			<tr>
-				<th>Código</th>
-				<th>Titulo</th>
+				<th style="text-align: center;">Código</th>
+				<th style="text-align: center;">Titulo</th>
+				<!--
 				<th>Autor</th>
 				<th>Editorial</th>
-				<th>Cantidad</th>
-				<th>Disponibles</th>
+				-->
+				<th style="text-align: center;">Cantidad</th>
+				<th style="text-align: center;">Disponibles</th>
 			</tr>
 		</thead>
 
@@ -68,8 +70,10 @@
 			<tr>
 				<td><?php echo $fila['Codigo']; ?></td>
 				<td><?php echo $fila['Titulo']; ?></td>
-				<td><?php echo $fila['Autor']; ?></td>
-				<td><?php echo $fila['Editorial']; ?></td>
+				<!--
+				<td><?php //echo $fila['Autor']; ?></td>
+				<td><?php //echo $fila['Editorial']; ?></td>
+				-->
 				<td><?php echo $fila['Cantidad']; ?></td>
 				<td><?php echo $fila['Disponible']; ?></td>
 			</tr>
