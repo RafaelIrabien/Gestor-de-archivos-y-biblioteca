@@ -67,6 +67,10 @@
 	text-align: center;
 }
 
+#botones span {
+	width: 40%;
+}
+
 
 /*OTRA CAJA DE LADO DERECHO*/
 #ContListLibros{

@@ -26,6 +26,7 @@
 		$Titulo = $fila['titulo'];
 		$idAutor = $fila['id_autor'];
 		$idEditorial = $fila['id_editorial'];
+		$idGenero = $fila['id_genero'];
 		$Cantidad = $fila['cantidad'];
 		$Disponible = $fila['disponibles'];
 		$Casillero = $fila['casillero'];
@@ -33,7 +34,7 @@
 
 		$tablaAutor = $cnmysql->query("SELECT * FROM autores");
 		$tablaEditorial = $cnmysql->query("SELECT * FROM editoriales");
-
+		$tablaGenero = $cnmysql->query("SELECT * FROM generos");
 
  ?>
 
@@ -121,6 +122,28 @@
 							}
 
 							echo ">" . $fila['editorial'] . "</option>";
+						}
+
+						 ?>
+					</select>
+				</div>
+
+
+				<div>
+					<label for="cbogenero">Género:</label>
+					<select id="cbogenero" name="cbogenero">
+						<?php 
+						while($fila = mysqli_fetch_array($tablaGenero)){
+
+							$filaCod = $fila['id_genero'];
+
+							echo "<option value='" . $filaCod . "'";
+
+							if ($filaCod == $idGenero) {
+								echo 'selected';
+							}
+
+							echo ">" . $fila['genero'] . "</option>";
 						}
 
 						 ?>

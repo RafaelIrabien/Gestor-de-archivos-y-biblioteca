@@ -73,7 +73,7 @@
 					
 
 					<div id="BusquedaLi">
-					<input type="text" id= "txtbusqueda" name="" placeholder="Título, Autor, Editorial">
+					<input type="text" id= "txtbusqueda" name="" placeholder="Título, Autor, Editorial, Género">
 					<span class="btn btn-primary" onclick="ListarLibro();">Buscar</span>
 					
 					</div>

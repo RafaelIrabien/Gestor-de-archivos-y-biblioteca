@@ -10,7 +10,7 @@
 		include('V_Libro.php');
 	} else {
 
-		echo "<h1 style='color:#fff;'>Error al eliminar</h1>";
+		echo "<h1 style='color:#fff;text-align: center;'>Error al eliminar</h1>";
 		
 		
 	}

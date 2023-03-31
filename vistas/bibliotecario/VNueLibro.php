@@ -16,8 +16,8 @@
 
 
 	$tablaAutor = $cnmysql->query("SELECT * FROM autores");
-
 	$tablaEditorial = $cnmysql->query("SELECT * FROM editoriales");
+	$tablaGenero = $cnmysql->query("SELECT * FROM generos");
 
  ?>
 
@@ -71,6 +71,19 @@
 							while ($fila = mysqli_fetch_array($tablaAutor)) {
 
 								echo "<option value='" . $fila['id_autor'] . "'>" . $fila['nombre'] . "</option>";
+							}
+						 ?>
+					</select>
+				</div>
+
+
+				<div>
+					<label for="cbogenero">Género:</label>
+					<select id="cbogenero" name="cbogenero">
+						<?php 
+							while ($fila = mysqli_fetch_array($tablaGenero)) {
+
+								echo "<option value='" . $fila['id_genero'] . "'>" . $fila['genero'] . "</option>";
 							}
 						 ?>
 					</select>

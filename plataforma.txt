@@ -1,4 +1,6 @@
 
+
+
 CREATE TABLE `archivos` (
   `id_archivo` int(11) NOT NULL,
   `id_categoria` int(11) DEFAULT NULL,
@@ -11,41 +13,6 @@ CREATE TABLE `archivos` (
 
 
 
-CREATE TABLE `categorias` (
-  `id_categoria` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `nombre` varchar(255) NOT NULL,
-  `fecha_insert` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-
-CREATE TABLE `roles` (
-  `id_rol` int(11) NOT NULL,
-  `rol` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-INSERT INTO `roles` (`id_rol`, `rol`) VALUES
-(1, 'Maestro'),
-(2, 'Secretario'),
-(3, 'Bibliotecario');
-
-
-CREATE TABLE `usuarios` (
-  `id_usuario` int(11) NOT NULL,
-  `id_rol` int(11) NOT NULL,
-  `nombre` varchar(255) NOT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `foto` longblob DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-CREATE TABLE `fotos` (
-  `id_foto` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `foto` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-
 CREATE TABLE `archivos_compartir` (
   `id_archivo_compartir` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
@@ -56,11 +23,123 @@ CREATE TABLE `archivos_compartir` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
+
+CREATE TABLE `autores` (
+  `id_autor` int(11) NOT NULL,
+  `nombre` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+CREATE TABLE `categorias` (
+  `id_categoria` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `fecha_insert` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+CREATE TABLE `detalle_prestamos` (
+  `id_detalle` int(11) NOT NULL,
+  `id_libro` int(11) DEFAULT NULL,
+  `id_prestamo` int(11) DEFAULT NULL,
+  `id_estado` int(11) DEFAULT NULL,
+  `Fecha_Retorno` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+CREATE TABLE `editoriales` (
+  `id_editorial` int(11) NOT NULL,
+  `editorial` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
 CREATE TABLE `enlaces` (
   `id_enlace` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `enlace` varchar(255) NOT NULL
+  `enlace` varchar(255) NOT NULL,
+  `instruccion` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+CREATE TABLE `estado` (
+  `id_estado` int(11) NOT NULL,
+  `estado` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+CREATE TABLE `fotos` (
+  `id_foto` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `foto` longblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+CREATE TABLE `generos` (
+  `id_genero` int(11) NOT NULL,
+  `genero` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+CREATE TABLE `lectores` (
+  `id_lector` int(11) NOT NULL,
+  `nombre` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+CREATE TABLE `libros` (
+  `id_libro` int(11) NOT NULL,
+  `id_autor` int(11) NOT NULL,
+  `id_editorial` int(11) DEFAULT NULL,
+  `id_genero` int(11) DEFAULT NULL,
+  `titulo` varchar(255) DEFAULT NULL,
+  `cantidad` int(11) DEFAULT NULL,
+  `disponibles` int(11) DEFAULT NULL,
+  `casillero` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+CREATE TABLE `prestamos` (
+  `id_prestamo` int(11) NOT NULL,
+  `id_lector` int(11) DEFAULT NULL,
+  `fecha_entrega` date DEFAULT NULL,
+  `fecha_devolucion` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+CREATE TABLE `roles` (
+  `id_rol` int(11) NOT NULL,
+  `rol` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+INSERT INTO `roles` (`id_rol`, `rol`) VALUES
+(1, 'Maestro'),
+(2, 'Secretario'),
+(3, 'Bibliotecario');
+
+
+
+CREATE TABLE `usuarios` (
+  `id_usuario` int(11) NOT NULL,
+  `id_rol` int(11) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
 
 ALTER TABLE `archivos`
   ADD PRIMARY KEY (`id_archivo`),
@@ -68,9 +147,64 @@ ALTER TABLE `archivos`
   ADD KEY `fkArchivosUsuarios_idx` (`id_usuario`);
 
 
+ALTER TABLE `archivos_compartir`
+  ADD PRIMARY KEY (`id_archivo_compartir`),
+  ADD KEY `fkArchivosCompartirUsuarios_idx` (`id_usuario`);
+
+
+ALTER TABLE `autores`
+  ADD PRIMARY KEY (`id_autor`);
+
+
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id_categoria`),
   ADD KEY `fkCategoriaUsuario_idx` (`id_usuario`);
+
+
+ALTER TABLE `detalle_prestamos`
+  ADD PRIMARY KEY (`id_detalle`),
+  ADD KEY `fk_DetallesLibros_idx` (`id_libro`),
+  ADD KEY `fk_DetallesPrestamos_idx` (`id_prestamo`),
+  ADD KEY `fk_DetallesEstados_idx` (`id_estado`);
+
+
+ALTER TABLE `editoriales`
+  ADD PRIMARY KEY (`id_editorial`);
+
+
+ALTER TABLE `enlaces`
+  ADD PRIMARY KEY (`id_enlace`),
+  ADD KEY `fkEnlacesUsuarios_idx` (`id_usuario`);
+
+
+ALTER TABLE `estado`
+  ADD PRIMARY KEY (`id_estado`);
+
+
+ALTER TABLE `fotos`
+  ADD PRIMARY KEY (`id_foto`),
+  ADD KEY `fkFototosUsuarios_idx` (`id_usuario`);
+
+
+ALTER TABLE `generos`
+  ADD PRIMARY KEY (`id_genero`);
+
+
+ALTER TABLE `lectores`
+  ADD PRIMARY KEY (`id_lector`);
+
+
+ALTER TABLE `libros`
+  ADD PRIMARY KEY (`id_libro`),
+  ADD KEY `fk_LibrosAutores_idx` (`id_autor`),
+  ADD KEY `fk_LibrosEditoriales_idx` (`id_editorial`),
+  ADD KEY `fk_LibrosGeneros_idx` (`id_genero`);
+
+
+ALTER TABLE `prestamos`
+  ADD PRIMARY KEY (`id_prestamo`),
+  ADD KEY `fk_PrestamosLectores_idx` (`id_lector`);
+
 
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id_rol`);
@@ -82,56 +216,97 @@ ALTER TABLE `usuarios`
 
 
 ALTER TABLE `archivos`
-  MODIFY `id_archivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_archivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+
+ALTER TABLE `archivos_compartir`
+  MODIFY `id_archivo_compartir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+
+ALTER TABLE `autores`
+  MODIFY `id_autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+
+ALTER TABLE `detalle_prestamos`
+  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+
+ALTER TABLE `editoriales`
+  MODIFY `id_editorial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+
+ALTER TABLE `enlaces`
+  MODIFY `id_enlace` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+
+ALTER TABLE `estado`
+  MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+
+ALTER TABLE `fotos`
+  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
+
+ALTER TABLE `generos`
+  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+
+ALTER TABLE `lectores`
+  MODIFY `id_lector` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+
+ALTER TABLE `libros`
+  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+
+ALTER TABLE `prestamos`
+  MODIFY `id_prestamo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 
 ALTER TABLE `roles`
-  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
-ALTER TABLE `fotos`
-  ADD PRIMARY KEY (`id_foto`),
-  ADD KEY `fkFototosUsuarios_idx` (`id_usuario`);
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 
 ALTER TABLE `archivos`
   ADD CONSTRAINT `fkArchivosCategorias` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id_categoria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fkArchivosUsuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-ALTER TABLE `categorias`
-  ADD CONSTRAINT `fkCategoriaUsuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
-
-ALTER TABLE `fotos`
-  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
-ALTER TABLE `fotos`
-  ADD CONSTRAINT `fkFototosUsuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
-
-ALTER TABLE `archivos_compartir`
-  ADD PRIMARY KEY (`id_archivo_compartir`),
-  ADD KEY `fkArchivosCompartirUsuarios_idx` (`id_usuario`);
-
-ALTER TABLE `archivos_compartir`
-  MODIFY `id_archivo_compartir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
-ALTER TABLE `enlaces`
-  ADD PRIMARY KEY (`id_enlace`),
-  ADD KEY `fkEnlacesUsuarios_idx` (`id_usuario`);
-
-ALTER TABLE `enlaces`
-  MODIFY `id_enlace` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 ALTER TABLE `archivos_compartir`
   ADD CONSTRAINT `fkArchivosCompartirUsuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-TER TABLE `enlaces`
+
+ALTER TABLE `categorias`
+  ADD CONSTRAINT `fkCategoriaUsuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+ALTER TABLE `detalle_prestamos`
+  ADD CONSTRAINT `fk_DetallesEstados` FOREIGN KEY (`id_estado`) REFERENCES `estado` (`id_estado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_DetallesLibros` FOREIGN KEY (`id_libro`) REFERENCES `libros` (`id_libro`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_DetallesPrestamos` FOREIGN KEY (`id_prestamo`) REFERENCES `prestamos` (`id_prestamo`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+ALTER TABLE `enlaces`
   ADD CONSTRAINT `fkEnlacesUsuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+ALTER TABLE `fotos`
+  ADD CONSTRAINT `fkFototosUsuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+ALTER TABLE `libros`
+  ADD CONSTRAINT `fk_LibrosAutores` FOREIGN KEY (`id_autor`) REFERENCES `autores` (`id_autor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_LibrosEditoriales` FOREIGN KEY (`id_editorial`) REFERENCES `editoriales` (`id_editorial`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_LibrosGeneros` FOREIGN KEY (`id_genero`) REFERENCES `generos` (`id_genero`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+ALTER TABLE `prestamos`
+  ADD CONSTRAINT `fk_PrestamosLectores` FOREIGN KEY (`id_lector`) REFERENCES `lectores` (`id_lector`) ON DELETE CASCADE ON UPDATE CASCADE;

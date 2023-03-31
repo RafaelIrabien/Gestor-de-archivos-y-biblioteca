@@ -15,7 +15,8 @@
 				padding: 10px;
 				box-sizing: border-box;
 				color: #1D7034;
-				border:2px dotted #4DA459;'
+				border:2px dotted #4DA459;
+				text-align: center;'
 		><strong>¡Exito!</strong> Editorial agregada exitosamente</p>";
 
 		} else {
@@ -25,7 +26,8 @@
 				padding: 10px;
 				box-sizing: border-box;
 				color: #E33E3E;
-				border:2px dotted #E33E3E;'
+				border:2px dotted #E33E3E;
+				text-align: center;'
 		><strong>¡Error!</strong> Editorial no fué agregada</p>";
 
 		}
@@ -36,7 +38,8 @@
 				padding: 10px;
 				box-sizing: border-box;
 				color: #E33E3E;
-				border:2px dotted #E33E3E;'
+				border:2px dotted #E33E3E;
+				text-align: center;'
 		><strong>¡Error!</strong> Ingrese una editorial para agregar</p>";
 
 	}

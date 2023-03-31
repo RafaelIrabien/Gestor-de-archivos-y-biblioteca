@@ -18,7 +18,8 @@
 					padding: 10px;
 					box-sizing: border-box;
 					color: #1D7034;
-					border:2px dotted #4DA459;'
+					border:2px dotted #4DA459;
+					text-align: center;'
 			><strong>¡Exito!</strong> Autor fué modificado</p>";
 
 		} else {
@@ -28,7 +29,8 @@
 					padding: 10px;
 					box-sizing: border-box;
 					color: #E33E3E;
-					border:2px dotted #E33E3E;'
+					border:2px dotted #E33E3E;
+					text-align: center;'
 			><strong>¡Error!</strong> Autor no fue modificado</p>";
 
 		}
@@ -39,7 +41,8 @@
 				padding: 10px;
 				box-sizing: border-box;
 				color: #E33E3E;
-				border:2px dotted #E33E3E;'
+				border:2px dotted #E33E3E;
+				text-align: center;'
 		><strong>¡Error!</strong> Ingrese un código y un autor para modificar</p>";
 
 	}

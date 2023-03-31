@@ -19,14 +19,15 @@ $id_Usuario = $_SESSION['id_usuario'];
 
 $query= "
 
-SELECT LI.id_libro, LI.titulo, AU.nombre as Autor, ED.editorial as Editorial, LI.casillero, LI.cantidad, LI.disponibles FROM libros LI
+SELECT LI.id_libro, LI.titulo, AU.nombre as Autor, ED.editorial as Editorial, GE.genero as Genero, LI.casillero, LI.cantidad, LI.disponibles FROM libros LI
 INNER JOIN autores AU on AU.id_autor = LI.id_autor
-
 INNER JOIN editoriales ED on ED.id_editorial = LI.id_editorial
+INNER JOIN generos GE on GE.id_genero = LI.id_genero
 WHERE
 LI.titulo like '$vbusqueda%' OR
 AU.nombre like '$vbusqueda%' OR
-ED.editorial like '$vbusqueda%' 
+ED.editorial like '$vbusqueda%' OR
+GE.genero like '$vbusqueda%'
 ORDER BY LI.id_libro DESC;
 "
 ;
@@ -62,6 +63,7 @@ ORDER BY LI.id_libro DESC;
 				<th style="text-align: center;">Título</th>
 				<th style="text-align: center;">Autor</th>
 				<th style="text-align: center;">Editorial</th>
+				<th style="text-align: center;">Género</th>
 				<th style="text-align: center;">Casillero</th>
 				<th style="text-align: center;">Cantidad</th>
 				<th style="text-align: center;">Disponibles</th>
@@ -78,6 +80,7 @@ ORDER BY LI.id_libro DESC;
 				<td><?php echo $fila['titulo']; ?></td>
 				<td><?php echo $fila['Autor']; ?></td>
 				<td><?php echo $fila['Editorial']; ?></td>
+				<td><?php echo $fila['Genero']; ?></td>
 				<td><?php echo $fila['casillero']; ?></td>
 				<td><?php echo $fila['cantidad']; ?></td>
 				<td><?php echo $fila['disponibles']; ?></td>
