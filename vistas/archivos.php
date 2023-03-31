@@ -52,13 +52,13 @@
       </div>
       <div class="modal-body">
         	<form id="frmArchivos" enctype="multipart/form-data" method="POST">
-        		<label>Selecciona archivos:</label>
+        		<label>Seleccione archivos:</label>
         		<input type="file" name="archivos[]" id="archivos[]" multiple="">
         	</form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-primary" id="btnGuardarArchivos">Guardar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
@@ -95,7 +95,7 @@
     </div>
   </div>
 </div>
-
+ <br>
 
 
 </body>

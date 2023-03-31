@@ -148,9 +148,10 @@
          
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+       
         <button id="btnActualizarFoto" type="submit" class="btn btn-warning">Actualizar</button>
-           
+        
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
           </form>
 
         </div>       
@@ -188,10 +189,11 @@
           <br>
          
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button id="btnActualizarNombre" type="button" class="btn btn-warning">Actualizar</button>
-           
+      		<div class="modal-footer">
+        
+        		<button id="btnActualizarNombre" type="button" class="btn btn-warning">Actualizar</button>
+        
+        		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
           </form>
 
         </div>       

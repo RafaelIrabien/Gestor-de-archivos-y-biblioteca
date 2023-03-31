@@ -15,19 +15,7 @@
           <li class="nav-item">
             <a href="gestor.php"><span class="fa-solid fa-cloud"></span> Mis archivos</a>
           </li>
-
-
-          
-
-
-         <li class="nav-item list__item list__item--click">
-            <div class="list__button list__button--click">
-              <a href="#">
-                <span class="fa-solid fa-book"></span> 
-                Biblioteca
-              </a>
-            </div>
-          </li> 
+ 
 </ul>
 
       

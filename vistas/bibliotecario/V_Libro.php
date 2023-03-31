@@ -34,6 +34,7 @@
 	<script type="text/javascript" src="js/funcionesAutor.js"></script>
 	<script type="text/javascript" src="js/funcionesEditorial.js"></script>
 	<script type="text/javascript" src="js/funcionesPrestamo.js"></script>
+	<script type="text/javascript" src="js/funcionesGenero.js"></script>
 </head>
 <body>
 
@@ -67,6 +68,7 @@
 						<span class="btn btn-primary" onclick="VNuevoLi();">Agregar libro</span>
 						<span class="btn btn-primary" onclick="VistaDetalleAutor();">Opciones de autor</span>
 						<span class="btn btn-primary" onclick="VistaDetalleEditorial();">Opciones de Editorial</span>
+						<span class="btn btn-primary" onclick="VistaDetalleGenero();">Opciones de Género</span>
 					</div>
 					
 

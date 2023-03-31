@@ -51,6 +51,23 @@
 		});
 	}
 
+
+	function VistaDetalleGenero(){
+		var parametros = {};
+
+		$.ajax({
+				type: "POST",
+				data: parametros,
+				url: "VDetalleGenero.php",
+				beforeSend:function(){
+					$('#contenido').html();
+				},
+				success:function(vista){
+					$('#contenido').html(vista);
+				}
+		});
+	}
+
 	
 	function VistaPrestamo(Cod){
 	var parametros = {

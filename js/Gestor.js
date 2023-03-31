@@ -106,7 +106,7 @@
             			th.append($('<th style="text-align: center;">').text('Categoría'));
             			th.append($('<th style="text-align: center;">').text('Nombre'));
             			th.append($('<th style="text-align: center;">').text('Tipo'));
-            			th.append($('<th style="text-align: center;">').text('Opciones'));
+            			th.append($('<th style="text-align: center;">').text('Descargar'));
             			tbody.append(th);
           			}
 
@@ -120,13 +120,7 @@
 				tr.append("<td>" + res[i].Nombre + "</td>");
 				tr.append("<td>" + res[i].Tipo + "</td>");
 				tr.append("<td>" + 
-					"<a class='btn btn-success btn-sm' href='" + rutaDescarga + "' download='" + res[i].Nombre + "'><span class='fas fa-download'></span></a>"
-					  + "<span id='ver' class='btn btn-primary btn-sm'><span class='fas fa-eye'></span></span>" 
-					  + $(function(){
-					  	$('#ver').on('click',  function(){
-					  	 $('#modalVer').modal()
-					  	})
-					   }),
+					"<a href='" + rutaDescarga + "' download='" + res[i].Nombre + "'><span class='btn btn-success btn-sm'><span class='fas fa-download'></span></span></a>"
 					  + "</td>");
 				tbody.append(tr);
 				

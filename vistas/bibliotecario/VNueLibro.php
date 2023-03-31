@@ -104,8 +104,8 @@
 				</div>
 
 				<div id= 'botones'>
-					<span class="btn btn-primary" type="submit">Guardar</span>
-					<span class="btn btn-secondary" type="button" onclick="VistaLibro();">Cancelar</span>
+					<button class="btn btn-primary" type="submit">Guardar</button>
+					<button class="btn btn-secondary" type="button" onclick="VistaLibro();">Cancelar</button>
 				</div>
 
 			</form>

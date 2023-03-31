@@ -26,16 +26,6 @@
           </li>
 
 
-           <li class="nav-item">
-              <a href="#">
-               <span class="fa-solid fa-book"></span>
-               Biblioteca
-              </a>
-          </li>
-
-
-
-
             <div class="nav-item list__item list__item--click">
             <div class="list__button list__button--click">
               <a class="nav__link" href="#">

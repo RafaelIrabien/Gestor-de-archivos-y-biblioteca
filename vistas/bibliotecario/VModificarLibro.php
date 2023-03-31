@@ -146,8 +146,8 @@
 
 
 				<div id="botones">
-					<span class="btn btn-warning" type="submit">Modificar</span>
-					<span class="btn btn-secondary" onclick="VistaLibro();">Cancelar</span>
+					<button class="btn btn-warning" type="submit">Modificar</button>
+					<button class="btn btn-secondary" onclick="VistaLibro();">Cancelar</button>
 				</div>
 			</form>
 		</div>
