@@ -21,16 +21,16 @@
 	}
 
 
-	function ModificarEditorial(){
+	function ModificarGenero(){
 		var parametros = {
-			"vcod" : $('#txtcodEditorialMod').val(),
-			"vedi" : $('#txtEditorialMod').val()
+			"vcod" : $('#txtcodGeneroMod').val(),
+			"vgen" : $('#txtGeneroMod').val()
 		};
 
 		$.ajax({
 				type: "POST",
 				data: parametros,
-				url: "DModificarEditorial.php",
+				url: "DModificarGenero.php",
 				beforeSend:function(){
 					$("#CajaMensaje").html("Procesando")
 				},
