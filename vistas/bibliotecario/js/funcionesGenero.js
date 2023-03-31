@@ -44,15 +44,15 @@
 
 
 
-	function EliminarEditorial(){
+	function EliminarGenero(){
 		var parametros = {
-			"vcod" : $('#txtcodEditorialEli').val()
+			"vcod" : $('#txtcodGeneroEli').val()
 		};
 
 		$.ajax({
 				type: "POST",
 				data: parametros,
-				url: "DEliminarEditorial.php",
+				url: "DEliminarGenero.php",
 				beforeSend:function(){
 					$('#CajaMensaje').html("Procesando")
 				},
