@@ -14,7 +14,7 @@
 
 	//Llamamos al método conexion()
 	$conexion = $conexion->conexion();
-	$sql = "SELECT id_enlace, enlace FROM enlaces";
+	$sql = "SELECT * FROM enlaces";
 	$result = mysqli_query($conexion, $sql);
 
  ?>
@@ -31,7 +31,7 @@
 				 <tr>
 				 	<th style="text-align: center;">No.</th>
 					<th style="text-align: center;">Enlace</th>
-			   <!-- <th style="text-align: center;">Acciones</th> -->
+			        <th style="text-align: center;">Instrucciones</th>
 				 </tr>
 			</thead>
 			<br>
@@ -47,7 +47,11 @@
 				<tr>
 					<td style="font-weight: bold;"><?php echo $id_enlace; ?></td>
 					<td onclick="Copiar(this)"><?php echo $mostrar['enlace']; ?></td>
-			   <!-- <td></td> -->
+			    	<td>
+			    		<span style="border-radius: 100%; width: 30px;" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalVerInstrucciones" onclick="obtenerInstruccionPorId('<?php echo $id_enlace; ?>')">
+			    			<span class="fas fa-info"></span>
+			    		</span>
+			    	</td>
 				</tr>
 
 				<?php 

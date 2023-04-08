@@ -68,6 +68,19 @@
 		}
 
 
+		public function obtenerInstruccion($idEnlace) {
+			$conexion = Conectar::conexion();
+
+			$sql = "SELECT instruccion FROM enlaces WHERE id_enlace = '$idEnlace'";
+
+			$result = mysqli_query($conexion, $sql);
+			$datos = mysqli_fetch_array($result);
+
+			$Instruccion = $datos['instruccion'];
+			return $Instruccion;
+		}
+
+
 	} // Fin de la clase Enlaces
 
 

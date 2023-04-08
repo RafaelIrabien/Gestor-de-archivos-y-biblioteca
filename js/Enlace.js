@@ -137,7 +137,16 @@
 	}
 
 
-
+	function obtenerInstruccionPorId(idEnlace) {
+		$.ajax({
+				type: "POST",
+				data: "idEnlace=" + idEnlace,
+				url: "../procesos/compartir/enlaces/obtenerInstruccion.php",
+				success:function(respuesta) {
+					$('#instruccionObtenida').val(respuesta);
+				}
+		});
+	}
 
 
 
