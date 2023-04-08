@@ -2,15 +2,23 @@
 	function agregarEnlace() {
 		//Validamos que el input esté lleno, por lo que lo guardamos en una variable
 		var enlace = $('#Enlace').val();
+		var instruccion = $('#instruccion').val();
 
 		if (enlace == "") {
 			swal("Debe agregar un enlace");
 			return false;
-		} else {
+		}
+
+		else if(instruccion == ""){
+			swal("Debe agregar una instrucción");
+			return false;
+		}
+
+		 else {
 
 			$.ajax({
 				  type: "POST",
-				  data: "enlace=" + enlace,
+				  data: $('#frmEnlaces').serialize(),
 				  url: "../procesos/compartir/enlaces/agregarEnlace.php",
 				  success:function(respuesta) {
 				  	respuesta = respuesta.trim();
@@ -22,6 +30,8 @@
 				  		//Limpiamos el control una vez agregado el enlace 
 				  		//y agregamos los mensajes
 				  		$('#Enlace').val("");
+				  		$('#instruccion').val("");
+
 				  		swal(":D", "Enlace agregado con éxito", "success");
 				  	} else {
 				  		swal(":(", "Falló al agregar", "error");

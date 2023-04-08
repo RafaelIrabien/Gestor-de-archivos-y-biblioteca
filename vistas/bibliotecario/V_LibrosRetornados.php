@@ -78,7 +78,7 @@
 
 			<div id="tablaLR">
 				
-				<h1>Libros Retornados</h1>
+				<h1>Libros Devueltos</h1>
 				<div id="busqueda">
 
 

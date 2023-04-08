@@ -66,6 +66,12 @@ body{
 	overflow: auto;
 }
 
+#listGeneros{
+	width: 100%;
+	max-height: 236px;
+	overflow: auto;
+}
+
 #agregarEditorial{
 	margin: 2% 0% 2% 0%;
 	position: relative;

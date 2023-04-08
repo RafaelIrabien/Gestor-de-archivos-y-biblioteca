@@ -51,9 +51,12 @@
         </button>
       </div>
       <div class="modal-body">
-        	<form id="frmEnlaces">
+        	<form id="frmEnlaces" method="POST">
         		<label>Enlace:</label>
         		<input type="text" name="Enlace" id="Enlace" class="form-control">
+        		<br>
+        		<label>Instrucción:</label>
+        		<textarea type="text" id="instruccion" name="instruccion" class="form-control"></textarea>
         	</form>
       </div>
       <div class="modal-footer">

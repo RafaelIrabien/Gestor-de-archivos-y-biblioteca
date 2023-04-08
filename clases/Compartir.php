@@ -7,11 +7,12 @@
 		public function agregarEnlace($datos) {
 			$conexion = Conectar::conexion();
 
-			$sql = "INSERT INTO enlaces (id_usuario, enlace) VALUES (?, ?)";
+			$sql = "INSERT INTO enlaces (id_usuario, enlace, instruccion) VALUES (?, ?, ?)";
 
 			$query = $conexion->prepare($sql);
-			$query->bind_param("is", $datos['id_usuario'],
-									 $datos['enlace']);
+			$query->bind_param("iss", $datos['id_usuario'],
+									  $datos['enlace'],
+									  $datos['instruccion']);
 			$respuesta = $query->execute();
 			$query->close();
 
