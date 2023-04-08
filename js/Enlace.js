@@ -53,6 +53,7 @@
 
 			   	$('#id_Enlace').val(respuesta['idEnlace']);
 			   	$('#EnlaceE').val(respuesta['Enlace']);
+			   	$('#InstruccionE').val(respuesta['Instruccion']);
 			   }
 		});
 	}
@@ -63,7 +64,13 @@
 		if ($('#EnlaceE').val() == "" ) {
 			swal("No hay enlace");
 			return false;
-		} else {
+
+		} else if($('#InstruccionE').val() == "" ){
+			swal("No hay instrucción");
+			return false;
+		}
+
+		 else {
 
 			$.ajax({
 					type: "POST",

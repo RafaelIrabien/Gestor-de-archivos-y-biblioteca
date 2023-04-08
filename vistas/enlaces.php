@@ -56,7 +56,7 @@
         		<input type="text" name="Enlace" id="Enlace" class="form-control">
         		<br>
         		<label>Instrucción:</label>
-        		<textarea type="text" id="instruccion" name="instruccion" class="form-control"></textarea>
+        		<textarea id="instruccion" name="instruccion" class="form-control"></textarea>
         	</form>
       </div>
       <div class="modal-footer">
@@ -84,6 +84,8 @@
         		<label>Enlace:</label>
         		<input type="text" name="id_Enlace" id="id_Enlace" hidden="">
         		<input type="text" name="EnlaceE" id="EnlaceE" class="form-control">
+        		<br>
+        		<textarea name="InstruccionE" id="InstruccionE" class="form-control"></textarea>
         	</form>
       </div>
       <div class="modal-footer">

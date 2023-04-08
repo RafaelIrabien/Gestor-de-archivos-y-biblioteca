@@ -5,7 +5,8 @@
 
 	$datos = array(
 					"id_enlace" => $_POST['id_Enlace'],
-					"enlace" => $_POST['EnlaceE']
+					"enlace" => $_POST['EnlaceE'],
+					"instruccion" => $_POST['InstruccionE']
 					);
 
 	echo $enlaces->actualizarEnlace($datos);

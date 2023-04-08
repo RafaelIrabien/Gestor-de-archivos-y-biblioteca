@@ -23,14 +23,15 @@
 		public function obtenerEnlace($idEnlace) {
 			$conexion = Conectar::conexion();
 
-			$sql = "SELECT id_enlace, enlace FROM enlaces WHERE id_enlace = '$idEnlace'";
+			$sql = "SELECT id_enlace, enlace, instruccion FROM enlaces WHERE id_enlace = '$idEnlace'";
 
 			$result = mysqli_query($conexion, $sql);
 			$enlace = mysqli_fetch_array($result);
 
 			$datos = array(
 					      "idEnlace" => $enlace['id_enlace'],
-					      "Enlace" => $enlace['enlace']	
+					      "Enlace" => $enlace['enlace'],
+					      "Instruccion" => $enlace['instruccion']
 						   );
 			return $datos;
 		}
@@ -40,11 +41,12 @@
 		public function actualizarEnlace($datos) {
 			$conexion = Conectar::conexion();
 
-			$sql = "UPDATE enlaces SET enlace = ? WHERE id_enlace = ?";
+			$sql = "UPDATE enlaces SET enlace = ?, instruccion = ? WHERE id_enlace = ?";
 
 			$query = $conexion->prepare($sql);
-			$query->bind_param("si", $datos['enlace'],
-									 $datos['id_enlace']);
+			$query->bind_param("ssi", $datos['enlace'],
+									  $datos['instruccion'],
+									  $datos['id_enlace']);
 			$respuesta = $query->execute();
 			$query->close();
 
