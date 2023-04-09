@@ -199,7 +199,20 @@
 	}
 
 
-	} //Fin de la clase Archivos
+	public function obtenerInstruccion($idArchivo) {
+			$conexion = Conectar::conexion();
+
+			$sql = "SELECT instruccion FROM archivos_compartir WHERE id_archivo_compartir = '$idArchivo'";
+
+			$result = mysqli_query($conexion, $sql);
+			$datos = mysqli_fetch_array($result);
+
+			$Instruccion = $datos['instruccion'];
+			return $Instruccion;
+		}
+
+
+  } //Fin de la clase Archivos
 
 
  ?>

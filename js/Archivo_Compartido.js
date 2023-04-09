@@ -9,3 +9,17 @@
 				}
 		});
 	}
+
+
+
+	function obtenerInstruccion(idArchivo) {
+		$.ajax({
+				type: "POST",
+				data: "idArchivo=" + idArchivo,
+				url: "../procesos/compartir/archivos/obtenerInstruccion.php",
+				success:function(respuesta) {
+				 $('#instruccionObtenido').val(respuesta);
+				 
+				}
+		});
+	}
