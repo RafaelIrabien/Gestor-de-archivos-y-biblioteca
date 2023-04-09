@@ -54,6 +54,9 @@
         	<form id="frmArchivos" enctype="multipart/form-data" method="POST">
         		<label>Seleccione archivos:</label>
         		<input type="file" name="archivos[]" id="archivos[]" multiple="">
+            <br><br>
+            <label>Instrucción:</label>
+            <textarea name="instruccion" id="instruccion" class="form-control"></textarea>
         	</form>
       </div>
       <div class="modal-footer">

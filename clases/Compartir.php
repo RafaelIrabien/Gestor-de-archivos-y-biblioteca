@@ -92,13 +92,14 @@
 		public function agregarArchivo($datos) {
 			$conexion = Conectar::conexion();
 
-			$sql = "INSERT INTO archivos_compartir (id_usuario, nombre, tipo, ruta) VALUES (?, ?, ?, ?)";
+			$sql = "INSERT INTO archivos_compartir (id_usuario, nombre, tipo, ruta, instruccion) VALUES (?, ?, ?, ?, ?)";
 
 			$query = $conexion->prepare($sql);
-			$query->bind_param("isss", $datos["idUsuario"],
-									   $datos["Nombre"],
-									   $datos["Tipo"],
-									   $datos["Ruta"]);
+			$query->bind_param("issss", $datos["idUsuario"],
+									    $datos["Nombre"],
+									    $datos["Tipo"],
+									    $datos["Ruta"],
+									    $datos["Instruccion"]);
 			$respuesta = $query->execute();
 			$query->close();
 			return $respuesta;

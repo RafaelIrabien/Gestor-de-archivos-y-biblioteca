@@ -36,7 +36,8 @@
 										  "idUsuario" => $idUsuario,
 										  "Nombre" => $nombreArchivo,
 										  "Tipo" => $tipoArchivo,
-										  "Ruta" => $rutaFinal
+										  "Ruta" => $rutaFinal,
+										  "Instruccion" => $_POST['instruccion']
 											);
 			//Hacemos que se suban los archivos
 			//Si sube un archivo, entonces que meta un registro en la BD
