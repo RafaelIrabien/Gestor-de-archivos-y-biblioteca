@@ -29,7 +29,7 @@
 		<table class="table table-hover" id="tablaEnlacesDatatable">
 			<thead>
 				 <tr>
-				 	<th style="text-align: center;">No.</th>
+			   <!--	<th style="text-align: center;">No.</th> -->
 					<th style="text-align: center;">Enlace</th>
 			        <th style="text-align: center;">Instrucciones</th>
 				 </tr>
@@ -45,7 +45,7 @@
 			 	?>
 			
 				<tr>
-					<td style="font-weight: bold;"><?php echo $id_enlace; ?></td>
+				<!--<td style="font-weight: bold;"><?php echo $id_enlace; ?></td> -->
 					<td onclick="Copiar(this)"><?php echo $mostrar['enlace']; ?></td>
 			    	<td>
 			    		<span style="border-radius: 100%; width: 30px;" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalVerInstrucciones" onclick="obtenerInstruccionPorId('<?php echo $id_enlace; ?>')">

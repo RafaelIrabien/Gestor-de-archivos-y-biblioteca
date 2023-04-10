@@ -74,9 +74,9 @@
       </div>
 
       <div class="modal-body">
-      	<textarea id="instruccionObtenido" class="form-control">
+      	<p id="instruccionObtenido" class="form-control">
       		
-      	</textarea>
+      	</p>
       </div>
       
       <div class="modal-footer">
@@ -114,9 +114,9 @@
       </div>
 
       <div class="modal-body">
-      	<textarea type="text" id="instruccionObtenida" class="form-control">
+      	<p type="text" id="instruccionObtenida" class="form-control">
       		
-      	</textarea>
+      	</p>
       		
 
       </div>

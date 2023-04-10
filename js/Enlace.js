@@ -143,7 +143,7 @@
 				data: "idEnlace=" + idEnlace,
 				url: "../procesos/compartir/enlaces/obtenerInstruccion.php",
 				success:function(respuesta) {
-					$('#instruccionObtenida').val(respuesta);
+					$('#instruccionObtenida').html(respuesta);
 				}
 		});
 	}

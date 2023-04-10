@@ -26,7 +26,7 @@ class Usuario extends Conectar{
 			$query = $conexion->prepare($sql);
 
 			//Este es donde vamos a agregar todos los datos que vienen aqui
-			//Hay que agregar el tipo de dato que va a cachar (nombre es 	string, entonces se pone una s)
+			//Hay que agregar el tipo de dato que va a cachar (nombre es string, entonces se pone una s)
 			$query->bind_param('isss',  $datos['idRol'],
 									  	$datos['nombre'],
 								  	  	$datos['correo'],
@@ -161,6 +161,23 @@ class Usuario extends Conectar{
 		$query->close();
 
 		return $result;
+	}
+
+
+
+
+	public function eliminarUsuario($id_Usuario) {
+		$conexion = Conectar::conexion();
+
+		$sql = "DELETE FROM usuarios WHERE id_usuario = ?";
+
+		$query = $conexion->prepare($sql);
+		$query->bind_param('i', $id_Usuario);
+		$respuesta = $query->execute();
+		$query->close();
+
+		return $respuesta;
+
 	}
 
 	

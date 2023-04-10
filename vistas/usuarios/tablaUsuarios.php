@@ -35,7 +35,7 @@
 
 
 	<div class="tabla">
-		<div class="col-sm-10">
+		<div class="col-sm-11">
 			<div class="table-responsive">
 				<h1 class="display-4">Usuarios</h1>
 				<br>
@@ -50,6 +50,7 @@
 							<th style="text-align: center;">Correo</th>
 							<th style="text-align: center;">Rol</th>
 							<th style="text-align: center;">Ver archivos</th>
+							<th style="text-align: center;">Eliminar usuario</th>
 						</tr>
 					</thead>
 
@@ -94,6 +95,11 @@
 									<span class="fas fa-regular fa-folder-open"></span>
 								</span>
 								
+							</td>
+							<td>
+								<span class="btn btn-danger" onclick="eliminarUsuario('<?php  echo $id_usuario; ?>')">
+									<span class="fas fa-user-xmark"></span>
+								</span>
 							</td>
 						
 						</tr>

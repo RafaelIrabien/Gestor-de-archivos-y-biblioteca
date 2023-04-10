@@ -20,10 +20,11 @@
 
 
 	<div class="tabla">
-	<div class="col-sm-10">
+	<div class="col-sm-11">
 	<div class="table-responsive">
 		<h1 class="display-4">Archivos</h1>
-			<br>
+		<br>
+		<h5>Estimado usuario, haga click en el botón <i class="fas fa-circle-info"></i> para poder ver las instrucciones relacionadas con el archivo a trabajar.</h5>
 		<table class="table table-hover" id="tablaArchivosDatatable">
 			<thead>
 				 <tr>

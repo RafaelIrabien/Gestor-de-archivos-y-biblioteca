@@ -128,7 +128,7 @@ include "fondo.php";
 include "footer.php"; ?>
 
 
-<script type="text/javascript" src="../js/Gestor.js"></script>
+<script type="text/javascript" src="../js/Secretario.js"></script>
   <script type="text/javascript">
   	$(document).ready(function(){
   		$('#tablaUsuarios').load('usuarios/tablaUsuarios.php');
