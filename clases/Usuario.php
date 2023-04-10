@@ -178,6 +178,8 @@ class Usuario extends Conectar{
 
 		return $respuesta;
 
+
+		
 	}
 
 	
