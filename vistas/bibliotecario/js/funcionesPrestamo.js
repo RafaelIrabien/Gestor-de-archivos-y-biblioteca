@@ -88,24 +88,9 @@
 
 
 
-	function ListarLibrosDevueltos(){
-	var parametros = {
-		"dbusqueda": $('#txtbusqueda').val()
-	};
 
-	$.ajax({
-		data: parametros,
-		url: "listarLibrosDevueltos.php",
-		type: "POST",
-		beforeSend: function(){
-			$('#ListaLR').html("Procesando")
-		},
-		success: function(datos){
-			$('#ListaLR').html(datos);
-		}
-	});
 
-}
+
 
 	function VRetornarLibro(Cod){
 	var parametros = {
@@ -147,3 +132,69 @@
 	});
 
 }
+
+
+
+
+//  Libros Devueltos //
+
+function ListarLibrosDevueltos(){
+	var parametros = {
+		"dbusqueda": $('#txtbusqueda').val()
+	};
+
+	$.ajax({
+		data: parametros,
+		url: "listarLibrosDevueltos.php",
+		type: "POST",
+		beforeSend: function(){
+			$('#ListaLR').html("Procesando")
+		},
+		success: function(datos){
+			$('#ListaLR').html(datos);
+		}
+	});
+
+}
+
+
+	
+	function VEliminarLibroDevuelto(Cod){
+		var parametros = {
+			"vcod" : Cod
+		};
+
+		$.ajax({
+				type: "POST",
+				data: parametros,
+				url: "VEliminarLibroDevuelto.php",
+				beforeSend:function(){
+					$('#ContenidoLR').html("Procesando");
+				},
+				success:function(datos){
+					$('#ContenidoLR').html(datos);
+				}
+		});
+	}
+
+
+
+
+	function DEliminarLibroDevuelto(Cod){
+		var parametros = {
+			"vcod" : Cod
+		};
+
+		$.ajax({
+				type: "POST",
+				data: parametros,
+				url: "DEliminarLibroDevuelto.php",
+				beforeSend:function(){
+					$('#ContenidoLR').html("Procesando");
+				},
+				success:function(datos){
+					$('#ContenidoLR').html(datos);
+				}
+		});
+
+	}

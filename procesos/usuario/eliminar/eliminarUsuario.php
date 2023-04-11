@@ -8,9 +8,8 @@
 
 	echo $usuarios->eliminarUsuario($id_Usuario);
 
-
-	$carpeta2 = '../../../archivos/' . $id_Usuario; //Definimos la segunda ruta
-
+	//Definimos la ruta de la carpeta del usuario a eliminar
+	$carpeta2 = '../../../archivos/' . $id_Usuario; 
 	
 
 	if (is_dir($carpeta2)) {

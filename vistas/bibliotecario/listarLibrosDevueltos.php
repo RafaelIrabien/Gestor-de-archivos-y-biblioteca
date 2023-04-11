@@ -58,6 +58,7 @@
 				<th style="text-align: center;">Fecha de entrega</th>
 				<th style="text-align: center;">Fecha de devolución</th>
 				<th style="text-align: center;">Fecha de retorno</th>
+				<th style="text-align: center;">Eliminar</th>
 			</tr>
 
 		<tbody>
@@ -71,6 +72,12 @@
 				<td><?php echo $fila['Fecha Entrega']; ?></td>
 				<td><?php echo $fila['Fecha de Devolución']; ?></td>
 				<td><?php echo $fila['Fecha de Retorno']; ?></td>
+
+				<td>
+					<span class="btn btn-danger btn-sm" onclick="VEliminarLibroDevuelto(<?php echo $fila['CodDp']; ?>)">
+						<span class="fas fa-thin fa-trash-can"></span>
+					</span>
+				</td>
 			</tr>
 			<?php 
 				}

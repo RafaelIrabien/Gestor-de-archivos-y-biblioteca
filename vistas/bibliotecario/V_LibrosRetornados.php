@@ -41,6 +41,9 @@
 
 	<link rel="stylesheet" type="text/css" href="css_l/retornados.css">
 	<link rel="stylesheet" type="text/css" href="../../css/tablas.css">
+
+	<script type="text/javascript" src="js/funcionesPrestamo.js"></script>
+	
 </head>
 <body>
 
