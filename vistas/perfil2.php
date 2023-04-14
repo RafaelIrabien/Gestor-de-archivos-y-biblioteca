@@ -97,9 +97,9 @@
 		while ($dato = mysqli_fetch_array($result)) {
 			//$contraseña = 
 	?>
-		<p><strong>Nombre:</strong> <?php echo $dato['nombre']; ?></p>
+		<p><strong>Nombre completo:</strong> <?php echo $dato['nombre']; ?></p>
 		<br>
-		<p><strong>Correo:</strong> <?php echo $dato['email']; ?></p>
+		<p><strong>Correo electrónico:</strong> <?php echo $dato['email']; ?></p>
 		<br>
 		<span type="button" class="btn btn-primary" style="display:block; margin: 0 auto; width: 30%;" data-toggle="modal" data-target="#modalEditarNombre" onclick="obtenerDatosNombre('<?php echo $dato['id_usuario']; ?>')">
 		 <span class="fa fa-edit"></span> Editar datos
@@ -183,8 +183,11 @@
           <br>
           <input type="text" id="id_Usuario" name="id_Usuario" hidden="">
 
+          <label>Nombre completo:</label>
          	<input type="text" id="Nombre" name="Nombre" class="form-control">
          	<br>
+
+         	<label>Correo electrónico:</label>
        		<input type="text" id="Email" name="Email" class="form-control">
           <br>
          

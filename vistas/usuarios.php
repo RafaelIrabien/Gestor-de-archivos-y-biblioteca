@@ -133,6 +133,7 @@ include "footer.php"; ?>
   	$(document).ready(function(){
   		$('#tablaUsuarios').load('usuarios/tablaUsuarios.php');
      // $('#tablaArchivosUsuario').load('usuarios/archivosUsuario.php');
+    
   	});
   </script>
 

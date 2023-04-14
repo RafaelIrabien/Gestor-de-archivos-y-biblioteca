@@ -123,7 +123,7 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#tablaUsuariosDatatable').DataTable();
-
+		
 	});
 </script>
 
