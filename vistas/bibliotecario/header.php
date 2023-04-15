@@ -46,6 +46,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
      
+    </div>
+
       <div class="collapse navbar-collapse" id="navbarResponsive">
        
      <?php 
@@ -55,9 +57,8 @@
       } 
       ?>
 
-       
       </div>
-    </div>
+      
   </nav>
 
   
