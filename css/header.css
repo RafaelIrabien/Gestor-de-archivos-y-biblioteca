@@ -56,7 +56,7 @@
 
 
   .list__show {
-     margin-left: 60px;
+    margin-left: 54px;
     list-style: none;
     transition: height .4s;
     height: 0;
@@ -96,7 +96,7 @@
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-color: white;
-    margin-left: 60px;
+    margin-left: 54px;
   }
 
   
