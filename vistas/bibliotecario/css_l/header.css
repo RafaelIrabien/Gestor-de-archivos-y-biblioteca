@@ -54,6 +54,7 @@ nav {
 
 
   .list__show {
+    margin-left: 60px;
     list-style: none;
     transition: height .4s;
     height: 0;
@@ -92,10 +93,5 @@ nav {
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-color: white;
-    
-  }
-
-
-  #F {
-    margin: 20px;
+    margin-left: 60px;
   }
