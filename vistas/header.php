@@ -45,7 +45,10 @@
         <span class="navbar-toggler-icon"></span>
       </button>
      
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+      
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
        
      <?php 
         if ($fila['id_rol'] == '1') {
@@ -59,7 +62,6 @@
 
        
       </div>
-    </div>
   </nav>
 
   

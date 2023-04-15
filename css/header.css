@@ -2,7 +2,11 @@
     border-bottom: 0.5px solid #757575;
     border-radius: 0px 0px 5px 5px;
   }
- 
+
+
+  .collapse {
+    margin-right: 30px;
+  }
 
   .nav-item {
     width: 170px;
