@@ -6,8 +6,8 @@ body{
 #ContenidoLi{
 
 	width: 100%;
-	padding: 2%;
-	border: 1px solid #fff;
+	
+	
 	box-sizing: border-box;
 }
 
@@ -40,9 +40,7 @@ body{
 #busqueda{
 	/*border: 1px solid red;*/
 	
-
-
-	padding: 0.5%;
+	height: 85px;
 	box-sizing: border-box;
 	background-color: #FFC44F;
 	text-align: right;
@@ -81,7 +79,7 @@ body{
 
 #ListaLi{
 	width: 100%;
-	max-height: 500px;
+	/* max-height: 500px; */
 	overflow: auto;
 
 	margin-top: 2%;

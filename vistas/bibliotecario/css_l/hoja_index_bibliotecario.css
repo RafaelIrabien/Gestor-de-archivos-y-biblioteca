@@ -11,22 +11,18 @@ body{
 
 
 #contenedor{
-	width: 1000px;
+	width: 1200px;
 
 	margin-top: 20px;
 	margin-bottom: 20px;
 	margin: auto;
 	
 	padding: 20px;
-	background: rgba(0,0,0,0.4);
+	background: rgba(0,0,0,0.7);
 	border-radius: 10px;
 	box-shadow: 0px 0px 1px #fff;
 }
 
-
-#contenido{
-	background: rgba(0,0,0,0.7);
-}
 
 
 

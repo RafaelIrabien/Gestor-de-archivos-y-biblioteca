@@ -45,7 +45,7 @@
         	}
 		}
 		
-		$('#tablaArchivosUsuario').DataTable();	
+		 $("#tablaArchivosUsuario").DataTable();	
 	} 
   });
 }

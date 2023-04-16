@@ -34,6 +34,11 @@
 	<script type="text/javascript" src="js/funcionesPrestamo.js"></script>
 	<script type="text/javascript" src="js/funcionesGenero.js"></script>
 
+
+	<script src="../../librerias/jquery-3.4.1.min.js"></script>
+	<script src="../../librerias/datatable/jquery.dataTables.min.js"></script>
+  	<script src="../../librerias/datatable/dataTables.bootstrap4.min.js"></script>
+
 	<link rel="stylesheet" href="css_l/hoja_index_bibliotecario.css">
 	<link rel="stylesheet" type="text/css" href="../../css/tablas.css">
 	

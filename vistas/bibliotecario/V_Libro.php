@@ -35,35 +35,22 @@
 	<script type="text/javascript" src="js/funcionesEditorial.js"></script>
 	<script type="text/javascript" src="js/funcionesPrestamo.js"></script>
 	<script type="text/javascript" src="js/funcionesGenero.js"></script>
+
+
+	
+	<script src="../../librerias/datatable/jquery.dataTables.min.js"></script>
+  	<script src="../../librerias/datatable/dataTables.bootstrap4.min.js"></script>
+
 </head>
 <body>
 
-	<script type="text/javascript">
-		$(function ListarDefault(){
-			var parametros = {
-			"dbusqueda": $('#txtbusqueda').val()
-			};
-
-			$.ajax({
-					type: "POST",
-					data: parametros,
-					url: "listarLibros.php",
-					beforeSend:function(){
-						$('#ListaLi').html("Procesando")
-					},
-					success:function(datos){
-						$('#ListaLi').html(datos);
-					}
-			});
-		})
-	</script>
-
+	<br>
 	<div id="ContenidoLi">
 		<div id="DatosLi">
 			<div id="tablaLi">
 				<h1>Lista de libros</h1>
 				<div id="busqueda">
-
+					<br>
 					<div id="NuevoLi">
 						<span class="btn btn-primary" onclick="VNuevoLi();">Agregar libro</span>
 						<span class="btn btn-primary" onclick="VistaDetalleAutor();">Opciones de autor</span>
@@ -72,11 +59,7 @@
 					</div>
 					
 
-					<div id="BusquedaLi">
-					<input type="text" id= "txtbusqueda" name="" placeholder="Título, Autor, Editorial, Género">
-					<span class="btn btn-primary" onclick="ListarLibro();">Buscar</span>
-					
-					</div>
+				
 				</div>
 
 				<div id="ListaLi">
@@ -89,6 +72,16 @@
 </body>
 </html>
 
+
+
+
+
+<script type="text/javascript">
+  	$(document).ready(function(){
+  		$('#ListaLi').load('listarLibros.php');
+     
+  	});
+  </script>
 
 
 <?php 

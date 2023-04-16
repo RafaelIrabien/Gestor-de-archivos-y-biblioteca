@@ -15,7 +15,7 @@ $id_Usuario = $_SESSION['id_usuario'];
 		
 
 
-	$vbusqueda = $_POST["dbusqueda"];
+	
 
 $query= "
 
@@ -23,11 +23,6 @@ SELECT LI.id_libro, LI.titulo, AU.nombre as Autor, ED.editorial as Editorial, GE
 INNER JOIN autores AU on AU.id_autor = LI.id_autor
 INNER JOIN editoriales ED on ED.id_editorial = LI.id_editorial
 INNER JOIN generos GE on GE.id_genero = LI.id_genero
-WHERE
-LI.titulo like '$vbusqueda%' OR
-AU.nombre like '$vbusqueda%' OR
-ED.editorial like '$vbusqueda%' OR
-GE.genero like '$vbusqueda%'
 ORDER BY LI.id_libro DESC;
 "
 ;
@@ -56,8 +51,8 @@ ORDER BY LI.id_libro DESC;
 
 
 
-	<table class="table table-hover">
-		<theader>
+	<table class="table table-hover" id="tablaLibros">
+		<thead>
 			<tr>
 				<th style="text-align: center;">Código</th>
 				<th style="text-align: center;">Título</th>
@@ -67,9 +62,9 @@ ORDER BY LI.id_libro DESC;
 				<th style="text-align: center;">Casillero</th>
 				<th style="text-align: center;">Cantidad</th>
 				<th style="text-align: center;">Disponibles</th>
-				<th colspan="2" style="text-align: center;">Acciones</th>
+				<th  style="text-align: center;">Acciones</th>
 			</tr>
-
+		</thead>
 		<tbody>
 
 			<?php 
@@ -88,8 +83,7 @@ ORDER BY LI.id_libro DESC;
 					<span class="btn btn-warning btn-sm" style="cursor:pointer" onclick="VModificarLibro(<?php echo $fila['id_libro']; ?>)">
 						<span class="fas fa-edit"></span>
 					</span>
-				</td>
-				<td>
+				
 					<span class="btn btn-danger btn-sm" style="cursor:pointer" onclick="VEliminarLibro(<?php echo $fila['id_libro']; ?>)">
 						<span class="fas fa-thin fa-trash-can"></span>
 					</span>
@@ -99,11 +93,21 @@ ORDER BY LI.id_libro DESC;
 				}
 			 ?>
 		</tbody>
-		</theader>
+		
 	</table>
+
+	
 
 </body>
 </html>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#tablaLibros').DataTable();
+		
+	});
+</script>
 
 
 
