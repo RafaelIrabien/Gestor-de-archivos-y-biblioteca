@@ -1,4 +1,4 @@
-
+/*
 	function ListarStockLibro(){
 	var parametros = {
 		"dbusqueda" : $("#txtbusqueda").val()
@@ -12,12 +12,13 @@
 			$("#ListaLibros").html("Procesando")
 		},
 		success: function(datos){
+			$('#ListaLibros').load('listarStockLibros.php');
 			$("#ListaLibros").html(datos);
 			
 		}
 	});
 
-}
+}  */
 
 
 
@@ -57,7 +58,7 @@
 					$('#CajaMensaje').html("Procesando")
 				},
 				success:function(datos){
-					ListarStockLibro();
+					$('#ListaLibros').load('listarStockLibros.php');
 
 					$('#txtCodLibro').val('');
 					$("#MsjVerificarPrestamo").slideDown("fast");

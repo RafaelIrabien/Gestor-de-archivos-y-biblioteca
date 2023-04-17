@@ -33,8 +33,8 @@
 			<h1><strong>Mensaje del Sistema</strong></h1>
 			<p>¿Desea Retornar este Libro?</p>
 			<div>
-				<button type="button" onclick="DRetornarLibro(<?php echo $dcodDp ;?>);">Aceptar</button>
-				<button type="button" onclick="VistaLibrosPrestados();">Cancelar</button>
+				<span class="btn btn-primary" onclick="DRetornarLibro(<?php echo $dcodDp ;?>);">Aceptar</span>
+				<span class="btn btn-secondary" onclick="VistaLibrosPrestados();">Cancelar</span>
 			</div>
 		</div>
 
