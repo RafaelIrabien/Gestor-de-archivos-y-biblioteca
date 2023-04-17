@@ -28,38 +28,7 @@
 	<link rel="stylesheet" type="text/css" href="../../css/tablas.css">
 	<title></title>
 </head>
-	<script type="text/javascript">
-		
-		$(function ListarDefault(){
-			var parametros = {};
 
-			$.ajax({
-					type: "POST",
-					data: parametros,
-					url: "listarGenero.php",
-					beforeSend:function(){
-						$('#listGeneros').html("Procesando")
-					},
-					success:function(datos){
-						$('#listGeneros').html(datos);
-					}
-			});
-		})
-
-
-		function tiempoReal(){
-			var tabla = $.ajax({
-								datatype: "text",
-								async: false,
-								url: "listarGenero.php",
-						}).responseText;
-
-						document.getElementById('listGeneros').innerHTML = tabla;
-		}
-
-		setInterval(tiempoReal, 1000);
-		
-	</script>
 
 <body>
 	<div id="contenidoDetEditorial">
@@ -123,6 +92,12 @@
 
 
 
+<script type="text/javascript">
+  	$(document).ready(function(){
+  		$('#listGeneros').load('listarGenero.php');
+     
+  	});
+</script>
 
 
  <?php 

@@ -60,7 +60,7 @@
 		
 						<input type="text" id="txtEditorialMod" placeholder="Cambiar editorial por ..." required>
 
-						<span class="btn btn-warning" type="button" onclick="ModificarEditorial();">Modificar Editorial</span>
+						<span class="btn btn-warning" type="button" onclick="ModificarEditorial();">Modificar editorial</span>
 					</form>
 				</div>
 

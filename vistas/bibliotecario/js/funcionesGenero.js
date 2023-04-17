@@ -13,6 +13,7 @@
 				},
 
 				success:function(datos){
+					$('#listGeneros').load('listarGenero.php');
 					document.forms['FormAgregarGenero'].reset();
 					$('#CajaMensaje').slideDown("fast");
 					$('#CajaMensaje').html(datos);
@@ -35,6 +36,7 @@
 					$("#CajaMensaje").html("Procesando")
 				},
 				success:function(datos){
+					$('#listGeneros').load('listarGenero.php');
 					document.forms['FormModificarEditorial'].reset();
 					$("#CajaMensaje").slideDown("fast");
 					$("#CajaMensaje").html(datos);
@@ -57,6 +59,7 @@
 					$('#CajaMensaje').html("Procesando")
 				},
 				success:function(datos){
+					$('#listGeneros').load('listarGenero.php');
 					document.forms['FormEliminarEditorial'].reset();
 					$('#CajaMensaje').slideDown("fast");
 					$('#CajaMensaje').html(datos);

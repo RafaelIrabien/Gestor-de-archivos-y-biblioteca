@@ -37,20 +37,20 @@
  </head>
  <body>
 
- 	<table class="table table-hover">
-		<theader>
+ 	<table class="table table-hover" id="tablaGenero">
+		<thead>
 			<tr>
-				<th style="text-align: center;">Código</th>
+				<th style="text-align: center;width: 4px;">Código</th>
 				<th style="text-align: center;">Género</th>
 			</tr>
-		</theader>
+		</thead>
 
 		<tbody>
 			<?php 
 				while($fila2 = mysqli_fetch_array($result)) {
 			 ?>
 			<tr>
-				<td><?php echo $fila2['id_genero']; ?></td>
+				<td style="text-align: center;width: 4px;"><?php echo $fila2['id_genero']; ?></td>
 				<td><?php echo $fila2['genero']; ?></td>
 			</tr>
 			<?php 
@@ -65,6 +65,12 @@
 
 
 
+<script type="text/javascript">
+  	$(document).ready(function(){
+  		$('#tablaGenero').DataTable();
+     
+  	});
+</script>
 
 
 

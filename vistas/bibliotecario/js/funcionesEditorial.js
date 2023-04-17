@@ -13,6 +13,7 @@
 				},
 
 				success:function(datos){
+					$('#listEditoriales').load('listarEditorial.php');
 					document.forms['FormAgregarEditorial'].reset();
 					$('#CajaMensaje').slideDown("fast");
 					$('#CajaMensaje').html(datos);
@@ -35,6 +36,7 @@
 					$("#CajaMensaje").html("Procesando")
 				},
 				success:function(datos){
+					$('#listEditoriales').load('listarEditorial.php');
 					document.forms['FormModificarEditorial'].reset();
 					$("#CajaMensaje").slideDown("fast");
 					$("#CajaMensaje").html(datos);
@@ -57,6 +59,7 @@
 					$('#CajaMensaje').html("Procesando")
 				},
 				success:function(datos){
+					$('#listEditoriales').load('listarEditorial.php');
 					document.forms['FormEliminarEditorial'].reset();
 					$('#CajaMensaje').slideDown("fast");
 					$('#CajaMensaje').html(datos);
