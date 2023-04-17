@@ -31,6 +31,7 @@
 				}, 
 
 				success:function(datos){
+					$('#listAutores').load('listarAutor.php');
 					document.forms['FormAgregarAutor'].reset();
 					$('#CajaMensaje').slideDown("fast");
 					$('#CajaMensaje').html(datos);
@@ -55,6 +56,7 @@
 				},
 
 				success:function(datos){
+					$('#listAutores').load('listarAutor.php');
 					document.forms['FormModificarAutor'].reset();
 					$('#CajaMensaje').slideDown("fast");
 					$('#CajaMensaje').html(datos);
@@ -78,6 +80,7 @@
 				},
 
 				success:function(datos){
+					$('#listAutores').load('listarAutor.php');
 					document.forms['FormEliminarAutor'].reset();
 					$('#CajaMensaje').slideDown("fast");
 					$('#CajaMensaje').html(datos);

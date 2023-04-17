@@ -18,7 +18,7 @@
 					color: #1D7034;
 					border:2px dotted #4DA459;
 					text-align: center;'
-			><strong>¡Exito!</strong> Autor fué eliminado</p>";
+			><strong>¡Éxito!</strong> Autor fué eliminado</p>";
 
 		}else{
 

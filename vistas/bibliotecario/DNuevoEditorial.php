@@ -17,7 +17,7 @@
 				color: #1D7034;
 				border:2px dotted #4DA459;
 				text-align: center;'
-		><strong>¡Exito!</strong> Editorial agregada exitosamente</p>";
+		><strong>¡Éxito!</strong> Editorial agregada exitosamente</p>";
 
 		} else {
 

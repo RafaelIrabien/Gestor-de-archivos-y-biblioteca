@@ -17,7 +17,7 @@
 				color: #1D7034;
 				border:2px dotted #4DA459;
 				text-align: center;'
-		><strong>Exito!</strong> Autor Agregado exitosamente</p>";
+		><strong>¡Éxito!</strong> Autor Agregado exitosamente</p>";
 		} else {
 				echo "<p
 				style='	background-color: #EE9393;
@@ -26,7 +26,7 @@
 						color: #E33E3E;
 						border:2px dotted #E33E3E;
 						text-align: center;'
-				><strong>Error!</strong> Autor No Fue Agregado</p>";
+				><strong>¡Error!</strong> Autor no fué agregado</p>";
 	}
 
 
@@ -38,7 +38,7 @@
 				color: #E33E3E;
 				border:2px dotted #E33E3E;
 				text-align: center;'
-		><strong>Error!</strong> Ingrese un Autor para Agregar</p>";
+		><strong>¡Error!</strong> Ingrese un autor para Agregar</p>";
 }
 
 

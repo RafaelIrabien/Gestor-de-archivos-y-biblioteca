@@ -22,13 +22,13 @@
 			color: #E33E3E;
 			border:2px dotted #E33E3E;
 			text-align: center;'
-		><strong>Error!</strong> No puede ingresar menor número de ejemplares, porque el número de prestados excede a este.</p>";
+		><strong>¡Error!</strong> No puede ingresar menor número de ejemplares, porque el número de prestados excede a este.</p>";
 	exit();
 }
 	
-	$nuevaCantidad = $dCantidad - $cantidad;
+	$nuevaCantidad = $dDisponible - $cantidad;
 
-	$sql = "UPDATE libros SET titulo = '$dTitulo', id_autor = '$dAutor', id_editorial = '$dEditorial', id_genero = '$dGenero', cantidad = '$nuevaCantidad', disponibles = '$dDisponible', casillero = '$dUbicacion' WHERE id_libro = '$dCod'";
+	$sql = "UPDATE libros SET titulo = '$dTitulo', id_autor = '$dAutor', id_editorial = '$dEditorial', id_genero = '$dGenero', cantidad = '$dCantidad', disponibles = '$nuevaCantidad', casillero = '$dUbicacion' WHERE id_libro = '$dCod'";
 
 	$result = $cnmysql->query($sql);
 

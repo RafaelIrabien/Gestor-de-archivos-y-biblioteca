@@ -18,7 +18,7 @@
 					box-sizing: border-box;
 					color: #1D7034;
 					border:2px dotted #4DA459;'
-			><strong>¡Exito!</strong> Género fué modificado</p>";
+			><strong>¡Éxito!</strong> Género fué modificado</p>";
 
 		} else {
 

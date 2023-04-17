@@ -37,7 +37,7 @@
 	<script type="text/javascript" src="js/funcionesGenero.js"></script>
 
 
-	
+	<script src="../../librerias/jquery-3.4.1.min.js"></script>	
 	<script src="../../librerias/datatable/jquery.dataTables.min.js"></script>
   	<script src="../../librerias/datatable/dataTables.bootstrap4.min.js"></script>
 

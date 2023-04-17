@@ -20,7 +20,7 @@
 					color: #1D7034;
 					border:2px dotted #4DA459;
 					text-align: center;'
-			><strong>¡Exito!</strong> Autor fué modificado</p>";
+			><strong>¡Éxito!</strong> Autor fué modificado</p>";
 
 		} else {
 

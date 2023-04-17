@@ -29,37 +29,7 @@
 	<title></title>
 </head>
 
-	<script type="text/javascript">
-		$(function ListarDefault(){
-			var parametros = {};
 
-			$.ajax({
-					type: "POST",
-					data: parametros,
-					url: "listarAutor.php",
-					beforeSend:function(){
-						$('#listAutores').html("Procesando");
-					},
-					success:function(datos){
-						$('#listAutores').html(datos);
-					}
-			});
-		})
-
-
-		function tiempoReal(){
-			var tabla = $.ajax({
-								datatype: "text",
-								async: false,
-								url: "listarAutor.php",
-							}).responseText;
-
-							document.getElementById('listAutores').innerHTML(tabla);
-		}
-
-		setInterval(tiempoReal, 1000);
-
-	</script>
 
 <body>
 	<div id="contenidoDetAutor">
@@ -68,7 +38,7 @@
 
 			<div id="caja1">
 				<fieldset>
-					<legend>Lista de autores</legend>
+				
 					<div id="listAutores">
 						
 					</div>
@@ -119,6 +89,14 @@
 
 </body>
 </html>
+
+
+<script type="text/javascript">
+  	$(document).ready(function(){
+  		$('#listAutores').load('listarAutor.php');
+     
+  	});
+</script>
 
 
 <?php 

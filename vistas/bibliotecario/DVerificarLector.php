@@ -30,7 +30,7 @@ if (!empty($dCodLector)) {
 				color: #1D7034;
 				border:2px dotted #4DA459;
 				text-align: center;'
-		><strong>Obsercaciones:</strong> El lector no tiene libros pendientes </p>";
+		><strong>Observaciones:</strong> El lector no tiene libros pendientes </p>";
 	}else{
 		echo "<p
 		style='	background-color: #EE9393;

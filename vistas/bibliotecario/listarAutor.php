@@ -35,20 +35,20 @@
 </head>
 <body>
 
-	<table class="table table-hover">
-		<theader>
+	<table class="table table-hover" id="tablaAutores">
+		<thead>
 			<tr>
-				<th style="text-align: center;">Código</th>
+				<th style="text-align: center; width: 3px;">Código</th>
 				<th style="text-align: center;">Autor</th>
 			</tr>
-		</theader>
+		</thead>
 
 		<tbody>
 			<?php 
 				while($fila = mysqli_fetch_array($result)) {
 			 ?>
 			<tr>
-				<td><?php echo $fila['id_autor']; ?></td>
+				<td style="width: 3px;"><?php echo $fila['id_autor']; ?></td>
 				<td><?php echo $fila['nombre']; ?></td>
 			</tr>
 			<?php 
@@ -59,6 +59,14 @@
 
 </body>
 </html>
+
+
+<script type="text/javascript">
+  	$(document).ready(function(){
+  		$('#tablaAutores').DataTable();
+     
+  	});
+</script>
 
 
 <?php 

@@ -16,7 +16,7 @@
 				box-sizing: border-box;
 				color: #1D7034;
 				border:2px dotted #4DA459;'
-		><strong>¡Exito!</strong> Género agregado exitosamente</p>";
+		><strong>¡Éxito!</strong> Género agregado exitosamente</p>";
 
 		} else {
 
