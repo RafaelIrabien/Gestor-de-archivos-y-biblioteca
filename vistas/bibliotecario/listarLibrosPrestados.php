@@ -58,7 +58,7 @@
 	<table class="table table-hover">
 		<theader>
 			<tr>
-				<th style="text-align: center;">Título</th>
+				<th style="text-align: center;">Libro</th>
 				<th style="text-align: center;">Lector</th>
 				<th style="text-align: center;">Fecha de entrega</th>
 				<th style="text-align: center;">Fecha de devolución</th>
@@ -105,7 +105,7 @@
 
  <?php 
  		}else{
-		echo "No se encontraron resultados";
+		echo "<p style='color: white; text-align: center;'>No se encontraron resultados</p>";
 	}
 
  	} else {

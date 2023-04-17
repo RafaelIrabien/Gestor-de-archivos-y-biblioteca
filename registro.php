@@ -99,13 +99,13 @@
 				if (respuesta == 1) {
 					//Se reinicia el formulario
 					$('#frmRegistro')[0].reset();
-					swal(":D", "Agregado con exito", "success");
+					swal(":D", "Agregado con éxito", "success");
 
 				} else if (respuesta == 2) {
 					swal("El usuario o correo ya existe, por favor escriba otro");
 
 				} else {
-					swal(":(", "Fallo al agregar", "error");
+					swal(":(", "Falló al agregar", "error");
 				}
 			}
 		});

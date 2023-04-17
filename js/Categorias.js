@@ -20,7 +20,7 @@
                       
                       //Limpamos el control una vez agregada la categoría y agregamos los mensajes
                       $('#nombreCategoria').val("");
-                      swal(":D", "Agregado con exito", "success");
+                      swal(":D", "Agregado con éxito", "success");
                   } else {
                       swal(":(", "Falló al agregar", "error");
                   }
@@ -35,7 +35,7 @@
     idCategoria = parseInt(idCategoria);
 
     if (idCategoria < 1) {
-        swal("No tiene id de categoría");
+        swal("No tiene identificador de categoría");
         return false;
 
     } else {

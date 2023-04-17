@@ -61,7 +61,7 @@
 		<center>
 			<br>
 			<ul id="menu">
-				<li><a onclick="VistaPrestamo();">Prestamos</a></li>
+				<li><a onclick="VistaPrestamo();">Préstamos</a></li>
 				<li><a onclick="VistaLibrosPrestados();">Libros prestados</a></li>
 				<li><a onclick="VistaLibrosRetornados();">Libros devueltos</a></li>
 				<li><a onclick="VistaLibro();">Libros</a></li>

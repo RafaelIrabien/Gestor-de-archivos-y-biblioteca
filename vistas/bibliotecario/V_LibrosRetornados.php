@@ -20,7 +20,7 @@
  <!DOCTYPE html>
 <html>
 <head>
-
+<!--
 	<script type="text/javascript">
 		
 
@@ -35,7 +35,7 @@
 			}
 	</script>
 	
-
+-->
 	
 	<title></title>
 
@@ -87,15 +87,14 @@
 
 
 
-					<div id="ImprimirLR">
+		<!--	<div id="ImprimirLR">
 					<span class="btn btn-primary" onclick="imprSelec('ListaLR');">Imprimir</span>
-					</div>	
+					</div>	-->
 
 					<div id="BusquedaLR">
 					<input type="text" id="txtbusqueda" name="" placeholder="Nombre del lector">
 					<span class="btn btn-primary" onclick="ListarLibrosDevueltos();">Buscar</span>
-					</div>
-
+					</div>	
 
 					
 				</div>

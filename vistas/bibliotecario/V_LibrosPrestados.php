@@ -48,7 +48,7 @@
 
 			})
 
-
+			/*
 			function imprSelec(nombre) {
 			  var ficha = document.getElementById(nombre);//obtenemos el objeto a imprimir
 			  var ventimp = window.open(' ', 'popimpr'); //abrimos una ventana vacía nueva
@@ -59,7 +59,7 @@
 
 			}
 
-
+			*/
 
 </script>
 
@@ -75,9 +75,9 @@
 				<h1>Libros Prestados</h1>
 				<div id="busqueda">
 
-					<div id="NuevoLP">
+		<!--  <div id="NuevoLP">
 					<span class="btn btn-primary" onclick="imprSelec('ListaLP');">Imprimir</span>
-					</div>	
+					</div>	-->
 
 					<div id="BusquedaLP">
 					<input  type="text" id= "txtbusqueda" name="" placeholder="Nombre del lector">

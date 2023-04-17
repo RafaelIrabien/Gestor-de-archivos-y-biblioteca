@@ -47,6 +47,10 @@
 		//Si el control o input viene vacío, entonces muestra un mensaje
 		if ($('#Nombre').val() == "") {
 			swal("No hay nombre de usuario");
+		}
+		else if ($('#Email').val() == "") {
+			swal("No hay correo de usuario");
+		
 		} else {
 
 			$.ajax({
@@ -59,7 +63,7 @@
 
 					if (respuesta == 1) {
 						window.location.reload(true);
-						swal(":D", "Nombre de usuario actualizado con éxito", "success");
+						swal(":D", "Datos actualizados con éxito", "success");
 					} else {
 						swal(":(", "Falló al actualizar", "error");
 					}
