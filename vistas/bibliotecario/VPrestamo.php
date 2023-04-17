@@ -41,26 +41,7 @@
 	<link rel="stylesheet" type="text/css" href="../../css/tablas.css">
 </head>
 
-	<script type="text/javascript">
-
-		$(function VistaDefault(){
-			var parametros = {
-				"dbusqueda" : $('#txtbusqueda').val()
-			};
-
-			$.ajax({
-				type: "POST",
-				data: parametros,
-				url: "listarStockLibros.php",
-				beforeSend:function(){
-					$('#ListaLibros').html("Procesando")
-				},
-				success:function(datos){
-					$('#ListaLibros').html(datos);
-				}
-			});
-		})
-	</script>
+	
 
 <body>
 	<div id="ContPrestamo">
@@ -119,7 +100,7 @@
 
 		<div id="ContListLibros">
 			<h1>Lista de libros</h1>
-			
+			<!--
 				<div id="busqueda" class="input-group">
 					
 					<input class="form-control" type="text" id="txtbusqueda" placeholder="Título del libro">
@@ -129,7 +110,7 @@
 
 				
 				
-				</div>
+				</div> -->
 
 				<div id="ListaLibros">
 					
@@ -142,6 +123,14 @@
 </html>
 
 
+
+
+<script type="text/javascript">
+  	$(document).ready(function(){
+  		$('#ListaLibros').load('listarStockLibros.php');
+     
+  	});
+  </script>
 
 
 <?php 

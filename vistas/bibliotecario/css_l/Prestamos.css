@@ -113,15 +113,23 @@
 }
 
 
+
 #ListaLibros{
-	
-	border:1px solid black;
-
 	width: 100%;
-	max-height: 430px;
-	
 	overflow: auto;
+}
 
+#ListaLibros #codigo{
+	border-left: 1px solid black;
+}
+
+#ListaLibros #disponible{
+	border-right: 1px solid black;
+}
+
+#ListaLibros table {
+	border-bottom: 1px solid black;
+	border-radius: 10px;
 }
 
 

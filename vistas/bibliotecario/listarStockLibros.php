@@ -14,17 +14,13 @@
 	 if(isset($_SESSION['nombre'])) {
 
 
-	 	$vbusqueda = $_POST['dbusqueda'];
+	 	
 
 	 	$sql = "SELECT LI.id_libro AS Codigo, LI.titulo AS Titulo, AU.nombre AS Autor, ED.editorial AS Editorial, LI.cantidad AS Cantidad, LI.disponibles AS Disponible
 	 		FROM libros LI
 	 		
 	 		INNER JOIN autores AU ON AU.id_autor = LI.id_autor
 	 		INNER JOIN editoriales ED ON ED.id_editorial = LI.id_editorial
-	 		WHERE 
-	 		LI.titulo LIKE '$vbusqueda%' OR
-	 		AU.nombre LIKE '$vbusqueda%' OR
-	 		ED.editorial LIKE '$vbusqueda%' 
 	 		ORDER BY LI.id_libro DESC;
 	 			";
 
@@ -48,7 +44,7 @@
 	<title></title>
 </head>
 <body>
-	<table class="table table-hover">
+	<table class="table table-hover" id="tablaStock">
 		<thead>
 			<tr>
 				<th style="text-align: center;">Código</th>
@@ -68,14 +64,14 @@
 				while($fila = mysqli_fetch_array($result)){
 			 ?>
 			<tr>
-				<td><?php echo $fila['Codigo']; ?></td>
-				<td><?php echo $fila['Titulo']; ?></td>
+				<td id="codigo"><?php echo $fila['Codigo']; ?></td>
+				<td id="titulos"><?php echo $fila['Titulo']; ?></td>
 				<!--
 				<td><?php //echo $fila['Autor']; ?></td>
 				<td><?php //echo $fila['Editorial']; ?></td>
 				-->
-				<td><?php echo $fila['Cantidad']; ?></td>
-				<td><?php echo $fila['Disponible']; ?></td>
+				<td id="cantidad"><?php echo $fila['Cantidad']; ?></td>
+				<td id="disponible"><?php echo $fila['Disponible']; ?></td>
 			</tr>
 			<?php 
 				}
@@ -86,6 +82,14 @@
 </body>
 </html>
 
+
+
+<script type="text/javascript">
+  	$(document).ready(function(){
+  		$('#tablaStock').DataTable();
+     
+  	});
+  </script>
 
 
 <?php 
