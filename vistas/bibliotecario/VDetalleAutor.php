@@ -38,7 +38,8 @@
 
 			<div id="caja1">
 				<fieldset>
-				
+				<legend>Lista de autores</legend>
+
 					<div id="listAutores">
 						
 					</div>
