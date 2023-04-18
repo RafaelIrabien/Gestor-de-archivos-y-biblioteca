@@ -6,7 +6,9 @@
 	if (!empty($dAutor)) {
 		
 		$sql = "INSERT INTO autores (nombre) VALUES ('$dAutor')";
-		$result = $cnmysql->query($sql);
+		//$result = $cnmysql->query($sql);
+		$query = $cnmysql->prepare($sql);
+		$result = $query->execute();
 
 		if ($result) {
 
@@ -29,6 +31,9 @@
 				><strong>¡Error!</strong> Autor no fué agregado</p>";
 	}
 
+			$query->close();
+			return $result;
+
 
 	} else {
 	echo "<p
@@ -38,7 +43,7 @@
 				color: #E33E3E;
 				border:2px dotted #E33E3E;
 				text-align: center;'
-		><strong>¡Error!</strong> Ingrese un autor para Agregar</p>";
+		><strong>¡Error!</strong> Ingrese un autor para agregar</p>";
 }
 
 

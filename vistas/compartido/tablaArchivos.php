@@ -24,7 +24,7 @@
 	<div class="table-responsive">
 		<h1 class="display-4">Archivos</h1>
 		<br>
-		<h5>Estimado usuario, haga click en el botón <i style="border: 2px solid black; padding: 2.5px; border-radius: 4px;" class="fas fa-align-justify"></i> para poder ver la descripción relacionada con el archivo a trabajar.</h5>
+		<h5>Estimado usuario, haga click en el botón <i style="font-size: 14px;color: white;border: 2px solid black; padding: 5px; border-radius: 4px; background: black;" class="fas fa-align-justify"></i> para poder ver la descripción relacionada con el archivo a trabajar.</h5>
 		<table class="table table-hover" id="tablaArchivosDatatable">
 			<thead>
 				 <tr>

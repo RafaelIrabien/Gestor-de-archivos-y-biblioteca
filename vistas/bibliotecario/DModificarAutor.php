@@ -9,7 +9,9 @@
 
 		$sql = "UPDATE autores SET nombre = '$dAutor' WHERE id_autor = '$dCod'";
 
-		$result = $cnmysql->query($sql);
+		//$result = $cnmysql->query($sql);
+		$query = $cnmysql->prepare($sql);
+		$result = $query->execute();
 
 		if ($result) {
 			
@@ -34,6 +36,10 @@
 			><strong>¡Error!</strong> Autor no fue modificado</p>";
 
 		}
+
+			$query->close();
+			return $result;
+
 	} else {
 
 		echo "<p
