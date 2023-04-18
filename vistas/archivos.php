@@ -55,7 +55,7 @@
         		<label>Seleccione archivos:</label>
         		<input type="file" name="archivos[]" id="archivos[]" multiple="">
             <br><br>
-            <label>Instrucción:</label>
+            <label>Descripción:</label>
             <textarea name="instruccion" id="instruccion" class="form-control"></textarea>
         	</form>
       </div>

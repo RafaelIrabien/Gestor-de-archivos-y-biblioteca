@@ -60,12 +60,12 @@
 </div>
 
 
-<!-- Modal para Visualizar Instrucciones -->
+<!-- Modal para Visualizar Descripción -->
 <div class="modal fade" id="modalVerInstruccion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Instrucciones</h5>
+        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Descripción</h5>
         <div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -100,12 +100,12 @@
 
 
 
-	<!-- Modal para Visualizar Instrucciones -->
+	<!-- Modal para Visualizar Descripción -->
 <div class="modal fade" id="modalVerInstrucciones" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Instrucciones</h5>
+        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Descripción</h5>
         <div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>

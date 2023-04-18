@@ -59,7 +59,7 @@
 
 
   .list__show {
-    margin-left: 54px;
+    margin-left: 50px;
     list-style: none;
     transition: height .4s;
     height: 0;

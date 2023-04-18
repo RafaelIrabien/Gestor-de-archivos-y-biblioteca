@@ -24,7 +24,7 @@
 	<div class="table-responsive">
 		<h1 class="display-4">Archivos</h1>
 		<br>
-		<h5>Estimado usuario, haga click en el botón <i class="fas fa-circle-info"></i> para poder ver las instrucciones relacionadas con el archivo a trabajar.</h5>
+		<h5>Estimado usuario, haga click en el botón <i style="border: 2px solid black; padding: 2.5px; border-radius: 4px;" class="fas fa-align-justify"></i> para poder ver la descripción relacionada con el archivo a trabajar.</h5>
 		<table class="table table-hover" id="tablaArchivosDatatable">
 			<thead>
 				 <tr>
@@ -84,8 +84,8 @@
 							}
 						 ?>
 
-						 <span style="border-radius: 100%; width: 30px;" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalVerInstruccion" onclick="obtenerInstruccion('<?php echo $idArchivoC; ?>')">
-						 	<span class="fas fa-info"></span>
+						 <span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalVerInstruccion" onclick="obtenerInstruccion('<?php echo $idArchivoC; ?>')">
+						 	<span class="fas fa-align-justify"></span>
 						 </span>
 
 
