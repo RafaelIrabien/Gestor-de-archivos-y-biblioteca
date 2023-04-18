@@ -7,8 +7,8 @@
 	if (!empty($dGenero) && !empty($dCod)) {
 		
 		$sql = "UPDATE generos SET genero = '$dGenero' WHERE id_genero = '$dCod'";
-
-		$result = $cnmysql->query($sql);
+		$query = $cnmysql->prepare($sql);
+		$result = $query->execute();
 
 		if ($result) {
 			
@@ -33,6 +33,10 @@
 			><strong>¡Error!</strong> Género no fué modificado</p>";
 
 		}
+
+		$query->close();
+		return $result;
+
 
 	} else {
 

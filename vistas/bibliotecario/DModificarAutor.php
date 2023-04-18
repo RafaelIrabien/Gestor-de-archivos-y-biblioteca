@@ -6,7 +6,6 @@
 
 	if (!empty($dAutor) && !empty($dCod)) {
 		
-
 		$sql = "UPDATE autores SET nombre = '$dAutor' WHERE id_autor = '$dCod'";
 
 		//$result = $cnmysql->query($sql);

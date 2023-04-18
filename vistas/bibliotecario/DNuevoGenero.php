@@ -6,7 +6,8 @@
 	if (!empty($dGenero)) {
 		
 		$sql = "INSERT INTO generos (genero) VALUES ('$dGenero')";
-		$result = $cnmysql->query($sql);
+		$query = $cnmysql->prepare($sql);
+		$result = $query->execute();
 
 		if ($result) {
 			
@@ -31,6 +32,11 @@
 		><strong>¡Error!</strong> Género no fué agregado</p>";
 
 		}
+
+		$query->close();
+		return $result;
+
+
 	} else {
 
 		echo "<p

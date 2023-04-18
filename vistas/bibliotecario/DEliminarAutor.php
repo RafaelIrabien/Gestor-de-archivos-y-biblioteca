@@ -26,14 +26,9 @@
 
 		//Eliminar el autor seleccionado de la tabla autores 
 		$sql = "DELETE FROM autores WHERE id_autor = '$dCod'";
-		
-		//$result = $cnmysql->query($sql);
 		$query = $cnmysql->prepare($sql);
-	
 		$result = $query->execute();
-		
 
-		
 		
 		// Verificar si la consulta SELECT no devolvió filas y si la consulta DELETE fue exitosa
 		if (mysqli_affected_rows($cnmysql) > 0 && $result) {
