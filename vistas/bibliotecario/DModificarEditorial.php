@@ -8,7 +8,8 @@
 		
 		$sql = "UPDATE editoriales SET editorial = '$dEditorial' WHERE id_editorial = '$dCod'";
 
-		$result = $cnmysql->query($sql);
+		$query = $cnmysql->prepare($sql);
+		$result = $query->execute();
 
 		if ($result) {
 			
@@ -33,6 +34,10 @@
 			><strong>¡Error!</strong> Editorial no fué modificada</p>";
 
 		}
+
+			$query->close();
+			return $result;
+			
 
 	} else {
 

@@ -6,7 +6,8 @@
 	if (!empty($dEditorial)) {
 		
 		$sql = "INSERT INTO editoriales (editorial) VALUES ('$dEditorial')";
-		$result = $cnmysql->query($sql);
+		$query = $cnmysql->prepare($sql);
+		$result = $query->execute();
 
 		if ($result) {
 			
@@ -31,6 +32,11 @@
 		><strong>¡Error!</strong> Editorial no fué agregada</p>";
 
 		}
+
+		$query->close();
+		return $result;
+
+		
 	} else {
 
 		echo "<p
