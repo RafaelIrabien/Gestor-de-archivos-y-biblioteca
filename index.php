@@ -36,7 +36,21 @@
     <!-- Login Form -->
     <form method="POST" id="frmLogin" onsubmit="return logear()">
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario">
+
       <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
+    
+          <label for="password"></label>
+        <!-- checkbox que nos permite activar o desactivar la opcion -->
+          <div>
+                            
+            <input style="margin-bottom: 20px;" type="checkbox" id="mostrar_contrasena" title="Click para mostrar contraseña"/>
+              Mostrar Contraseña
+            </div>
+      
+            
+
+
+
       <input type="submit" class="fadeIn fourth" value="iniciar sesion">
     </form>
 
@@ -83,6 +97,19 @@
     return false;
   }
 
+</script>
+
+
+<script>
+$(document).ready(function () {
+  $('#mostrar_contrasena').click(function () {
+    if ($('#mostrar_contrasena').is(':checked')) {
+      $('#password').attr('type', 'text');
+    } else {
+      $('#password').attr('type', 'password');
+    }
+  });
+});
 </script>
 
 

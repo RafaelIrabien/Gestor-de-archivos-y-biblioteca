@@ -33,16 +33,33 @@
 		<h1 class="text-center">Registro de usuario</h1>
 			
 		 <div class="col-sm-9 col-center">
-				<form id="frmRegistro" method="post" onsubmit="return agregarUsuarioNuevo()"> <!-- Inicio del formulario -->
+			<form id="frmRegistro" method="post" onsubmit="return agregarUsuarioNuevo()"> <!-- Inicio del formulario -->
 
-					<label>Nombre:</label>
-					<input type="text" name="nombre" id="nombre" class="form-control" required="">
-					<br>
-					<label>Email o correo:</label>
-					<input type="email" name="correo" id="correo" class="form-control" required="">
-					<br>
-					<label>Contraseña:</label>
-					<input type="text" name="password" id="password" class="form-control" required="">
+				<label>Nombre:</label>
+				<input type="text" name="nombre" id="nombre" class="form-control" required="">
+				<br>
+				<label>Email o correo:</label>
+				<input type="email" name="correo" id="correo" class="form-control" required="">
+
+      				<br>
+
+        				<label for="password">Contraseña:</label>
+        				<input type="password" name="password" id="password" class="form-control" required="">
+
+      				<div>
+        				<label for="password"></label>
+        <!-- checkbox que nos permite activar o desactivar la opcion -->
+        				<div style="float: right;">
+        				        		
+        					<input style="margin-top: 10px;" type="checkbox" id="mostrar_contrasena" title="Click para mostrar contraseña"/>
+          					Mostrar Contraseña
+          				</div>
+      				</div>
+    				
+ 				
+
+
+
 					<br>
 					<label>Rol:</label>
 					<select id="Roles" name="Roles" class="form-control">
@@ -113,5 +130,21 @@
 		return false;
 	}
 </script>
+
+
+<script>
+$(document).ready(function () {
+  $('#mostrar_contrasena').click(function () {
+    if ($('#mostrar_contrasena').is(':checked')) {
+      $('#password').attr('type', 'text');
+    } else {
+      $('#password').attr('type', 'password');
+    }
+  });
+});
+</script>
+
+
+
 </body>
 </html>

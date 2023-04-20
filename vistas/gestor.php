@@ -48,7 +48,8 @@
         	<form id="frmArchivos" enctype="multipart/form-data" method="POST">
         		<label>Categoría:</label>
         		<div id="cetegoriasLoad"></div>
-        		<br>
+        		<br><br>
+        		<p>Nota: Asegurese de que sus archivos pesen menos de 10 MB.</p>
         		<label>Seleccione archivos:</label>
         		<input type="file" name="archivos[]"  id="archivos[]"  multiple="">
         	</form>

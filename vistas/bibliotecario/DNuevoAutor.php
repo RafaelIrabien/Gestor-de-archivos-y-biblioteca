@@ -19,7 +19,7 @@
 				color: #1D7034;
 				border:2px dotted #4DA459;
 				text-align: center;'
-		><strong>¡Éxito!</strong> Autor Agregado exitosamente</p>";
+		><strong>¡Éxito!</strong> Autor agregado exitosamente</p>";
 		} else {
 				echo "<p
 				style='	background-color: #EE9393;
