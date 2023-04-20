@@ -76,7 +76,7 @@
 	 	</div>
 	 <div class="image-upload">
 	 	<label for="file-input">
-	 <img src="../img/Foto_perfil.png" id="img-foto" title="Click aquí para subir su foto">
+	 <img src="../img/Foto_perfil.webp" id="img-foto" title="Click aquí para subir su foto">
 	  </label>
 	
 	 <input type="file" id="file-input" required name="imagen" accept="image/*" onchange="vista_preliminar(event)">

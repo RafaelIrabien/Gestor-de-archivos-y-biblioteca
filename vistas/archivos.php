@@ -53,10 +53,10 @@
       <div class="modal-body">
         	<form id="frmArchivos" enctype="multipart/form-data" method="POST">
         		<label>Seleccione archivos:</label>
-        		<input type="file" name="archivos[]" id="archivos[]" multiple="">
+        		<input type="file" name="archivos[]" id="archivos[]" multiple="" required>
             <br><br>
             <label>Descripción:</label>
-            <textarea name="instruccion" id="instruccion" class="form-control"></textarea>
+            <textarea name="instruccion" id="instruccion" class="form-control" required></textarea>
         	</form>
       </div>
       <div class="modal-footer">

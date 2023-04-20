@@ -51,7 +51,7 @@
 		<header>
 			<div id="banner" >
 				<div class="table-responsive">
-					<img src="img_l/banner.jpg" width="900" height="200">
+					<img src="img_l/banner.webp" width="900" height="200">
 				</div>
 			</div>
 		</header>

@@ -29,7 +29,7 @@
     <!-- Icon -->
     <div class="fadeIn first">
     	<br>
-      <img src="img/logo_2.png" id="icon" alt="User Icon" />
+      <img src="img/logo_2.webp" id="icon" alt="User Icon" />
       <h1>Gestor de archivos</h1>
     </div>
 

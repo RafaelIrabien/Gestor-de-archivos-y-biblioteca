@@ -37,7 +37,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     
     <a class="navbar-brand"  href="../inicio.php">
-        <img id="logo" src="../../img/logo_2.png" alt="..." width="140px">
+        <img id="logo" src="../../img/logo_2.webp" alt="..." width="140px">
       </a>
 
     <div class="container">

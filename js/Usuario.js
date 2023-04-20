@@ -47,9 +47,11 @@
 		//Si el control o input viene vacío, entonces muestra un mensaje
 		if ($('#Nombre').val() == "") {
 			swal("No hay nombre de usuario");
+			return false;
 		}
 		else if ($('#Email').val() == "") {
 			swal("No hay correo de usuario");
+			return false;
 		
 		} else {
 

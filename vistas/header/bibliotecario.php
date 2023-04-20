@@ -54,7 +54,7 @@
           <div class="nav-item list__item list__item--click">
             <div class="list__button list__button--click">
                 <a class="nav__link" href="#">
-                  <div class="foto" style="background-image: url('data:image/jpeg;base64,<?php echo $Foto; ?>');"></div>
+                  <div class="foto" loading="lazy" style="background-image: url('data:image/jpeg;base64,<?php echo $Foto; ?>');"></div>
                 </a>
             </div>
             <ul class="list__show menu-vertical">
@@ -81,7 +81,7 @@
           <div class="nav-item list__item list__item--click">
             <div class="list__button list__button--click">
                 <a class="nav__link" href="#">
-                  <div class="foto" style="background-image: url(../img/Foto_perfil.png);"></div>
+                  <div class="foto" loading="lazy" style="background-image: url(../img/Foto_perfil.webp);"></div>
                 </a>
             </div>
             <ul class="list__show menu-vertical">

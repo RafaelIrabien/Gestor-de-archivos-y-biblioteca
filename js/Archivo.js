@@ -1,7 +1,19 @@
 
 	function agregarArchivo() {
+
+		
 		//FormData es un objeto de JS que nos permite enviar archivos
 		var formData = new FormData(document.getElementById('frmArchivos'));
+		
+		if (formData.get('archivos[]').name == '') {
+			swal("No hay archivo(s)");
+			return;
+		}
+		else if ($('#instruccion').val() == "") {
+			swal("No hay descripción");
+			return;
+		
+		} else {
 
 		$.ajax({
 				url: "../procesos/compartir/archivos/guardarArchivo.php",
@@ -27,6 +39,7 @@
 					}
 				}
 		});
+	  }
 	}
 
 

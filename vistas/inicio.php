@@ -28,7 +28,7 @@
 			<div id="tablaArchivosCompartidos"></div>
 		</div>
 	</div>
-	<br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
 
 
 	<!-- Modal para Visualizar Archivos -->
