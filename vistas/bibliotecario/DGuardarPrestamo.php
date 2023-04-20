@@ -9,28 +9,6 @@
 	if (!empty($dLector) && !empty($dFechaDevolucion) && !empty($dCodLibro)) {
 		
 
-		/*
-		//Verificamos si hay libros disponibles según el elegido
-		$sql = "SELECT disponible FROM stock_libros WHERE id_libro = '$dCodLibro'";
-
-		$result = $cnmysql->query($sql);
-		$dato = mysqli_fetch_array($result);
-
-		$cantidad = $dato['disponible'];
-
-		if ($cantidad <= 0) {
-			echo "<p
-			style='	background-color: #EE9393;
-				padding: 10px;
-				box-sizing: border-box;
-				color: #E33E3E;
-				border:2px dotted #E33E3E;'
-			><strong>Error!: </strong>No hay libros disponibles...</p>";
-			exit();
-		}  
-
-		*/
-
 
 		$sql = "INSERT INTO lectores(nombre) VALUES('$dLector')";
 		$result = $cnmysql->query($sql);
@@ -77,7 +55,8 @@
 				padding: 10px;
 				box-sizing: border-box;
 				color: #1D7034;
-				border:2px dotted #4DA459;'
+				border:2px dotted #4DA459;
+				text-align: center;'
 				><strong>¡Éxito!: </strong> El préstamo ha sido guardado</p>";
 			} else {
 				echo "<p
@@ -85,7 +64,8 @@
 				padding: 10px;
 				box-sizing: border-box;
 				color: #E33E3E;
-				border:2px dotted #E33E3E;'
+				border:2px dotted #E33E3E;
+				text-align: center;'
 				><strong>¡Error!: </strong>Los datos presentan errores, verifique por favor</p>";
 			}
 
@@ -99,7 +79,8 @@
 				padding: 10px;
 				box-sizing: border-box;
 				color: #E33E3E;
-				border:2px dotted #E33E3E;'
+				border:2px dotted #E33E3E;
+				text-align: center;'
 		><strong>¡Error!: </strong>Falta ingresar datos</p>";
 	}
 

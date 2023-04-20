@@ -82,7 +82,7 @@
 
 							?>
 
-							<td><div class="img" style="background-image: url(../img/Foto_perfil.png);"></div></td>
+							<td><div class="img" style="background-image: url(../img/Foto_perfil.webp);"></div></td>
 						<?php 
 							} 
 

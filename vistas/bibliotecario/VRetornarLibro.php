@@ -15,7 +15,18 @@
 
 		$dcodDp = $_POST['vcod'];
 
+		$sql = "SELECT DP.id_detalle AS 'CodDp', LI.titulo AS 'Titulo', LE.nombre AS 'Lector'
+			FROM detalle_prestamos DP
+			INNER JOIN libros LI ON LI.id_libro = DP.id_libro
+			INNER JOIN prestamos PR ON PR.id_prestamo = DP.id_prestamo
+			INNER JOIN lectores LE ON LE.id_lector = PR.id_lector
+			WHERE DP.id_detalle = '$dcodDp'";
 
+	 	$result = $cnmysql->query($sql);
+	 	$fila = mysqli_fetch_array($result);
+
+	 	$Titulo = $fila['Titulo'];
+	 	$Lector = $fila['Lector'];
 
 ?>
 
@@ -31,6 +42,12 @@
 		
 		<div id="CajaMensaje">
 			<h1><strong>Mensaje del Sistema</strong></h1>
+
+			<div id="DatosLibro">
+				<h5><?php echo $Titulo; ?></h5>
+				<h6>Prestado por <?php echo $Lector; ?></h6>
+			</div>
+			
 			<p>¿Desea Retornar este Libro?</p>
 			<div>
 				<span class="btn btn-primary" onclick="DRetornarLibro(<?php echo $dcodDp ;?>);">Aceptar</span>
