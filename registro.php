@@ -52,7 +52,7 @@
         				<div style="float: right;">
         				        		
         					<input style="margin-top: 10px;" type="checkbox" id="mostrar_contrasena" title="Click para mostrar contraseña"/>
-          					Mostrar Contraseña
+          					Mostrar contraseña
           				</div>
       				</div>
     				

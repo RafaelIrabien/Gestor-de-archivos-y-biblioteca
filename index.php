@@ -44,7 +44,7 @@
           <div>
                             
             <input style="margin-bottom: 20px;" type="checkbox" id="mostrar_contrasena" title="Click para mostrar contraseña"/>
-              Mostrar Contraseña
+              Mostrar contraseña
             </div>
       
             

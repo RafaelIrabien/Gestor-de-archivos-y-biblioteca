@@ -64,8 +64,10 @@
 					<td><?php echo $mostrar['tipo']; ?></td>
 					<td >
 					
-						<a href="<?php echo $rutaDescarga; ?>" download="<?php echo $nombreArchivo; ?>" class="btn btn-success btn-sm">
+						<a href="<?php echo $rutaDescarga; ?>" download="<?php echo $nombreArchivo; ?>">
+							<span class="btn btn-success btn-sm">
 							<span class="fas fa-download"></span>
+						  </span>
 						</a>
 
 						<?php 

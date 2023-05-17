@@ -62,10 +62,9 @@
 						$extensionesValidas = array(
 												'png', 
 												'jpg',
-												'doc',
-												'docx', 
+												 
 												'pdf',
-												'xls', 
+												
 												'mp4',
 												'mp3',
 												'flac'

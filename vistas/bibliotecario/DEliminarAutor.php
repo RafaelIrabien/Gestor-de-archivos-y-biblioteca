@@ -7,7 +7,7 @@
 		
 		$sql_2 = "SELECT id_autor FROM libros WHERE id_autor = '$dCod'";
 		
-		//$result_2 = $cnmysql->query($sql_2);
+		
 		$result_2 = mysqli_query($cnmysql, $sql_2);
 
 		// Verificar si el id del autor existe en la tabla "libros"

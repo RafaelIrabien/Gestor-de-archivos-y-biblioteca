@@ -1,5 +1,5 @@
 <?php 
 
-	$cnmysql = new mysqli("localhost","root","","plataforma");
+	$cnmysql = new mysqli("localhost","root","Quelafuerzateacompañe","plataforma");
 
  ?>

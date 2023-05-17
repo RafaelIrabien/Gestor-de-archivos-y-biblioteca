@@ -48,7 +48,7 @@
 				<h6>Prestado por <?php echo $Lector; ?></h6>
 			</div>
 			
-			<p>¿Desea Retornar este Libro?</p>
+			<p>¿Desea retornar este libro?</p>
 			<div>
 				<span class="btn btn-primary" onclick="DRetornarLibro(<?php echo $dcodDp ;?>);">Aceptar</span>
 				<span class="btn btn-secondary" onclick="VistaLibrosPrestados();">Cancelar</span>

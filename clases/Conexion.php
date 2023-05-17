@@ -5,7 +5,7 @@ class Conectar{
 	public function conexion(){
 		$servidor = "localhost";
 		$usuario = "root";
-		$password = "";
+		$password = "Quelafuerzateacompañe";
 		$base = "plataforma";
 
 		$conexion = mysqli_connect($servidor, $usuario, $password, $base);
